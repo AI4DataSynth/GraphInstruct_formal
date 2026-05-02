@@ -1,0 +1,39 @@
+cff-version: 1.2.0
+title: "GraphInstruct: A Progressive Benchmark for Diagnosing Capability Gaps in LLM Graph Generation"
+message: "If you use this benchmark, please cite the conference paper below."
+type: dataset
+authors:
+  - name: "Anonymous Authors"
+    affiliation: "Anonymized for double-blind review (NeurIPS 2026 E&D Track)"
+abstract: >-
+  GraphInstruct is a progressive-complexity benchmark for diagnosing where
+  LLM graph-generation capability fails. It comprises 800 hand-authored
+  instructions stratified into 6 complexity levels (L0-L5), 1,582
+  algorithmically synthesized reference solutions, 4,163 distributional
+  reference graphs, and 5 evaluation dimensions (D1 structural, D2 textual,
+  D3 embedding, D4 instruction-match, D5 efficiency) using deterministic,
+  LLM-as-judge-free metrics. A 12-LLM x 4-strategy capability survey
+  (180,000 outputs) reveals where in the complexity spectrum each LLM
+  breaks down, and complementary verification-guided generation methods
+  (VGIG, CAAP) surpass the per-level prompt-engineering oracle by +0.035 to
+  +0.050 on three target models.
+license: MIT
+license-url: "https://opensource.org/licenses/MIT"
+keywords:
+  - benchmark
+  - graph generation
+  - large language models
+  - LLM evaluation
+  - diagnostic benchmark
+  - progressive complexity
+  - structured generation
+version: "1.0.0"
+date-released: "2026-05-06"
+preferred-citation:
+  type: conference-paper
+  title: "GraphInstruct: A Progressive Benchmark for Diagnosing Capability Gaps in LLM Graph Generation"
+  authors:
+    - name: "Anonymous Authors"
+  conference:
+    name: "40th Conference on Neural Information Processing Systems (NeurIPS 2026), Track on Evaluations and Datasets"
+  year: 2026

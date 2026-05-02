@@ -1,0 +1,58 @@
+{
+  "per_instruction": [
+    {
+      "instruction_id": "L0-001",
+      "level": 0,
+      "d1_valid_rate": 1.0,
+      "d4_instruction_score": 1.0,
+      "d5_tokens_per_valid": 127.0,
+      "dimension_scores": {
+        "D1": 0.7,
+        "D2": 0.0,
+        "D3": 0.0,
+        "D4": 1.0,
+        "D5": 0.9165135708180099
+      },
+      "level_score": 0.9571428571428572
+    },
+    {
+      "instruction_id": "L0-002",
+      "level": 0,
+      "d1_valid_rate": 1.0,
+      "d4_instruction_score": 0.6666666666666666,
+      "d5_tokens_per_valid": 176.0,
+      "dimension_scores": {
+        "D1": 0.7,
+        "D2": 0.0,
+        "D3": 0.0,
+        "D4": 0.6666666666666666,
+        "D5": 0.8870325883359518
+      },
+      "level_score": 0.6714285714285714
+    }
+  ],
+  "per_level_scores": {
+    "0": 0.8142857142857143
+  },
+  "total_score": 0.04071428571428572,
+  "final_score": 0.04071428571428572,
+  "metadata": {
+    "provider": "mock",
+    "model": "gpt-3.5-turbo",
+    "strategy": "zero-shot",
+    "graph_format": "code",
+    "samples": 1,
+    "levels": [
+      0
+    ],
+    "seed": 42,
+    "total_tokens": 303,
+    "checkpoint": "results\\_smoke_gpt35.jsonl",
+    "method": "baseline",
+    "max_rounds": null,
+    "num_candidates": null,
+    "feedback_level": null,
+    "eval_mode": "quality-only",
+    "derived_from": "combined"
+  }
+}

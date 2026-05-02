@@ -1,0 +1,138 @@
+{
+  "per_instruction": [
+    {
+      "instruction_id": "L0-001",
+      "level": 0,
+      "d1_valid_rate": 0.0,
+      "d4_instruction_score": 0.0,
+      "d5_tokens_per_valid": null,
+      "dimension_scores": {
+        "D1": 0.0,
+        "D2": 0.0,
+        "D3": 0.0,
+        "D4": 0.0,
+        "D5": 0.0
+      },
+      "level_score": 0.0
+    },
+    {
+      "instruction_id": "L0-002",
+      "level": 0,
+      "d1_valid_rate": 1.0,
+      "d4_instruction_score": 1.0,
+      "d5_tokens_per_valid": 205.0,
+      "dimension_scores": {
+        "D1": 0.7,
+        "D2": 0.0,
+        "D3": 0.0,
+        "D4": 1.0,
+        "D5": 0.8702531214879901
+      },
+      "level_score": 0.931075936446397
+    },
+    {
+      "instruction_id": "L4-001",
+      "level": 4,
+      "d1_valid_rate": 1.0,
+      "d4_instruction_score": 0.9349849962490621,
+      "d5_tokens_per_valid": 318.0,
+      "dimension_scores": {
+        "D1": 0.7,
+        "D2": 0.0,
+        "D3": 0.6972108434257467,
+        "D4": 0.9349849962490621,
+        "D5": 0.8093219518902168
+      },
+      "level_score": 0.740500582891804
+    },
+    {
+      "instruction_id": "L4-002",
+      "level": 4,
+      "d1_valid_rate": 1.0,
+      "d4_instruction_score": 0.9553471416735709,
+      "d5_tokens_per_valid": 322.0,
+      "dimension_scores": {
+        "D1": 0.7,
+        "D2": 0.0,
+        "D3": 0.6063399837505661,
+        "D4": 0.9553471416735709,
+        "D5": 0.807288733230932
+      },
+      "level_score": 0.7468512370926321
+    }
+  ],
+  "per_level_scores": {
+    "0": 0.4655379682231985,
+    "4": 0.7436759099922181
+  },
+  "total_score": 0.20919587590921446,
+  "final_score": 0.24057525729559662,
+  "raw_generations": {
+    "L0-001": [
+      {
+        "raw_output": "ERROR: Connection error.",
+        "graph_serialized": null,
+        "graph_nodes": null,
+        "graph_edges": null,
+        "valid": false,
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "api_calls": 5
+      }
+    ],
+    "L0-002": [
+      {
+        "raw_output": "Graph[name='example', nodes=3] {\n    node_list = ['0', '1', '2'];\n    edge_list = [('0','1'), ('1','2')];\n}",
+        "graph_serialized": "Graph[nodes=3] {\n    node_list = ['0', '1', '2'];\n    edge_list = [('0','1'), ('1','2')];\n}",
+        "graph_nodes": 3,
+        "graph_edges": 2,
+        "valid": true,
+        "input_tokens": 166,
+        "output_tokens": 39,
+        "api_calls": 1
+      }
+    ],
+    "L4-001": [
+      {
+        "raw_output": "Graph[name='social_network', nodes=10] {\n    node_list = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];\n    edge_list = [('0', '1'), ('0', '2'), ('0', '3'), ('1', '2'), ('1', '4'), ('1', '5'), ('2', '3'), ('2', '6'), ('3', '7'), ('4', '5'), ('4', '6'), ('5', '8'), ('6', '9'), ('7', '8'), ('8', '9')];\n}",
+        "graph_serialized": "Graph[nodes=10] {\n    node_list = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];\n    edge_list = [\n        ('0','1'), ('0','2'), ('0','3'), ('1','2'), ('1','4'),\n        ('1','5'), ('2','3'), ('2','6'), ('3','7'), ('4','5'),\n        ('4','6'), ('5','8'), ('6','9'), ('7','8'), ('8','9')];\n}",
+        "graph_nodes": 10,
+        "graph_edges": 15,
+        "valid": true,
+        "input_tokens": 177,
+        "output_tokens": 141,
+        "api_calls": 1
+      }
+    ],
+    "L4-002": [
+      {
+        "raw_output": "Graph[name='friendship_network', nodes=12] {\n    node_list = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11'];\n    edge_list = [('0','1'), ('0','2'), ('0','3'), ('1','2'), ('1','4'), ('1','5'), ('2','3'), ('2','6'), ('3','7'), ('4','5'), ('4','8'), ('5','9'), ('6','10'), ('7','8'), ('8','11'), ('9','10'), ('10','11')];\n}",
+        "graph_serialized": "Graph[nodes=12] {\n    node_list = ['0', '1', '10', '11', '2', '3', '4', '5', '6', '7', '8', '9'];\n    edge_list = [\n        ('0','1'), ('0','2'), ('0','3'), ('1','2'), ('1','4'),\n        ('1','5'), ('2','3'), ('2','6'), ('3','7'), ('4','5'),\n        ('4','8'), ('5','9'), ('6','10'), ('7','8'), ('8','11'),\n        ('9','10'), ('10','11')];\n}",
+        "graph_nodes": 12,
+        "graph_edges": 17,
+        "valid": true,
+        "input_tokens": 179,
+        "output_tokens": 143,
+        "api_calls": 1
+      }
+    ]
+  },
+  "metadata": {
+    "provider": "openai",
+    "model": "gpt-4o-mini",
+    "strategy": "zero-shot",
+    "graph_format": "code",
+    "samples": 1,
+    "levels": [
+      0,
+      4
+    ],
+    "seed": 42,
+    "total_tokens": 845,
+    "checkpoint": "results\\_smoke_real.jsonl",
+    "method": "baseline",
+    "max_rounds": null,
+    "num_candidates": null,
+    "feedback_level": null
+  }
+}

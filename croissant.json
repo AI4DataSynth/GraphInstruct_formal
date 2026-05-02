@@ -1,0 +1,197 @@
+{
+  "@context": {
+    "@language": "en",
+    "@vocab": "https://schema.org/",
+    "citeAs": "cr:citeAs",
+    "column": "cr:column",
+    "conformsTo": "dct:conformsTo",
+    "cr": "http://mlcommons.org/croissant/",
+    "rai": "http://mlcommons.org/croissant/RAI/",
+    "data": {"@id": "cr:data", "@type": "@json"},
+    "dataType": {"@id": "cr:dataType", "@type": "@vocab"},
+    "dct": "http://purl.org/dc/terms/",
+    "examples": {"@id": "cr:examples", "@type": "@json"},
+    "extract": "cr:extract",
+    "field": "cr:field",
+    "fileProperty": "cr:fileProperty",
+    "fileObject": "cr:fileObject",
+    "fileSet": "cr:fileSet",
+    "format": "cr:format",
+    "includes": "cr:includes",
+    "isLiveDataset": "cr:isLiveDataset",
+    "jsonPath": "cr:jsonPath",
+    "key": "cr:key",
+    "parentField": "cr:parentField",
+    "path": "cr:path",
+    "recordSet": "cr:recordSet",
+    "references": "cr:references",
+    "regex": "cr:regex",
+    "repeated": "cr:repeated",
+    "replace": "cr:replace",
+    "sc": "https://schema.org/",
+    "separator": "cr:separator",
+    "source": "cr:source",
+    "subField": "cr:subField",
+    "transform": "cr:transform"
+  },
+  "@type": "sc:Dataset",
+  "name": "GraphInstruct",
+  "description": "GraphInstruct is a progressive-complexity benchmark for diagnosing LLM graph-generation capability. It comprises 800 hand-authored instructions stratified into 6 complexity levels (L0-L5), 1,582 algorithmically synthesized reference solutions, and 4,163 distributional reference graphs (3,115 synthetic L3 + 1,048 real-world L4). Outputs are scored on 5 evaluation dimensions (D1 structural, D2 textual, D3 embedding, D4 instruction-match, D5 efficiency) with deterministic, LLM-as-judge-free metrics. NeurIPS 2026 Evaluations & Datasets Track submission.",
+  "conformsTo": "http://mlcommons.org/croissant/1.0",
+  "version": "1.0.0",
+  "datePublished": "2026-05-06",
+  "license": "https://creativecommons.org/licenses/by/4.0/",
+  "url": "https://github.com/AI4DataSynth/GraphInstruct",
+  "citeAs": "@inproceedings{graphinstruct2026, title={GraphInstruct: A Progressive Benchmark for Diagnosing Capability Gaps in LLM Graph Generation}, author={Anonymous Authors}, booktitle={Proceedings of the 40th Conference on Neural Information Processing Systems (NeurIPS 2026), Track on Evaluations and Datasets}, year={2026}}",
+  "keywords": [
+    "benchmark",
+    "graph generation",
+    "large language models",
+    "evaluation",
+    "diagnostic",
+    "progressive complexity",
+    "structured generation"
+  ],
+  "creator": {
+    "@type": "Organization",
+    "name": "Anonymous Authors (NeurIPS 2026 double-blind submission)"
+  },
+  "distribution": [
+    {
+      "@type": "cr:FileObject",
+      "@id": "instructions-l0",
+      "name": "level_0.json",
+      "description": "100 L0 instructions (format generation) with reference solutions and constraint specifications.",
+      "contentUrl": "data/instructions/level_0.json",
+      "encodingFormat": "application/json"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "instructions-l1",
+      "name": "level_1.json",
+      "description": "200 L1 instructions (single explicit constraint) with reference solutions.",
+      "contentUrl": "data/instructions/level_1.json",
+      "encodingFormat": "application/json"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "instructions-l2",
+      "name": "level_2.json",
+      "description": "200 L2 instructions (multi-constraint composition; 9 deliberately infeasible).",
+      "contentUrl": "data/instructions/level_2.json",
+      "encodingFormat": "application/json"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "instructions-l3",
+      "name": "level_3.json",
+      "description": "150 L3 instructions (numerical attribute control).",
+      "contentUrl": "data/instructions/level_3.json",
+      "encodingFormat": "application/json"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "instructions-l4",
+      "name": "level_4.json",
+      "description": "100 L4 instructions (domain semantics).",
+      "contentUrl": "data/instructions/level_4.json",
+      "encodingFormat": "application/json"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "instructions-l5",
+      "name": "level_5.json",
+      "description": "50 L5 instructions (multi-step graph editing).",
+      "contentUrl": "data/instructions/level_5.json",
+      "encodingFormat": "application/json"
+    },
+    {
+      "@type": "cr:FileSet",
+      "@id": "reference-pools-l3",
+      "name": "L3 synthetic reference pool",
+      "description": "3,115 synthetic graphs across 15 attribute subgroups x 3 sizes (small / medium / large).",
+      "containedIn": {"@id": "data/reference_pools/l3_synthetic/"},
+      "encodingFormat": "application/octet-stream",
+      "includes": "*.pkl"
+    },
+    {
+      "@type": "cr:FileSet",
+      "@id": "reference-pools-l4",
+      "name": "L4 real-world reference pool",
+      "description": "1,048 real-world graphs across 9 domains (citation, social, biological, infrastructure, communication, ecological, knowledge-graph, plus synthetic BA controls). Each domain subset retains its upstream license; see DATA_LICENSE.md.",
+      "containedIn": {"@id": "data/reference_pools/l4_real/"},
+      "encodingFormat": "application/octet-stream",
+      "includes": "*.pkl"
+    }
+  ],
+  "recordSet": [
+    {
+      "@type": "cr:RecordSet",
+      "@id": "instruction-record",
+      "name": "instruction",
+      "description": "One instruction in GraphInstruct: a natural-language graph-generation query with associated constraints and reference solutions.",
+      "field": [
+        {
+          "@type": "cr:Field",
+          "@id": "instruction/id",
+          "name": "id",
+          "description": "Unique identifier in format L{level}-{seq:03d} (e.g., L1-042).",
+          "dataType": "sc:Text"
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "instruction/level",
+          "name": "level",
+          "description": "Instruction complexity level, integer in [0, 5].",
+          "dataType": "sc:Integer"
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "instruction/instruction",
+          "name": "instruction",
+          "description": "Natural-language instruction issued to the LLM.",
+          "dataType": "sc:Text"
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "instruction/explicit_constraints",
+          "name": "explicit_constraints",
+          "description": "Constraints stated in the instruction text (e.g., graph_type=tree, num_nodes=10).",
+          "dataType": "sc:Text",
+          "repeated": true
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "instruction/implicit_constraints",
+          "name": "implicit_constraints",
+          "description": "Constraints implied by the explicit ones (e.g., a tree with n nodes implies acyclic, connected, n-1 edges).",
+          "dataType": "sc:Text",
+          "repeated": true
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "instruction/graph_sizes",
+          "name": "graph_sizes",
+          "description": "Size buckets the instruction applies to: subset of {small (<=20), medium (21-50), large (>50)}.",
+          "dataType": "sc:Text",
+          "repeated": true
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "instruction/reference_solutions",
+          "name": "reference_solutions",
+          "description": "1 or 2 algorithmically synthesized reference graphs encoded in InstructGraph code-style format.",
+          "dataType": "sc:Text",
+          "repeated": true
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "instruction/feasible",
+          "name": "feasible",
+          "description": "False for the 9 deliberately infeasible L2 instructions; true otherwise.",
+          "dataType": "sc:Boolean"
+        }
+      ]
+    }
+  ]
+}

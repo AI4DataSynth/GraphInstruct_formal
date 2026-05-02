@@ -1,0 +1,18 @@
+# GraphInstruct — Python dependencies
+# Core (required for D1, D4, D5 metrics + parser + validators)
+networkx>=3.0
+numpy>=1.24
+tiktoken>=0.5
+matplotlib>=3.7
+
+# Optional — install via `pip install -e ".[full]"` for D2 / D3 metrics
+# transformers>=4.30
+# torch>=2.0
+# torch_geometric>=2.0
+# igraph>=0.11
+# plotly>=5.0
+
+# LLM API clients (only needed if running new generations)
+# openai>=1.0
+# anthropic>=0.34
+# dashscope>=1.0

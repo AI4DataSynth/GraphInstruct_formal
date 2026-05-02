@@ -1,0 +1,83 @@
+# ============================================================
+# GraphInstruct .gitignore
+# ============================================================
+
+# --- Python ---
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+*.egg
+*.egg-info/
+build/
+dist/
+.eggs/
+pip-wheel-metadata/
+
+# --- Virtual environments ---
+venv/
+env/
+.venv/
+.env/
+ENV/
+
+# --- IDE / editor ---
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+
+# --- Jupyter ---
+.ipynb_checkpoints/
+
+# --- Coverage / testing ---
+.coverage
+.coverage.*
+.cache/
+.pytest_cache/
+htmlcov/
+.tox/
+.claude-test-results.log
+
+# --- Build / packaging ---
+*.log
+*.tmp
+
+# --- LLM API keys (paranoid catch) ---
+.env
+.env.local
+*.key
+secrets.toml
+
+# --- Large raw outputs (host on Zenodo, not GitHub) ---
+results/raw_generations/*.jsonl
+results/raw_generations/*.json
+!results/raw_generations/README.md
+
+# --- Raw upstream datasets (download via scripts/download_raw.sh) ---
+data/raw/*.gz
+data/raw/*.zip
+data/raw/*.txt
+data/raw/MUTAG/
+!data/raw/.gitkeep
+!data/raw/README.md
+
+# --- Compiled / temporary ---
+*.pdf
+*.aux
+*.bbl
+*.blg
+*.synctex.gz
+
+# --- macOS ---
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# --- Windows ---
+Thumbs.db
+Desktop.ini
+$RECYCLE.BIN/
