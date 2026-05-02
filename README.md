@@ -39,8 +39,9 @@ actually governs failure. **GraphInstruct closes this diagnostic gap**:
 export KMP_DUPLICATE_LIB_OK=TRUE
 export PYTHONIOENCODING=utf-8
 
-# 1. Clone and install
-git clone https://github.com/AI4DataSynth/GraphInstruct.git
+# 1. Get the code: download as zip from the anonymous review URL
+#    https://anonymous.4open.science/r/GraphInstruct_formal-3272
+#    (post-acceptance: a public GitHub URL will replace this line)
 cd GraphInstruct
 pip install -e .
 

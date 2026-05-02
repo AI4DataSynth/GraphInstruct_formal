@@ -1,4 +1,4 @@
-# Reproduction Guide / 复现指南
+# Reproduction Guide
 
 
 > Maps each main-paper number to the exact command that produces it. Reviewers should be able to recover every claim in §5 (Results) and Appendix C, F, G of the paper using the recipes below.

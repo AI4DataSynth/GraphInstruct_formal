@@ -1,4 +1,4 @@
-# Data Licensing & Attribution / 数据许可与归属
+# Data Licensing & Attribution
 
 ### Summary
 

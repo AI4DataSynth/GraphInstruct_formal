@@ -41,7 +41,7 @@
   "version": "1.0.0",
   "datePublished": "2026-05-06",
   "license": "https://creativecommons.org/licenses/by/4.0/",
-  "url": "https://github.com/AI4DataSynth/GraphInstruct",
+  "url": "https://anonymous.4open.science/r/GraphInstruct_formal-3272",
   "citeAs": "@inproceedings{graphinstruct2026, title={GraphInstruct: A Progressive Benchmark for Diagnosing Capability Gaps in LLM Graph Generation}, author={Anonymous Authors}, booktitle={Proceedings of the 40th Conference on Neural Information Processing Systems (NeurIPS 2026), Track on Evaluations and Datasets}, year={2026}}",
   "keywords": [
     "benchmark",

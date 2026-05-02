@@ -113,7 +113,7 @@ def no_contradiction(graph: Optional[nx.Graph]) -> bool:
                 return False
             edge_set.add(edge_key)
 
-    # Defensive: undirected graph symmetry check (design doc Section 3.5: "无向图无单向边").
+    # Defensive: undirected graphs must have no one-way edges (design doc Section 3.5).
     # nx.Graph guarantees symmetry internally, so this is a safety net against
     # custom subclasses or future NetworkX changes that might break this invariant.
     if not graph.is_directed():

@@ -1,4 +1,4 @@
-# Installation / 安装指引
+# Installation
 
 ### System requirements
 

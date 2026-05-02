@@ -1,4 +1,4 @@
-# Dataset Schema / 数据集结构
+# Dataset Schema
 
 This directory contains the GraphInstruct benchmark data. It is organized into two pools:
 

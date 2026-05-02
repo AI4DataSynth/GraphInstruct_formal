@@ -1,4 +1,4 @@
-# GraphInstruct — Datasheet for Datasets / 数据集说明书
+# GraphInstruct — Datasheet for Datasets
 
 
 > This datasheet follows the template of Gebru et al. (2021), *"Datasheets for Datasets"*. The full version with extensive answers under each of the 7 sections is in **paper Appendix I**. This file in the supplementary repeats the most reviewer-relevant questions for quick reference.

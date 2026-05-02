@@ -38,11 +38,11 @@ MODEL_COLORS = [
 ]
 
 DIMENSION_LABELS = {
-    "D1": "D1 结构质量",
-    "D2": "D2 文本质量",
-    "D3": "D3 嵌入质量",
-    "D4": "D4 指令匹配",
-    "D5": "D5 Token效率",
+    "D1": "D1 Structural",
+    "D2": "D2 Textual",
+    "D3": "D3 Embedding",
+    "D4": "D4 Instruction Match",
+    "D5": "D5 Token Efficiency",
 }
 
 DIMENSIONS = ["D1", "D2", "D3", "D4", "D5"]
@@ -112,10 +112,10 @@ def pareto_frontier_plot(
         # Hover text with details
         hover = (
             f"<b>{name}</b><br>"
-            f"质量 (S_total): {quality:.4f}<br>"
-            f"Token成本: {cost:.0f}<br>"
-            f"有效率: {valid_rate:.1%}<br>"
-            f"最终分数: {data.get('final_score', 0.0):.4f}"
+            f"Quality (S_total): {quality:.4f}<br>"
+            f"Token cost: {cost:.0f}<br>"
+            f"Valid rate: {valid_rate:.1%}<br>"
+            f"Final score: {data.get('final_score', 0.0):.4f}"
         )
 
         fig.add_trace(
@@ -146,7 +146,7 @@ def pareto_frontier_plot(
                 y=f_quals,
                 mode="lines",
                 line=dict(color="red", width=2, dash="dash"),
-                name="Pareto 前沿",
+                name="Pareto frontier",
                 hoverinfo="skip",
             )
         )
@@ -169,9 +169,9 @@ def pareto_frontier_plot(
         )
 
     fig.update_layout(
-        title="Pareto 前沿：质量 vs Token 成本",
-        xaxis_title="平均 Token 成本",
-        yaxis_title="总质量分数 (S_total)",
+        title="Pareto frontier: Quality vs Token cost",
+        xaxis_title="Average Token cost",
+        yaxis_title="Total Quality score (S_total)",
         hovermode="closest",
         template="plotly_white",
         legend=dict(yanchor="top", y=0.99, xanchor="left", x=0.01),
@@ -240,7 +240,7 @@ def radar_comparison(
         polar=dict(
             radialaxis=dict(visible=True, range=[0, 1]),
         ),
-        title="五维评估雷达图 (D1-D5)",
+        title="Five-dimension Radar Chart (D1-D5)",
         template="plotly_white",
         showlegend=True,
     )
@@ -305,14 +305,14 @@ def level_heatmap(results: Dict[str, Any]) -> "go.Figure":
             texttemplate="%{text}",
             hovertext=hover_text,
             hovertemplate="%{hovertext}<extra></extra>",
-            colorbar=dict(title="分数"),
+            colorbar=dict(title="Score"),
         )
     )
 
     fig.update_layout(
-        title="模型 x 指令等级 得分热力图",
-        xaxis_title="指令等级",
-        yaxis_title="模型",
+        title="Model x Instruction Level Score Heatmap",
+        xaxis_title="Instruction Level",
+        yaxis_title="Model",
         template="plotly_white",
     )
 
@@ -356,10 +356,10 @@ def efficiency_scatter(results: Dict[str, Any]) -> "go.Figure":
 
         hover = (
             f"<b>{name}</b><br>"
-            f"质量: {quality:.4f}<br>"
-            f"Token成本: {cost:.0f}<br>"
-            f"有效率: {valid_rate:.1%}<br>"
-            f"质量/千Token: {quality / max(cost / 1000, 0.001):.4f}"
+            f"Quality: {quality:.4f}<br>"
+            f"Token cost: {cost:.0f}<br>"
+            f"Valid rate: {valid_rate:.1%}<br>"
+            f"Quality/kToken: {quality / max(cost / 1000, 0.001):.4f}"
         )
 
         fig.add_trace(
@@ -389,15 +389,15 @@ def efficiency_scatter(results: Dict[str, Any]) -> "go.Figure":
                 y=f_quals,
                 mode="lines",
                 line=dict(color="rgba(255,0,0,0.5)", width=2, dash="dot"),
-                name="Pareto 前沿",
+                name="Pareto frontier",
                 hoverinfo="skip",
             )
         )
 
     fig.update_layout(
-        title="质量 vs Token 效率",
-        xaxis_title="平均 Token 成本",
-        yaxis_title="总质量分数 (S_total)",
+        title="Quality vs Token Efficiency",
+        xaxis_title="Average Token cost",
+        yaxis_title="Total Quality score (S_total)",
         hovermode="closest",
         template="plotly_white",
     )
