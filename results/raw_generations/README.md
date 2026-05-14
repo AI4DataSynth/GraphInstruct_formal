@@ -16,9 +16,9 @@ are the alternative hosting locations.
 ### Option 1 — Zenodo (preferred; permanent DOI)
 
 The Zenodo record contains a **complete frozen snapshot** of `results/`
-(leaderboards + 45 quality.json + raw_generations/). Reviewers who only need
-quality scores or leaderboards can use the GitHub copy of those files; the
-Zenodo archive is for raw outputs and long-term archival.
+(leaderboards + 45 quality.json + raw_generations/). If you only need
+quality scores or leaderboards, the GitHub copy of those files is sufficient;
+the Zenodo archive is for raw outputs and long-term archival.
 
 *This URL will be filled in upon Zenodo upload (see
 `PLACEHOLDER_ZENODO_DOI` in repo metadata).*

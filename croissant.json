@@ -36,13 +36,13 @@
   },
   "@type": "sc:Dataset",
   "name": "GraphInstruct",
-  "description": "GraphInstruct is a progressive-complexity benchmark for diagnosing LLM graph-generation capability. It comprises 800 hand-authored instructions stratified into 6 complexity levels (L0-L5), 1,582 algorithmically synthesized reference solutions, and 4,163 distributional reference graphs (3,115 synthetic L3 + 1,048 real-world L4). Outputs are scored on 5 evaluation dimensions (D1 structural, D2 textual, D3 embedding, D4 instruction-match, D5 efficiency) with deterministic, LLM-as-judge-free metrics. NeurIPS 2026 Evaluations & Datasets Track submission.",
+  "description": "GraphInstruct is a progressive-complexity benchmark for diagnosing LLM graph-generation capability. It comprises 800 hand-authored instructions stratified into 6 complexity levels (L0-L5), 1,582 algorithmically synthesized reference solutions, and 4,163 distributional reference graphs (3,115 synthetic L3 + 1,048 real-world L4). Outputs are scored on 5 evaluation dimensions (D1 structural, D2 textual, D3 embedding, D4 instruction-match, D5 efficiency) with deterministic, LLM-as-judge-free metrics.",
   "conformsTo": "http://mlcommons.org/croissant/1.0",
   "version": "1.0.0",
   "datePublished": "2026-05-06",
   "license": "https://creativecommons.org/licenses/by/4.0/",
-  "url": "https://anonymous.4open.science/r/GraphInstruct_formal-3272",
-  "citeAs": "@inproceedings{graphinstruct2026, title={GraphInstruct: A Progressive Benchmark for Diagnosing Capability Gaps in LLM Graph Generation}, author={Anonymous Authors}, booktitle={Proceedings of the 40th Conference on Neural Information Processing Systems (NeurIPS 2026), Track on Evaluations and Datasets}, year={2026}}",
+  "url": "https://github.com/AI4DataSynth/GraphInstruct_formal",
+  "citeAs": "@misc{graphinstruct2026, title={GraphInstruct: A Progressive Benchmark for Diagnosing Capability Gaps in LLM Graph Generation}, author={{The GraphInstruct Authors}}, year={2026}}",
   "keywords": [
     "benchmark",
     "graph generation",
@@ -54,7 +54,7 @@
   ],
   "creator": {
     "@type": "Organization",
-    "name": "Anonymous Authors (NeurIPS 2026 double-blind submission)"
+    "name": "The GraphInstruct Authors"
   },
   "distribution": [
     {

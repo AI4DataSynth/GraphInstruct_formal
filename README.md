@@ -1,12 +1,10 @@
 # GraphInstruct
 
 > A progressive-complexity benchmark for diagnosing capability gaps in LLM graph generation.
-> NeurIPS 2026 · Evaluations & Datasets Track · Anonymous Authors
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![Data: CC BY 4.0](https://img.shields.io/badge/Data-CC--BY--4.0-orange.svg)](docs/DATA_LICENSE.md)
 [![Python](https://img.shields.io/badge/python-3.10%2B-blue.svg)](pyproject.toml)
-[![NeurIPS 2026](https://img.shields.io/badge/NeurIPS-2026%20E%26D-red.svg)](https://neurips.cc/Conferences/2026)
 [![Tests](https://img.shields.io/badge/tests-418%20passing-brightgreen.svg)](tests/)
 
 ---
@@ -39,10 +37,9 @@ actually governs failure. **GraphInstruct closes this diagnostic gap**:
 export KMP_DUPLICATE_LIB_OK=TRUE
 export PYTHONIOENCODING=utf-8
 
-# 1. Get the code: download as zip from the anonymous review URL
-#    https://anonymous.4open.science/r/GraphInstruct_formal-3272
-#    (post-acceptance: a public GitHub URL will replace this line)
-cd GraphInstruct
+# 1. Get the code
+git clone https://github.com/AI4DataSynth/GraphInstruct_formal.git
+cd GraphInstruct_formal
 pip install -e .
 
 # 2. Verify with 418 unit tests (~30 s)
@@ -92,6 +89,25 @@ python scripts/d5_robustness.py
 ```
 
 > **Note:** `run_baseline.py` auto-selects `max_tokens` per model to match the paper (gpt-3.5-turbo=4096, all others=16384). No flag needed — see [`docs/REPRODUCE.md`](docs/REPRODUCE.md) for details.
+
+---
+
+## 🔎 Extended analyses
+
+Beyond the main reproduction pipeline above, this repository ships an
+extended-analyses companion that drills into individual design choices:
+
+- [`SUPP_ANALYSES.md`](SUPP_ANALYSES.md) — additional robustness and
+  sensitivity studies (CV-style Oracle baseline, cost-adjusted method
+  comparison, reference-pair dedup, parse-failure rates, leave-one-out
+  regression robustness, weight-vector ablations).
+- [`scripts/analyses/`](scripts/analyses/) — standalone CPU-only scripts
+  that regenerate every number in the companion (e.g. `python
+  scripts/analyses/b17_loo_ols.py`). Outputs land in
+  `scripts/analyses/results/` as JSON.
+
+These analyses are independent of the main paper tables; the headline
+leaderboards below are unaffected.
 
 ---
 
@@ -156,14 +172,12 @@ a runnable end-to-end example.
 If you use GraphInstruct, please cite:
 
 ```bibtex
-@inproceedings{graphinstruct2026,
-  title     = {{GraphInstruct}: A Progressive Benchmark for Diagnosing
-               Capability Gaps in {LLM} Graph Generation},
-  author    = {Anonymous Authors},
-  booktitle = {Proceedings of the 40th Conference on Neural Information
-               Processing Systems (NeurIPS 2026), Track on Evaluations
-               and Datasets},
-  year      = {2026}
+@misc{graphinstruct2026,
+  title        = {{GraphInstruct}: A Progressive Benchmark for Diagnosing
+                  Capability Gaps in {LLM} Graph Generation},
+  author       = {{The GraphInstruct Authors}},
+  year         = {2026},
+  howpublished = {\url{https://github.com/AI4DataSynth/GraphInstruct_formal}}
 }
 ```
 
@@ -184,8 +198,4 @@ sources** listed in [`docs/DATA_LICENSE.md`](docs/DATA_LICENSE.md).
 
 ## 🤝 Contributing & Contact
 
-This repository is anonymized for double-blind review at NeurIPS 2026.
-Author and contact information will be added upon acceptance.
-
-For questions about reproduction or usage during the review period, please open
-a GitHub issue.
+For questions about reproduction or usage, please open a GitHub issue.

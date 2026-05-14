@@ -1,10 +1,9 @@
 cff-version: 1.2.0
 title: "GraphInstruct: A Progressive Benchmark for Diagnosing Capability Gaps in LLM Graph Generation"
-message: "If you use this benchmark, please cite the conference paper below."
+message: "If you use this benchmark, please cite the work below."
 type: dataset
 authors:
-  - name: "Anonymous Authors"
-    affiliation: "Anonymized for double-blind review (NeurIPS 2026 E&D Track)"
+  - name: "The GraphInstruct Authors"
 abstract: >-
   GraphInstruct is a progressive-complexity benchmark for diagnosing where
   LLM graph-generation capability fails. It comprises 800 hand-authored
@@ -29,11 +28,3 @@ keywords:
   - structured generation
 version: "1.0.0"
 date-released: "2026-05-06"
-preferred-citation:
-  type: conference-paper
-  title: "GraphInstruct: A Progressive Benchmark for Diagnosing Capability Gaps in LLM Graph Generation"
-  authors:
-    - name: "Anonymous Authors"
-  conference:
-    name: "40th Conference on Neural Information Processing Systems (NeurIPS 2026), Track on Evaluations and Datasets"
-  year: 2026

@@ -1,7 +1,7 @@
 # `results/` — pre-computed experimental data
 
 This directory contains the computed evaluation outputs that back the numbers
-in the GraphInstruct paper. Reviewers can verify any paper number by inspecting
+in the GraphInstruct paper. You can verify any paper number by inspecting
 the JSON / CSV files here directly, without re-running the (expensive) LLM
 generation pipeline.
 
@@ -61,7 +61,7 @@ The 45 cells span:
 
 Total: **45 cells**.
 
-Reviewers can verify any single number in paper §5 by opening the corresponding
+You can verify any single number in paper §5 by opening the corresponding
 file. For example, paper §5.4 reports GPT-4o-mini L4 zero-shot Q = 0.744 — open
 `quality/gpt4omini-zero-shot.quality.json`, look at `per_level_scores["4"]`.
 
@@ -71,8 +71,7 @@ file. For example, paper §5.4 reports GPT-4o-mini L4 zero-shot Q = 0.744 — op
 
 The complete 180,000-output set of raw LLM generations (45 cells × 800
 instructions × 5 samples) totals **~1 GB** and is **not bundled** in this
-repository because it would push the repo past GitHub's recommended size and
-exceeds the NeurIPS supplementary 20 MB envelope.
+repository because it would push the repo past GitHub's recommended size.
 
 The raw generations live on **Zenodo** as part of a complete frozen snapshot
 of this `results/` directory:
@@ -83,7 +82,7 @@ of this `results/` directory:
 The Zenodo archive is a **superset** of what GitHub serves: it includes the
 leaderboard CSVs and 45 quality.json files (mirrored from this repo) plus the
 raw_generations/*.jsonl files (GitHub-only-omitted). This dual hosting gives
-reviewers a fast on-GitHub path for verifying single numbers and a single
+users a fast on-GitHub path for verifying single numbers and a single
 DOI-citable archive for long-term reproducibility.
 
 If you only want to verify paper numbers, the `quality/` JSON files above are

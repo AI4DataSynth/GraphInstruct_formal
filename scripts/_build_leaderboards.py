@@ -5,7 +5,7 @@ Run from the repo root:
     python scripts/_build_leaderboards.py
 
 The underscore prefix marks this as a one-shot build helper, not a
-reviewer-facing CLI tool. After it produces the 3 CSVs, you can delete
+user-facing CLI tool. After it produces the 3 CSVs, you can delete
 this file (or keep it for re-derivation if quality.json files change).
 """
 

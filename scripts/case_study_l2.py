@@ -32,7 +32,7 @@ from palette import (  # noqa: E402
 
 INSTRUCTION_FILE = PROJECT_ROOT / "data" / "instructions" / "level_2.json"
 RESULTS_DIR = PROJECT_ROOT / "results"
-OUT_DIR = PROJECT_ROOT / "paper-neurips-v2" / "figures"
+OUT_DIR = PROJECT_ROOT / "figures"
 
 CASE_ID = "L2-143"
 

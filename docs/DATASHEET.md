@@ -1,7 +1,7 @@
 # GraphInstruct — Datasheet for Datasets
 
 
-> This datasheet follows the template of Gebru et al. (2021), *"Datasheets for Datasets"*. The full version with extensive answers under each of the 7 sections is in **paper Appendix I**. This file in the supplementary repeats the most reviewer-relevant questions for quick reference.
+> This datasheet follows the template of Gebru et al. (2021), *"Datasheets for Datasets"*. It collects the most commonly asked questions for quick reference; the extended discussion lives in the accompanying paper.
 
 ### 1. Motivation
 
@@ -9,10 +9,10 @@
 GraphInstruct was created to provide the first **progressive-complexity diagnostic benchmark** for LLM graph generation. Existing graph-LLM benchmarks stratify along graph-type, task-domain, or classical-algorithm axes, all of which average over the structural-complexity dimension that actually governs failure. GraphInstruct closes this diagnostic gap by stratifying outputs into six progressively-constrained complexity levels and scoring along five evaluation dimensions targeting structurally distinct failure modes.
 
 **Who created the dataset and on behalf of which entity?**
-*Anonymized for double-blind review.* The benchmark was created by university researchers in machine learning, with no commercial sponsor.
+The benchmark was created by university researchers in machine learning, with no commercial sponsor.
 
 **Who funded the creation?**
-*Anonymized for double-blind review.*
+Created without external funding.
 
 ### 2. Composition
 
@@ -63,12 +63,12 @@ All reference graphs pass round-trip parse → serialize → re-parse; size-norm
 **How is the dataset distributed?**
 Public release on GitHub (link in main paper). Croissant metadata (JSON-LD) provided. Code released under MIT, instructions / synthetic graphs under CC-BY-4.0, L4 real-world subsets retain upstream licenses.
 
-**Will the dataset be public?** Yes, post-acceptance.
+**Will the dataset be public?** Yes — released under the licenses noted above.
 
 ### 7. Maintenance
 
 **Who maintains the dataset?**
-The authors (anonymized; identities to be filled in upon acceptance).
+The GraphInstruct authors maintain the repository at https://github.com/AI4DataSynth/GraphInstruct_formal.
 
 **How will updates be communicated?**
 Versioned releases on GitHub with semantic-versioned tags. Major changes will trigger a new DOI on Zenodo.

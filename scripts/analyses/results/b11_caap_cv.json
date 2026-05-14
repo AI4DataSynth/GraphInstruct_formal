@@ -1,0 +1,370 @@
+{
+  "ec-only": {
+    "n_templates": 63,
+    "folds_template_size": [
+      14,
+      14,
+      13,
+      12,
+      10
+    ],
+    "folds_instr_size": [
+      115,
+      244,
+      127,
+      109,
+      205
+    ],
+    "per_model": [
+      {
+        "model": "claudesonnet46",
+        "full_oracle_q": 0.9051259109721678,
+        "cv_oracle_q": 0.8514258803244411,
+        "delta": -0.05370003064772666,
+        "full_oracle_choices": {
+          "0": "few-shot",
+          "1": "zero-cot",
+          "2": "zero-cot",
+          "3": "zero-cot",
+          "4": "few-cot",
+          "5": "few-cot"
+        },
+        "n_strategy_disagreements_across_folds": 3
+      },
+      {
+        "model": "deepseekaiDeepSeekV3",
+        "full_oracle_q": 0.8577131245295896,
+        "cv_oracle_q": 0.8097082991768009,
+        "delta": -0.048004825352788716,
+        "full_oracle_choices": {
+          "0": "zero-shot",
+          "1": "zero-cot",
+          "2": "few-cot",
+          "3": "zero-cot",
+          "4": "few-shot",
+          "5": "few-cot"
+        },
+        "n_strategy_disagreements_across_folds": 2
+      },
+      {
+        "model": "gpt35turbo",
+        "full_oracle_q": 0.8042270120391211,
+        "cv_oracle_q": 0.7654855886458684,
+        "delta": -0.038741423393252705,
+        "full_oracle_choices": {
+          "0": "zero-cot",
+          "1": "zero-cot",
+          "2": "zero-cot",
+          "3": "zero-cot",
+          "4": "few-shot",
+          "5": "few-cot"
+        },
+        "n_strategy_disagreements_across_folds": 2
+      },
+      {
+        "model": "gpt41",
+        "full_oracle_q": 0.8599420596379524,
+        "cv_oracle_q": 0.8084305509522951,
+        "delta": -0.05151150868565735,
+        "full_oracle_choices": {
+          "0": "zero-cot",
+          "1": "few-shot",
+          "2": "few-cot",
+          "3": "few-shot",
+          "4": "few-shot",
+          "5": "zero-cot"
+        },
+        "n_strategy_disagreements_across_folds": 8
+      },
+      {
+        "model": "gpt4o",
+        "full_oracle_q": 0.8508785657474305,
+        "cv_oracle_q": 0.8099823119091679,
+        "delta": -0.040896253838262564,
+        "full_oracle_choices": {
+          "0": "few-shot",
+          "1": "zero-shot",
+          "2": "zero-cot",
+          "3": "few-shot",
+          "4": "few-shot",
+          "5": "few-shot"
+        },
+        "n_strategy_disagreements_across_folds": 3
+      },
+      {
+        "model": "gpt4omini",
+        "full_oracle_q": 0.8054074922350336,
+        "cv_oracle_q": 0.7663171898395242,
+        "delta": -0.03909030239550937,
+        "full_oracle_choices": {
+          "0": "zero-cot",
+          "1": "zero-cot",
+          "2": "zero-cot",
+          "3": "zero-cot",
+          "4": "few-shot",
+          "5": "few-cot"
+        },
+        "n_strategy_disagreements_across_folds": 2
+      },
+      {
+        "model": "metallamaLlama3370BInstructTurbo",
+        "full_oracle_q": 0.8639184307468718,
+        "cv_oracle_q": 0.8081185566444024,
+        "delta": -0.05579987410246945,
+        "full_oracle_choices": {
+          "0": "zero-cot",
+          "1": "zero-cot",
+          "2": "zero-cot",
+          "3": "few-shot",
+          "4": "few-shot",
+          "5": "few-cot"
+        },
+        "n_strategy_disagreements_across_folds": 1
+      },
+      {
+        "model": "metallamaMetaLlama318BInstruct",
+        "full_oracle_q": 0.7420160162824694,
+        "cv_oracle_q": 0.7116864761084577,
+        "delta": -0.030329540174011682,
+        "full_oracle_choices": {
+          "0": "zero-cot",
+          "1": "zero-cot",
+          "2": "zero-cot",
+          "3": "zero-shot",
+          "4": "few-shot",
+          "5": "zero-cot"
+        },
+        "n_strategy_disagreements_across_folds": 2
+      },
+      {
+        "model": "qwen35122ba10b",
+        "full_oracle_q": 0.8821280629404962,
+        "cv_oracle_q": 0.8140879516107778,
+        "delta": -0.06804011132971832,
+        "full_oracle_choices": {
+          "0": "zero-shot",
+          "1": "zero-shot",
+          "2": "zero-shot",
+          "3": "zero-cot",
+          "4": "few-cot",
+          "5": "zero-cot"
+        },
+        "n_strategy_disagreements_across_folds": 6
+      },
+      {
+        "model": "qwen3535ba3b",
+        "full_oracle_q": 0.8720388390803708,
+        "cv_oracle_q": 0.8089737433481684,
+        "delta": -0.06306509573220243,
+        "full_oracle_choices": {
+          "0": "zero-cot",
+          "1": "zero-cot",
+          "2": "zero-cot",
+          "3": "zero-cot",
+          "4": "few-cot",
+          "5": "few-cot"
+        },
+        "n_strategy_disagreements_across_folds": 2
+      },
+      {
+        "model": "qwen35397ba17b",
+        "full_oracle_q": 0.8853266267256852,
+        "cv_oracle_q": 0.8254459638463361,
+        "delta": -0.05988066287934912,
+        "full_oracle_choices": {
+          "0": "zero-shot",
+          "1": "zero-cot",
+          "2": "zero-cot",
+          "3": "few-cot",
+          "4": "few-cot",
+          "5": "zero-cot"
+        },
+        "n_strategy_disagreements_across_folds": 2
+      }
+    ]
+  },
+  "prefix-ec": {
+    "n_templates": 238,
+    "folds_template_size": [
+      50,
+      49,
+      48,
+      47,
+      44
+    ],
+    "folds_instr_size": [
+      127,
+      226,
+      162,
+      156,
+      129
+    ],
+    "per_model": [
+      {
+        "model": "claudesonnet46",
+        "full_oracle_q": 0.9051259109721678,
+        "cv_oracle_q": 0.8973075225711289,
+        "delta": -0.007818388401038878,
+        "full_oracle_choices": {
+          "0": "few-shot",
+          "1": "zero-cot",
+          "2": "zero-cot",
+          "3": "zero-cot",
+          "4": "few-cot",
+          "5": "few-cot"
+        },
+        "n_strategy_disagreements_across_folds": 4
+      },
+      {
+        "model": "deepseekaiDeepSeekV3",
+        "full_oracle_q": 0.8577131245295896,
+        "cv_oracle_q": 0.8618537909294967,
+        "delta": 0.004140666399907067,
+        "full_oracle_choices": {
+          "0": "zero-shot",
+          "1": "zero-cot",
+          "2": "few-cot",
+          "3": "zero-cot",
+          "4": "few-shot",
+          "5": "few-cot"
+        },
+        "n_strategy_disagreements_across_folds": 1
+      },
+      {
+        "model": "gpt35turbo",
+        "full_oracle_q": 0.8042270120391211,
+        "cv_oracle_q": 0.8149200049529552,
+        "delta": 0.010692992913834187,
+        "full_oracle_choices": {
+          "0": "zero-cot",
+          "1": "zero-cot",
+          "2": "zero-cot",
+          "3": "zero-cot",
+          "4": "few-shot",
+          "5": "few-cot"
+        },
+        "n_strategy_disagreements_across_folds": 1
+      },
+      {
+        "model": "gpt41",
+        "full_oracle_q": 0.8599420596379524,
+        "cv_oracle_q": 0.8540025814530388,
+        "delta": -0.0059394781849136935,
+        "full_oracle_choices": {
+          "0": "zero-cot",
+          "1": "few-shot",
+          "2": "few-cot",
+          "3": "few-shot",
+          "4": "few-shot",
+          "5": "zero-cot"
+        },
+        "n_strategy_disagreements_across_folds": 7
+      },
+      {
+        "model": "gpt4o",
+        "full_oracle_q": 0.8508785657474305,
+        "cv_oracle_q": 0.8416781373906879,
+        "delta": -0.009200428356742618,
+        "full_oracle_choices": {
+          "0": "few-shot",
+          "1": "zero-shot",
+          "2": "zero-cot",
+          "3": "few-shot",
+          "4": "few-shot",
+          "5": "few-shot"
+        },
+        "n_strategy_disagreements_across_folds": 2
+      },
+      {
+        "model": "gpt4omini",
+        "full_oracle_q": 0.8054074922350336,
+        "cv_oracle_q": 0.8109510890436283,
+        "delta": 0.005543596808594731,
+        "full_oracle_choices": {
+          "0": "zero-cot",
+          "1": "zero-cot",
+          "2": "zero-cot",
+          "3": "zero-cot",
+          "4": "few-shot",
+          "5": "few-cot"
+        },
+        "n_strategy_disagreements_across_folds": 2
+      },
+      {
+        "model": "metallamaLlama3370BInstructTurbo",
+        "full_oracle_q": 0.8639184307468718,
+        "cv_oracle_q": 0.8600034905414059,
+        "delta": -0.0039149402054659,
+        "full_oracle_choices": {
+          "0": "zero-cot",
+          "1": "zero-cot",
+          "2": "zero-cot",
+          "3": "few-shot",
+          "4": "few-shot",
+          "5": "few-cot"
+        },
+        "n_strategy_disagreements_across_folds": 1
+      },
+      {
+        "model": "metallamaMetaLlama318BInstruct",
+        "full_oracle_q": 0.7420160162824694,
+        "cv_oracle_q": 0.7273920803872016,
+        "delta": -0.014623935895267781,
+        "full_oracle_choices": {
+          "0": "zero-cot",
+          "1": "zero-cot",
+          "2": "zero-cot",
+          "3": "zero-shot",
+          "4": "few-shot",
+          "5": "zero-cot"
+        },
+        "n_strategy_disagreements_across_folds": 4
+      },
+      {
+        "model": "qwen35122ba10b",
+        "full_oracle_q": 0.8821280629404962,
+        "cv_oracle_q": 0.8768462742687466,
+        "delta": -0.005281788671749554,
+        "full_oracle_choices": {
+          "0": "zero-shot",
+          "1": "zero-shot",
+          "2": "zero-shot",
+          "3": "zero-cot",
+          "4": "few-cot",
+          "5": "zero-cot"
+        },
+        "n_strategy_disagreements_across_folds": 4
+      },
+      {
+        "model": "qwen3535ba3b",
+        "full_oracle_q": 0.8720388390803708,
+        "cv_oracle_q": 0.8715169883677639,
+        "delta": -0.0005218507126069083,
+        "full_oracle_choices": {
+          "0": "zero-cot",
+          "1": "zero-cot",
+          "2": "zero-cot",
+          "3": "zero-cot",
+          "4": "few-cot",
+          "5": "few-cot"
+        },
+        "n_strategy_disagreements_across_folds": 1
+      },
+      {
+        "model": "qwen35397ba17b",
+        "full_oracle_q": 0.8853266267256852,
+        "cv_oracle_q": 0.8709113451922217,
+        "delta": -0.014415281533463498,
+        "full_oracle_choices": {
+          "0": "zero-shot",
+          "1": "zero-cot",
+          "2": "zero-cot",
+          "3": "few-cot",
+          "4": "few-cot",
+          "5": "zero-cot"
+        },
+        "n_strategy_disagreements_across_folds": 2
+      }
+    ]
+  }
+}
