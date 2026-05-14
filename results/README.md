@@ -8,7 +8,7 @@ generation pipeline.
 ```
 results/
 ├── leaderboards/                 ← 3 CSV files, one per main-paper table
-├── quality/                      ← 45 per-cell quality scores (12 LLMs × 4 strategies + Sonnet-4 ZS)
+├── quality/                      ← 45 per-cell quality scores over 12 LLMs and 4 strategies
 └── raw_generations/              ← (placeholder) raw model outputs, hosted on Zenodo
 ```
 

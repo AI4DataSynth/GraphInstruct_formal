@@ -54,7 +54,7 @@ that we now spell out explicitly to align with the main paper §3.3.
 | Item | Status |
 |------|--------|
 | Unit-test count | **549 tests** (extended from the original 418 at paper-freeze; +131 cover D1/D2 aggregate definitions, dedup robustness, and infeasibility scoring). |
-| Reproduction | `REPRODUCE.md` (step-by-step), `requirements.txt` + `requirements-lock.txt` (pinned). No top-level `reproduce.sh`, `configs/`, or `environment.yml`. |
+| Reproduction | `REPRODUCE.md` (step-by-step), `requirements.txt` + `requirements-lock.txt` (pinned core dependencies). No top-level `reproduce.sh`, `configs/`, or `environment.yml`. |
 | License file name | `DATA_LICENSE.md` (canonical). |
 | Method chain count $K$ | **$K = 3$ chains** for all reported method experiments (VGIG, CAAP, Combined, retry, SC); contrasts with $k = 5$ for the baseline survey. |
 | Reference-pair diversity | 791 reference pairs total. 195/791 (24.7%) are name-stripped exact-string duplicates; an additional 50/791 (6.3%) are graph-isomorphic-only (different strings but isomorphic, directed-aware iso check). Total 245/791 (31.0%) functionally redundant pairs, concentrated at L1 (127 exact-dup of 200) and L5 (15 exact-dup + 17 iso-only of 50). Sensitivity quantified in §4 below. |
@@ -659,15 +659,15 @@ inclusion.
 
 | Analysis | Script | Output JSON |
 |----------|--------|-------------|
-| §2 CV Oracle (B1.1) | `scripts/analyses/b11_caap_cv.py` | `results/b11_caap_cv.json` |
-| §3 Cost-adjusted (B1.4) | `scripts/analyses/b14_sfin.py` | `results/b14_sfin.json` |
-| §4 Ref-dedup (B1.2) | `scripts/analyses/b12_ref_dedup.py` | `results/b12_ref_dedup.json` |
-| §5 Failure rates (B1.5) | `scripts/analyses/b15_failure_rates.py` | `results/b15_failure_rates.json` |
-| §6.1 L5 bootstrap (B2.1) | `scripts/analyses/b21_l5_bootstrap.py` | `results/b21_l5_bootstrap.json` |
-| §6.2 LOO OLS (B1.7) | `scripts/analyses/b17_loo_ols.py` | `results/b17_loo_ols.json` |
-| §6.3 Sign-count (B2.3) | `scripts/analyses/b23_sign_count.py` | `results/b23_sign_count.json` |
-| §7 N-balanced (B1.3) | `scripts/analyses/b13_nbalanced.py` | `results/b13_nbalanced.json` |
-| §8 Sonnet-4 exclusion (B1.6) | `scripts/analyses/b16_sonnet4_excl.py` | `results/b16_sonnet4_excl.json` |
+| §2 CV Oracle (B1.1) | `scripts/analyses/b11_caap_cv.py` | `scripts/analyses/results/b11_caap_cv.json` |
+| §3 Cost-adjusted (B1.4) | `scripts/analyses/b14_sfin.py` | `scripts/analyses/results/b14_sfin.json` |
+| §4 Ref-dedup (B1.2) | `scripts/analyses/b12_ref_dedup.py` | `scripts/analyses/results/b12_ref_dedup.json` |
+| §5 Failure rates (B1.5) | `scripts/analyses/b15_failure_rates.py` | `scripts/analyses/results/b15_failure_rates.json` |
+| §6.1 L5 bootstrap (B2.1) | `scripts/analyses/b21_l5_bootstrap.py` | `scripts/analyses/results/b21_l5_bootstrap.json` |
+| §6.2 LOO OLS (B1.7) | `scripts/analyses/b17_loo_ols.py` | `scripts/analyses/results/b17_loo_ols.json` |
+| §6.3 Sign-count (B2.3) | `scripts/analyses/b23_sign_count.py` | `scripts/analyses/results/b23_sign_count.json` |
+| §7 N-balanced (B1.3) | `scripts/analyses/b13_nbalanced.py` | `scripts/analyses/results/b13_nbalanced.json` |
+| §8 Sonnet-4 exclusion (B1.6) | `scripts/analyses/b16_sonnet4_excl.py` | `scripts/analyses/results/b16_sonnet4_excl.json` |
 | (shared utilities) | `scripts/analyses/_common.py` | — |
 
 ---

@@ -29,7 +29,7 @@ A stratified sample, with explicit per-(level × size × constraint-type) cell c
 No. All instructions are hand-authored; all reference graphs are either algorithmically synthesized or drawn from public datasets (see `DATA_LICENSE.md`).
 
 **Are there errors / sources of noise?**
-We document 9 deliberately infeasible L2 instructions (`feasible=false`) for which no constraint-satisfying graph exists. Beyond these, the benchmark passed six review rounds (three consecutive clean passes) and a 418-unit-test parser / validator suite.
+We document 9 deliberately infeasible L2 instructions (`feasible=false`) for which no constraint-satisfying graph exists. Beyond these, the benchmark passed six review rounds (three consecutive clean passes) and a 549-unit-test parser / validator suite.
 
 ### 3. Collection process
 
@@ -61,14 +61,14 @@ All reference graphs pass round-trip parse → serialize → re-parse; size-norm
 ### 6. Distribution
 
 **How is the dataset distributed?**
-Public release on GitHub (link in main paper). Croissant metadata (JSON-LD) provided. Code released under MIT, instructions / synthetic graphs under CC-BY-4.0, L4 real-world subsets retain upstream licenses.
+Distributed as part of this anonymous review artifact. Croissant metadata (JSON-LD) provided. Code released under MIT, instructions / synthetic graphs under CC-BY-4.0, L4 real-world subsets retain upstream licenses.
 
 **Will the dataset be public?** Yes — released under the licenses noted above.
 
 ### 7. Maintenance
 
 **Who maintains the dataset?**
-The GraphInstruct authors maintain the repository at https://github.com/AI4DataSynth/GraphInstruct_formal.
+The GraphInstruct authors maintain this anonymous review artifact. The public release repository will be de-anonymized after review.
 
 **How will updates be communicated?**
 Versioned releases on GitHub with semantic-versioned tags. Major changes will trigger a new DOI on Zenodo.

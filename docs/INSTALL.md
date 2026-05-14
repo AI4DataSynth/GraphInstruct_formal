@@ -28,7 +28,11 @@ python -m venv venv && source venv/bin/activate     # Linux/macOS
 # 3. Install with core dependencies
 pip install -e .
 
-# 4. Verify install: 418 unit tests should all pass (~30 s)
+# For a pinned core environment instead:
+# pip install -r requirements-lock.txt
+# pip install -e . --no-deps
+
+# 4. Verify install: 549 unit tests should all pass (~30 s)
 python -m unittest discover -v -s tests
 
 # 5. (optional) Install full dependencies for D2/D3 metrics
@@ -56,7 +60,7 @@ export DASHSCOPE_API_KEY=sk-...            # Alibaba Bailian: Qwen3.5-{35B,122B,
 export DEEPSEEK_API_KEY=sk-...             # DeepSeek: V3
 ```
 
-**Cost transparency.** Reproducing the full 12-LLM × 4-strategy survey (180 K outputs) would cost roughly USD ~600 in API spend at 2026 H1 prices, dominated by Anthropic and OpenAI per the per-provider breakdown reported in paper Appendix H. Reproducing a single (model, strategy) cell on GPT-4o-mini costs ~USD 4 and takes ~1 hour.
+**Cost transparency.** Reproducing the full 45-cell survey over 12 LLMs and 4 prompting strategies (180 K outputs) would cost roughly USD ~600 in API spend at 2026 H1 prices, dominated by Anthropic and OpenAI per the per-provider breakdown reported in paper Appendix H. Reproducing a single (model, strategy) cell on GPT-4o-mini costs ~USD 4 and takes ~1 hour.
 
 ### Troubleshooting
 

@@ -5,7 +5,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![Data: CC BY 4.0](https://img.shields.io/badge/Data-CC--BY--4.0-orange.svg)](docs/DATA_LICENSE.md)
 [![Python](https://img.shields.io/badge/python-3.10%2B-blue.svg)](pyproject.toml)
-[![Tests](https://img.shields.io/badge/tests-418%20passing-brightgreen.svg)](tests/)
+[![Tests](https://img.shields.io/badge/tests-549%20passing-brightgreen.svg)](tests/)
 
 ---
 
@@ -20,7 +20,8 @@ actually governs failure. **GraphInstruct closes this diagnostic gap**:
   complexity levels (L0 format → L5 multi-step graph editing)
 - **5 evaluation dimensions** (D1 structural · D2 textual · D3 embedding ·
   D4 instruction-match · D5 efficiency), all deterministic, **zero LLM-as-judge**
-- **12-LLM × 4-strategy capability survey** (180 K outputs) reveals where in the
+- **45-cell capability survey** over 12 LLMs and 4 prompting strategies
+  (180 K outputs) reveals where in the
   complexity spectrum each model breaks
 - **Verification-Guided Iterative Generation (VGIG) + Constraint-Aware Adaptive
   Prompting (CAAP)** surpass the per-level prompt-engineering oracle by
@@ -37,12 +38,11 @@ actually governs failure. **GraphInstruct closes this diagnostic gap**:
 export KMP_DUPLICATE_LIB_OK=TRUE
 export PYTHONIOENCODING=utf-8
 
-# 1. Get the code
-git clone https://github.com/AI4DataSynth/GraphInstruct_formal.git
-cd GraphInstruct_formal
+# 1. Enter the repository root
+cd <repository-root>
 pip install -e .
 
-# 2. Verify with 418 unit tests (~30 s)
+# 2. Verify with 549 unit tests (~30 s)
 python -m unittest discover -v -s tests
 
 # 3. Open the interactive notebook (5-min hands-on tour)
@@ -61,7 +61,7 @@ For a deeper dive, see [`docs/INSTALL.md`](docs/INSTALL.md) and
 | `data/instructions/` | 800 instructions in 6 JSON files (L0–L5) | The benchmark itself |
 | `data/reference_pools/` | 4,163 reference graphs (3,115 synthetic L3 + 1,048 real-world L4) | D1 / D3 distributional metrics |
 | `graphinstruct/` | Python package: parser, validators, D1–D5 metrics, scoring, VGIG/CAAP | Importable evaluation pipeline |
-| `tests/` | 418 unit tests across 14 files | Verifying correctness |
+| `tests/` | 549 unit tests across 19 files | Verifying correctness |
 | `scripts/` | 7 production CLI tools (baseline runner, ablations, visualization) | Reproducing paper tables |
 | `results/` | Per-cell quality scores, leaderboard CSVs | Direct evidence for paper Tables 1, 2, 3 |
 | `figures/` | All 21 paper figures as PNG/JPEG | Inspect results without running code |
@@ -78,7 +78,7 @@ Three reproduction tiers depending on the depth of verification you want:
 |------|--------------------|---------|----------|------|
 | **A** | Data integrity + parser + D1/D4/D5 metric correctness + D5 robustness ablation | CPU only | $0 | ~5 min |
 | **B** | Quality / Combined / S_final scores from cached generations | CPU + GPU (D3) | $0 | ~45 min |
-| **C** | Full 12-LLM × 4-strategy capability survey from scratch | API | ~$600 | ~7 days |
+| **C** | Full 45-cell capability survey from scratch | API | ~$600 | ~7 days |
 
 Full recipe: [`docs/REPRODUCE.md`](docs/REPRODUCE.md).
 
@@ -176,8 +176,7 @@ If you use GraphInstruct, please cite:
   title        = {{GraphInstruct}: A Progressive Benchmark for Diagnosing
                   Capability Gaps in {LLM} Graph Generation},
   author       = {{The GraphInstruct Authors}},
-  year         = {2026},
-  howpublished = {\url{https://github.com/AI4DataSynth/GraphInstruct_formal}}
+  year         = {2026}
 }
 ```
 

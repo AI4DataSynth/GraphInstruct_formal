@@ -1,8 +1,8 @@
 # `raw_generations/` — full LLM outputs (hosted externally)
 
-The complete set of raw LLM generations from the 12-LLM × 4-strategy capability
-survey is **not bundled** in this repository because it totals **~1 GB**. Below
-are the alternative hosting locations.
+The complete set of raw LLM generations from the 45-cell capability survey
+over 12 LLMs and 4 prompting strategies is **not bundled** in this repository
+because it totals **~1 GB**. Below are the alternative hosting locations.
 
 ## Contents
 

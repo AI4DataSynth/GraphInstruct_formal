@@ -11,14 +11,14 @@ We provide three tiers of reproduction depending on whether you want to (A) veri
 |------|-------------------|---------|----------|------|
 | **A** | Data integrity, parser, metric correctness, D5 robustness | CPU | $0 | ~5 min |
 | **B** | Quality / Combined / S_final scores from cached generations | CPU + GPU (D3) | $0 | ~45 min |
-| **C** | Full 12-LLM × 4-strategy survey from scratch | API | ~$600 | ~7 days |
+| **C** | Full 45-cell survey over 12 LLMs and 4 prompting strategies | API | ~$600 | ~7 days |
 
 ### Tier A: Verify data and metrics (CPU only, no API)
 
 ```bash
-# 1. Run all 418 unit tests
+# 1. Run all 549 unit tests
 python -m unittest discover -v -s tests
-#    → Should report: OK (418 tests)
+#    → Should report: OK (549 tests)
 
 # 2. Round-trip parser test on the 1,582 reference solutions
 python -m unittest tests.test_parser -v
@@ -33,22 +33,22 @@ python scripts/d5_robustness.py
 
 ```
    s_T    s_A    Spearman     Kendall    Top-1 stable   Top-5 jaccard
-   500      1      0.971       0.875            no            0.667
-   500      2      0.970       0.877            no            0.667
-   500      4      0.966       0.869            no            0.667
-  1000      1      1.000       0.996           yes            1.000
-  1000      2      1.000       1.000            -             1.000
-  1000      4      1.000       0.994           yes            1.000
-  2000      1      0.988       0.925            no            1.000
-  2000      2      0.991       0.937            no            1.000
-  2000      4      0.990       0.933            no            1.000
+   500      1      0.9663      0.8687              no           0.429
+   500      2      0.9663      0.8687              no           0.429
+   500      4      0.9663      0.8687              no           0.429
+  1000      1      1.0000      1.0000             yes           1.000
+  1000      2      1.0000      1.0000             yes           1.000
+  1000      4      1.0000      1.0000             yes           1.000
+  2000      1      0.9888      0.9333              no           1.000
+  2000      2      0.9888      0.9333              no           1.000
+  2000      4      0.9888      0.9333              no           1.000
 ```
 
-This step requires the cached `results/*.quality.json` files, which need to be downloaded from the project repository (see `README.md` for repository URL). They are not bundled in this supplementary zip due to size constraints.
+This step uses the bundled curated quality files under `results/quality/*.quality.json`; the script also supports the legacy flat layout `results/*.quality.json`.
 
 ### Tier B: Re-evaluate cached generations
 
-This tier presupposes you have downloaded the cached `results/*.jsonl` raw generation outputs from the repository (~1 GB). Then:
+This repository already bundles curated `results/quality/*.quality.json` files and the leaderboard CSVs used by the paper tables. Re-evaluating from raw generations requires downloading the cached `results/*.jsonl` raw generation outputs from the repository (~1 GB). Then:
 
 ```bash
 # 1. Re-evaluate a single (model, strategy) pair end-to-end
@@ -59,7 +59,7 @@ python scripts/eval_checkpoint.py \
 
 # 2. Generate the per-level Quality leaderboard
 python scripts/visualize_results.py --leaderboard
-#    → Reproduces Tab. 1 (top-12) and full per-level tables in Appendix G
+#    → Reproduces Tab. 1 (top-15) and full per-level tables in Appendix G
 
 # 3. Compute Pareto frontier and S_final (paper §5.3)
 python scripts/visualize_results.py --pareto
@@ -94,11 +94,11 @@ python scripts/run_baseline.py --model qwen3.5-35b --strategy combined --resume
 
 | Paper claim | Source data | Command | File regenerated |
 |-------------|-------------|---------|------------------|
-| Tab. 1 (top-15 leaderboard) | `results/*.quality.json` × 45 | `python scripts/visualize_results.py --leaderboard` | `results/leaderboards/top15.csv` |
+| Tab. 1 (top-15 leaderboard) | `results/quality/*.quality.json` × 45 | `python scripts/visualize_results.py --leaderboard` | `results/leaderboards/tab1_quality_top15.csv` |
 | Fig. 5 (E5 rounds curve) | E5 ablation outputs | `python scripts/run_baseline.py --ablation e5_rounds` then visualize | `figures/fig5_e5_rounds.png` |
 | Fig. 6 (E6 feedback granularity) | E6 ablation outputs | similar to E5 | `figures/fig6_e6_feedback.png` |
-| Fig. 8 (Pareto frontier) | `results/*.quality.json` × 45 | `python scripts/visualize_results.py --pareto` | `figures/fig8_pareto.png` |
-| Tab. 3 (D5 robustness) | `results/*.quality.json` | `python scripts/d5_robustness.py` | stdout |
+| Fig. 8 (Pareto frontier) | `results/quality/*.quality.json` × 45 | `python scripts/visualize_results.py --pareto` | `figures/fig8_pareto.png` |
+| Tab. 3 (D5 robustness) | `results/quality/*.quality.json` | `python scripts/d5_robustness.py` | stdout |
 | F.4 (L4 retrieval grounding evidence) | GPT-4o-mini zero-shot vs few-shot quality.json | `diff` of `gpt4omini-{zero,few}-shot.quality.json` per-level | — |
 | Case study L2-143 (Fig. 12 in App. F) | per-instance D1 outputs | `python scripts/case_study_l2.py --inst-id L2-143` | `figures/fig_case_study_L2.png` |
 

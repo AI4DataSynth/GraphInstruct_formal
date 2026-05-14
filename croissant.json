@@ -41,7 +41,6 @@
   "version": "1.0.0",
   "datePublished": "2026-05-06",
   "license": "https://creativecommons.org/licenses/by/4.0/",
-  "url": "https://github.com/AI4DataSynth/GraphInstruct_formal",
   "citeAs": "@misc{graphinstruct2026, title={GraphInstruct: A Progressive Benchmark for Diagnosing Capability Gaps in LLM Graph Generation}, author={{The GraphInstruct Authors}}, year={2026}}",
   "keywords": [
     "benchmark",

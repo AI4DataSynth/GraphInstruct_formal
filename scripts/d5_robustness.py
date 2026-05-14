@@ -51,7 +51,7 @@ def d5_score(tpv: float | None, api: float | None, s_t: float, s_a: float) -> fl
         return 0.0
     if tpv == float("inf") or api == float("inf"):
         return 0.0
-    if tpv < 0 or api < 1:
+    if tpv <= 0 or api < 1:
         return 0.0
     return 0.7 * math.exp(-tpv / s_t) + 0.3 * math.exp(-(api - 1) / s_a)
 
