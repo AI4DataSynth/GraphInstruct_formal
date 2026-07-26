@@ -1,31 +1,32 @@
 # `raw_generations/` — full LLM outputs (hosted externally)
 
-The complete set of raw LLM generations from the 45-cell capability survey
-over 12 LLMs and 4 prompting strategies is **not bundled** in this repository
-because it totals **~1 GB**. Below are the alternative hosting locations.
+The complete set of raw LLM generations — the 45-cell capability survey
+over 12 LLMs and 4 prompting strategies, plus the discussion-phase runs
+(reasoning panel, extended baseline models, held-out-exemplar,
+disabled-thinking, and refinement methods; **124 runs in total**) — is
+**not bundled** in this repository because it totals **~1.3 GB**. Below are the alternative hosting locations.
 
 ## Contents
 
 | Item | Size | Format |
 |------|------|--------|
-| `<model>-<strategy>.jsonl` × 45 | ~900 MB total | One JSON per line; each line = `{instruction_id, level, samples: [{raw_output, graph_serialized, valid, input_tokens, output_tokens, api_calls}, …]}` |
-| Sample format | — | 5 samples per instruction × 800 instructions × 45 cells = 180,000 generations |
+| `<model>-<strategy>.jsonl` × 124 | ~1.3 GB total | One JSON per line; each line = `{instruction_id, level, samples: [{raw_output, graph_serialized, valid, input_tokens, output_tokens, api_calls}, …]}` |
+| Sample format | — | 5 samples per instruction × 800 instructions; the 45-cell core survey alone = 180,000 generations |
 
 ## Download
 
 ### Option 1 — Zenodo (preferred; permanent DOI)
 
 The Zenodo record contains a **complete frozen snapshot** of `results/`
-(leaderboards + 45 quality.json + raw_generations/). If you only need
+(leaderboards + 124 quality.json + raw_generations/). If you only need
 quality scores or leaderboards, the GitHub copy of those files is sufficient;
 the Zenodo archive is for raw outputs and long-term archival.
 
-*This URL will be filled in upon Zenodo upload (see
-`PLACEHOLDER_ZENODO_DOI` in repo metadata).*
+**DOI: [10.5281/zenodo.21596998](https://doi.org/10.5281/zenodo.21596998)** — record page: https://zenodo.org/records/21596998
 
 ```bash
-# Replace PLACEHOLDER_RECORD with the actual Zenodo record ID once uploaded
-wget https://zenodo.org/records/PLACEHOLDER_RECORD/files/graphinstruct-results.tar.gz
+wget https://zenodo.org/records/21596998/files/graphinstruct-results.tar.gz
+# sha256: ffc238fdfeb33cf7cd4df817c950eab099807333087ae2b4c5903e7ab65a093b
 tar -xzf graphinstruct-results.tar.gz -C results/
 ```
 

@@ -8,8 +8,8 @@ generation pipeline.
 ```
 results/
 ├── leaderboards/                 ← 3 CSV files, one per main-paper table
-├── quality/                      ← 45 per-cell quality scores over 12 LLMs and 4 strategies
-└── raw_generations/              ← (placeholder) raw model outputs, hosted on Zenodo
+├── quality/                      ← 124 per-run quality scores (45-cell core survey + discussion-phase runs)
+└── raw_generations/              ← raw model outputs, hosted on Zenodo (DOI 10.5281/zenodo.21596998)
 ```
 
 ---
@@ -69,18 +69,19 @@ file. For example, paper §5.4 reports GPT-4o-mini L4 zero-shot Q = 0.744 — op
 
 ## `raw_generations/` — full LLM outputs (Zenodo)
 
-The complete 180,000-output set of raw LLM generations (45 cells × 800
-instructions × 5 samples) totals **~1 GB** and is **not bundled** in this
-repository because it would push the repo past GitHub's recommended size.
+The complete set of raw LLM generations (124 runs; the 45-cell core survey
+alone is 45 × 800 instructions × 5 samples = 180,000 outputs) totals
+**~1.3 GB** and is **not bundled** in this repository because it would push
+the repo past GitHub's recommended size.
 
 The raw generations live on **Zenodo** as part of a complete frozen snapshot
 of this `results/` directory:
 
-- **Zenodo DOI**: *(to be filled in upon upload — see
-  `raw_generations/README.md` for the wget recipe)*
+- **Zenodo DOI**: [10.5281/zenodo.21596998](https://doi.org/10.5281/zenodo.21596998) — record page:
+  https://zenodo.org/records/21596998 (see `raw_generations/README.md` for the wget recipe)
 
 The Zenodo archive is a **superset** of what GitHub serves: it includes the
-leaderboard CSVs and 45 quality.json files (mirrored from this repo) plus the
+leaderboard CSVs and 124 quality.json files (mirrored from this repo) plus the
 raw_generations/*.jsonl files (GitHub-only-omitted). This dual hosting gives
 users a fast on-GitHub path for verifying single numbers and a single
 DOI-citable archive for long-term reproducibility.
