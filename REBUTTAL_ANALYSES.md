@@ -350,9 +350,11 @@ Scheme definitions (weights for L0…L5):
 | −50% high levels | 0.067 | 0.133 | 0.200 | 0.267 | 0.167 | 0.167 |
 | sample-proportional | 0.125 | 0.25 | 0.25 | 0.1875 | 0.125 | 0.0625 |
 
-Default leaderboard (best-baseline, quality-only): Sonnet-4.6 > Qwen3.5-397B >
-Qwen3.5-122B > Qwen3.5-35B > GPT-4.1 > GPT-4o > DeepSeek-V3 > Sonnet-4 >
-Llama-3.3-70B > GPT-3.5-turbo > GPT-4o-mini > Llama-3.1-8B.
+Default leaderboard (best-baseline, quality-only): Sonnet-4.6 (0.9018) >
+Qwen3.5-397B (0.8788) > Qwen3.5-122B (0.8714) > Qwen3.5-35B (0.8607) >
+GPT-4.1 (0.8496) > GPT-4o (0.8443) > DeepSeek-V3 (0.8405) > Sonnet-4 (0.8342) >
+Llama-3.3-70B (0.8341) > GPT-3.5-turbo (0.7862) > GPT-4o-mini (0.7844) >
+Llama-3.1-8B (0.7305).
 
 Effect on the ranking (vs. the default leaderboard):
 
