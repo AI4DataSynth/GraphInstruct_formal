@@ -576,11 +576,28 @@ and references the bootstrap CI here.
 swap (rank-14 ↔ rank-16). The findings about Sonnet-4.6 / Qwen3.5 / GPT
 families on the top of the leaderboard are not driven by L5's small N.
 
-### Bonus: L5-zero ablation (zero L5 weight, D1–L4 renormalised)
+### Bonus: L5-zero ablation (zero L5 weight, L0–L4 renormalised)
 
-Top-9 retained: **6 / 9**. So L5 *does* carry diagnostic signal that
-contributes to top-9 distinctions, but the signal is balanced rather
-than dominant.
+Weights become (0.067, 0.133, 0.200, 0.267, 0.333, 0). Top-9 retained:
+**6 / 9**; top-15 retained: **15 / 15** — the top-15 cell set is preserved
+exactly. The six top-9 changes are all within-family strategy swaps inside
+the default top-12:
+
+| Move | Cell | Default rank → L5-zero rank |
+|------|------|------------------------------|
+| out of top-9 | Qwen3.5-397B zero-cot | 6 → 12 |
+| out of top-9 | Qwen3.5-122B zero-cot | 7 → 10 |
+| out of top-9 | Qwen3.5-35B few-cot | 8 → 11 |
+| into top-9 | Qwen3.5-122B few-shot | 10 → 6 |
+| into top-9 | Qwen3.5-397B few-shot | 12 → 8 |
+| into top-9 | GPT-4.1 few-shot | 11 → 9 |
+
+The demoted cells are all CoT variants and the promoted cells few-shot runs
+of the same model families, consistent with CoT prompting earning part of its
+premium on L5's multi-step tasks. At the *model* level (best baseline run per
+model), zeroing L5 leaves the top-5 and top-9 fully intact (5/5 and 9/9, max
+rank displacement 1). So L5 *does* carry diagnostic signal that contributes
+to top-9 distinctions, but the signal is balanced rather than dominant.
 
 ---
 

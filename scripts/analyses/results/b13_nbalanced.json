@@ -191,22 +191,90 @@
     "default": {
       "top9_retained": 9,
       "top15_retained": 15,
-      "top15_jaccard": 1.0
+      "top15_jaccard": 1.0,
+      "max_rank_shift_top15": 0
     },
     "N-balanced (1/n_l)": {
       "top9_retained": 9,
       "top15_retained": 14,
-      "top15_jaccard": 0.875
+      "top15_jaccard": 0.875,
+      "max_rank_shift_top15": 4
     },
     "Uniform (1/6)": {
       "top9_retained": 8,
       "top15_retained": 14,
-      "top15_jaccard": 0.875
+      "top15_jaccard": 0.875,
+      "max_rank_shift_top15": 3
     },
     "Mass-balanced (n_l)": {
       "top9_retained": 8,
       "top15_retained": 12,
-      "top15_jaccard": 0.6666666666666666
+      "top15_jaccard": 0.6666666666666666,
+      "max_rank_shift_top15": 8
     }
+  },
+  "l5_zero_ablation": {
+    "weights": [
+      0.06666666666666667,
+      0.13333333333333333,
+      0.19999999999999998,
+      0.26666666666666666,
+      0.3333333333333333,
+      0
+    ],
+    "top9_retained": 6,
+    "top15_retained": 15,
+    "top9_dropped": [
+      {
+        "cell": [
+          "qwen35397ba17b",
+          "zero-cot"
+        ],
+        "default_rank": 6,
+        "l5_zero_rank": 12
+      },
+      {
+        "cell": [
+          "qwen35122ba10b",
+          "zero-cot"
+        ],
+        "default_rank": 7,
+        "l5_zero_rank": 10
+      },
+      {
+        "cell": [
+          "qwen3535ba3b",
+          "few-cot"
+        ],
+        "default_rank": 8,
+        "l5_zero_rank": 11
+      }
+    ],
+    "top9_entered": [
+      {
+        "cell": [
+          "qwen35122ba10b",
+          "few-shot"
+        ],
+        "default_rank": 10,
+        "l5_zero_rank": 6
+      },
+      {
+        "cell": [
+          "qwen35397ba17b",
+          "few-shot"
+        ],
+        "default_rank": 12,
+        "l5_zero_rank": 8
+      },
+      {
+        "cell": [
+          "gpt41",
+          "few-shot"
+        ],
+        "default_rank": 11,
+        "l5_zero_rank": 9
+      }
+    ]
   }
 }

@@ -56,8 +56,27 @@ def main() -> None:
         )
     print()
 
-    # Load all baseline cells
-    cells = scan_results_dir(only_baselines=True)
+    # Load all baseline cells, frozen to the 12-model universe the tables
+    # report (45 cells); rebuttal-phase additions in results/ are excluded.
+    baseline_12 = {
+        "claudesonnet46",
+        "qwen35397ba17b",
+        "qwen35122ba10b",
+        "qwen3535ba3b",
+        "gpt41",
+        "gpt4o",
+        "deepseekaiDeepSeekV3",
+        "metallamaLlama3370BInstructTurbo",
+        "claudesonnet420250514",
+        "gpt35turbo",
+        "gpt4omini",
+        "metallamaMetaLlama318BInstruct",
+    }
+    cells = {
+        k: p
+        for k, p in scan_results_dir(only_baselines=True).items()
+        if k[0] in baseline_12
+    }
     print(f"# Loaded {len(cells)} baseline cells\n")
 
     # For each cell, compute total under each scheme
@@ -93,6 +112,7 @@ def main() -> None:
         "|--------|----------------|-----------------|-----------------"
         "|----------------|--------------------------|"
     )
+    max_shift_by_scheme: dict[str, int] = {}
     for scheme, rank_list in scheme_rankings.items():
         top9 = set(rank_list[:9])
         top15 = set(rank_list[:15])
@@ -107,6 +127,7 @@ def main() -> None:
             if k in default_rank_top15:
                 shift = abs((i + 1) - default_rank_top15[k])
                 max_shift = max(max_shift, shift)
+        max_shift_by_scheme[scheme] = max_shift
         print(
             f"| {scheme:25s} | {n9}/9 | {n15}/15 | {n20}/20 "
             f"| {jac15:.3f} | {max_shift} |"
@@ -130,12 +151,12 @@ def main() -> None:
             disp = f"{MODEL_DISPLAY.get(model, model)} {strat}"
             score = per_cell_totals[k][scheme]
             cells_row.append(f"{disp} ({score:.3f})")
-        print(f"| {i+1} | " + " | ".join(cells_row) + " |")
+        print(f"| {i + 1} | " + " | ".join(cells_row) + " |")
     print()
 
     # Quantify L5-influence test: does removing L5 entirely change top-9?
     no_l5_weights = (0.05 / 0.75, 0.10 / 0.75, 0.15 / 0.75, 0.20 / 0.75, 0.25 / 0.75, 0)
-    print("## L5-only ablation: zero L5 weight (renormalised D1-D4 to sum 1)\n")
+    print("## L5-only ablation: zero L5 weight (renormalised L0-L4 to sum 1)\n")
     per_cell_no_l5 = {
         k: compute_total_score(per_level_scores(load_quality(path)), no_l5_weights)
         for k, path in cells.items()
@@ -147,6 +168,18 @@ def main() -> None:
     no_l5_top15 = set(ranked_no_l5[:15])
     print(f"Top-9 retained without L5: {len(no_l5_top9 & default_top9)}/9")
     print(f"Top-15 retained without L5: {len(no_l5_top15 & default_top15)}/15")
+    default_rank_all = {k: i + 1 for i, k in enumerate(scheme_rankings["default"])}
+    no_l5_rank_all = {k: i + 1 for i, k in enumerate(ranked_no_l5)}
+    l5_moves = {
+        "top9_dropped": sorted(default_top9 - no_l5_top9, key=default_rank_all.get),
+        "top9_entered": sorted(no_l5_top9 - default_top9, key=no_l5_rank_all.get),
+    }
+    for label, keys in l5_moves.items():
+        for k in keys:
+            print(
+                f"  {label}: {MODEL_DISPLAY.get(k[0], k[0])} {k[1]} "
+                f"(default #{default_rank_all[k]} -> #{no_l5_rank_all[k]})"
+            )
     print()
 
     # Persist
@@ -166,8 +199,30 @@ def main() -> None:
                 "top15_retained": len(set(rl[:15]) & default_top15),
                 "top15_jaccard": len(set(rl[:15]) & default_top15)
                 / len(set(rl[:15]) | default_top15),
+                "max_rank_shift_top15": max_shift_by_scheme[scheme],
             }
             for scheme, rl in scheme_rankings.items()
+        },
+        "l5_zero_ablation": {
+            "weights": list(no_l5_weights),
+            "top9_retained": len(no_l5_top9 & default_top9),
+            "top15_retained": len(no_l5_top15 & default_top15),
+            "top9_dropped": [
+                {
+                    "cell": list(k),
+                    "default_rank": default_rank_all[k],
+                    "l5_zero_rank": no_l5_rank_all[k],
+                }
+                for k in l5_moves["top9_dropped"]
+            ],
+            "top9_entered": [
+                {
+                    "cell": list(k),
+                    "default_rank": default_rank_all[k],
+                    "l5_zero_rank": no_l5_rank_all[k],
+                }
+                for k in l5_moves["top9_entered"]
+            ],
         },
     }
     out_path = Path("scripts/analyses/results/b13_nbalanced.json")

@@ -61,14 +61,14 @@ All reference graphs pass round-trip parse → serialize → re-parse; size-norm
 ### 6. Distribution
 
 **How is the dataset distributed?**
-Distributed as part of this anonymous review artifact. Croissant metadata (JSON-LD) provided. Code released under MIT, instructions / synthetic graphs under CC-BY-4.0, L4 real-world subsets retain upstream licenses.
+Distributed as part of this artifact. Croissant metadata (JSON-LD) provided. Code released under MIT, instructions / synthetic graphs under CC-BY-4.0, L4 real-world subsets retain upstream licenses.
 
 **Will the dataset be public?** Yes — released under the licenses noted above.
 
 ### 7. Maintenance
 
 **Who maintains the dataset?**
-The GraphInstruct authors maintain this anonymous review artifact. The public release repository will be de-anonymized after review.
+The GraphInstruct authors maintain this artifact.
 
 **How will updates be communicated?**
 Versioned releases on GitHub with semantic-versioned tags. Major changes will trigger a new DOI on Zenodo.

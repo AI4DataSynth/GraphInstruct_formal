@@ -173,9 +173,16 @@ def find_pareto_front(points: list[tuple[float, float, str]]) -> set[str]:
 def scan_results_dir(
     results_dir: Path = Path("results"), only_baselines: bool = False
 ) -> dict[tuple[str, str], Path]:
-    """Find all quality.json files; map (model, strategy) -> path."""
+    """Find all quality.json files; map (model, strategy) -> path.
+
+    Files may live either directly under ``results/`` or in the
+    ``results/quality/`` subdirectory used by the released artifact.
+    """
     out: dict[tuple[str, str], Path] = {}
-    for f in sorted(results_dir.glob("*.quality.json")):
+    candidates = sorted(results_dir.glob("*.quality.json")) + sorted(
+        (results_dir / "quality").glob("*.quality.json")
+    )
+    for f in candidates:
         stem = f.name.removesuffix(".quality.json")
         parsed = parse_stem(stem)
         if parsed is None:
