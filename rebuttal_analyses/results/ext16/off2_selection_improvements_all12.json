@@ -1,0 +1,1820 @@
+{
+  "analysis": "OFF-2 selection-based improvements (Oracle / SC-best-of-5 / CAAP-selection) across twelve baseline models",
+  "baseline_definition": "Each model's highest quality-only (D5=0, D1-D4 renormalized) single-strategy total.",
+  "caap_name_mapping": {
+    "claudesonnet420250514": "claude-sonnet-4",
+    "claudesonnet46": "claude-sonnet-4-6",
+    "deepseekaiDeepSeekV3": "deepseek-v3",
+    "gpt35turbo": "gpt35turbo",
+    "gpt41": "gpt41",
+    "gpt4o": "gpt4o",
+    "gpt4omini": "gpt4omini",
+    "metallamaLlama3370BInstructTurbo": "meta-llama/llama-3.3-70b-instruct-turbo",
+    "metallamaMetaLlama318BInstruct": "llama-3-8b",
+    "qwen35122ba10b": "qwen3.5-122b",
+    "qwen3535ba3b": "qwen3.5-35b-a3b",
+    "qwen35397ba17b": "qwen3.5-397b"
+  },
+  "consistency_checks": {
+    "deepseekaiDeepSeekV3": {
+      "caap_selection": {
+        "delta_vs_file": -0.0011366815968005817,
+        "existing_file": 0.8545544003478962,
+        "note": "NOT directly comparable: offline is pure strategy selection over the four existing baselines (no augmentation); existing -caap adds L2/L3/L4 prompt augmentation on a zero-shot base with fresh generation. Offline is a lower bound.",
+        "offline_selection_only": 0.8534177187510956
+      },
+      "oracle": {
+        "delta_per_level_vs_file": -2.077893412888443e-12,
+        "existing_file": 0.8577131245316675,
+        "note": "existing -oracle is a per-level cherry-pick re-evaluated end-to-end; the offline per-level oracle should closely match; per-instruction is a strictly stronger upper bound.",
+        "offline_per_instruction": 0.8817868429639305,
+        "offline_per_level": 0.8577131245295896
+      },
+      "sc_best_of_5": {
+        "delta_vs_file": 0.05243516316015673,
+        "existing_file": 0.8203212476371284,
+        "note": "existing -sc uses a zero-shot base re-evaluated across all dimensions; the offline uplift touches only the D4/satisfaction term, so some divergence is expected.",
+        "offline_on_zero_shot_base": 0.8727564107972852,
+        "offline_zero_shot_uplift": 0.05123874883286648
+      }
+    },
+    "gpt4omini": {
+      "caap_selection": {
+        "delta_vs_file": -0.0006961678747794409,
+        "existing_file": 0.7996087500392987,
+        "note": "NOT directly comparable: offline is pure strategy selection over the four existing baselines (no augmentation); existing -caap adds L2/L3/L4 prompt augmentation on a zero-shot base with fresh generation. Offline is a lower bound.",
+        "offline_selection_only": 0.7989125821645192
+      },
+      "oracle": {
+        "delta_per_level_vs_file": 0.00023474881078666687,
+        "existing_file": 0.8051727434242469,
+        "note": "existing -oracle is a per-level cherry-pick re-evaluated end-to-end; the offline per-level oracle should closely match; per-instruction is a strictly stronger upper bound.",
+        "offline_per_instruction": 0.8372700126234335,
+        "offline_per_level": 0.8054074922350336
+      },
+      "sc_best_of_5": {
+        "delta_vs_file": 0.04399700258639594,
+        "existing_file": 0.7509537242887264,
+        "note": "existing -sc uses a zero-shot base re-evaluated across all dimensions; the offline uplift touches only the D4/satisfaction term, so some divergence is expected.",
+        "offline_on_zero_shot_base": 0.7949507268751224,
+        "offline_zero_shot_uplift": 0.042648716153127916
+      }
+    },
+    "qwen3535ba3b": {
+      "caap_selection": {
+        "delta_vs_file": -0.017868627914094715,
+        "existing_file": 0.8865584445855019,
+        "note": "NOT directly comparable: offline is pure strategy selection over the four existing baselines (no augmentation); existing -caap adds L2/L3/L4 prompt augmentation on a zero-shot base with fresh generation. Offline is a lower bound.",
+        "offline_selection_only": 0.8686898166714072
+      },
+      "oracle": {
+        "delta_per_level_vs_file": 5.660472091051361e-12,
+        "existing_file": 0.8720388390747104,
+        "note": "existing -oracle is a per-level cherry-pick re-evaluated end-to-end; the offline per-level oracle should closely match; per-instruction is a strictly stronger upper bound.",
+        "offline_per_instruction": 0.8978116383936531,
+        "offline_per_level": 0.8720388390803708
+      },
+      "sc_best_of_5": {
+        "delta_vs_file": -0.0072778138189958375,
+        "existing_file": 0.874050040711308,
+        "note": "existing -sc uses a zero-shot base re-evaluated across all dimensions; the offline uplift touches only the D4/satisfaction term, so some divergence is expected.",
+        "offline_on_zero_shot_base": 0.8667722268923121,
+        "offline_zero_shot_uplift": 0.057547752100840344
+      }
+    }
+  },
+  "d4_quality_weight_by_level": {
+    "0": 0.8571428571428572,
+    "1": 0.8235294117647058,
+    "2": 0.8235294117647058,
+    "3": 0.625,
+    "4": 0.6470588235294118,
+    "5": 0.625
+  },
+  "level_weights": [
+    0.05,
+    0.1,
+    0.15,
+    0.2,
+    0.25,
+    0.25
+  ],
+  "means_across_12": {
+    "caap_selection": 0.006100203804538397,
+    "oracle_per_instruction": 0.03599737836236361,
+    "oracle_per_level": 0.012204287285350224,
+    "sc_best_of_5": 0.055826996187363837
+  },
+  "method_notes": {
+    "caap_selection": "NO-AUGMENTATION lower bound: caap.select_strategy picks a strategy; that strategy's existing per-instruction score is used. Real CAAP additionally injects L2 checklist / L3 formulas / L4 domain priors requiring new generation (excluded).",
+    "oracle_per_instruction": "Exact: per-instruction max quality-only level_score across available strategies.",
+    "oracle_per_level": "build_oracle_baseline convention: per-level best strategy.",
+    "sc_best_of_5": "Best-strategy jsonl; per-sample satisfaction_rate (== runners._score_sample); uplift = max-of-5 minus mean-of-5, folded through renormalized D4 weight and added to the faithful stored baseline total. Absolute satisfaction != stored D4 (per-level MAE ~0.08-0.19), so only the internally-consistent delta is used."
+  },
+  "n_models_analyzed": 12,
+  "per_model": {
+    "claudesonnet420250514": {
+      "baseline": {
+        "quality_only_total": 0.8342372160060654,
+        "strategy": "zero-shot"
+      },
+      "caap_selection": {
+        "fallback_count": 440,
+        "gain_vs_baseline": 0.0,
+        "level_means": [
+          0.9386952380952381,
+          0.9827901960784314,
+          0.9004652178649237,
+          0.8408923319879412,
+          0.7366540903501231,
+          0.8064466513144107
+        ],
+        "quality_only_total": 0.8342372160060654,
+        "strategy_choice_counts": {
+          "0": {
+            "zero-shot": 100
+          },
+          "1": {
+            "zero-shot": 200
+          },
+          "2": {
+            "zero-shot": 200
+          },
+          "3": {
+            "zero-shot": 150
+          },
+          "4": {
+            "zero-shot": 100
+          },
+          "5": {
+            "zero-shot": 50
+          }
+        }
+      },
+      "display_name": "Sonnet-4",
+      "oracle_per_instruction": {
+        "gain_vs_baseline": 0.0,
+        "level_means": [
+          0.9386952380952381,
+          0.9827901960784314,
+          0.9004652178649237,
+          0.8408923319879412,
+          0.7366540903501231,
+          0.8064466513144107
+        ],
+        "quality_only_total": 0.8342372160060654,
+        "strategy_choice_counts": {
+          "0": {
+            "zero-shot": 100
+          },
+          "1": {
+            "zero-shot": 200
+          },
+          "2": {
+            "zero-shot": 200
+          },
+          "3": {
+            "zero-shot": 150
+          },
+          "4": {
+            "zero-shot": 100
+          },
+          "5": {
+            "zero-shot": 50
+          }
+        }
+      },
+      "oracle_per_level": {
+        "gain_vs_baseline": 0.0,
+        "level_means": [
+          0.9386952380952381,
+          0.9827901960784314,
+          0.9004652178649237,
+          0.8408923319879412,
+          0.7366540903501231,
+          0.8064466513144107
+        ],
+        "level_strategy": {
+          "0": "zero-shot",
+          "1": "zero-shot",
+          "2": "zero-shot",
+          "3": "zero-shot",
+          "4": "zero-shot",
+          "5": "zero-shot"
+        },
+        "quality_only_total": 0.8342372160060654
+      },
+      "sc_best_of_5": {
+        "base_strategy": "zero-shot",
+        "bo5_sat_by_level": {
+          "0": 0.8466666666666667,
+          "1": 0.9640833333333333,
+          "2": 0.8580833333333334,
+          "3": 0.8646190476190476,
+          "4": 0.7991428571428572,
+          "5": 0.893904761904762
+        },
+        "d4_satisfaction_uplift_by_level": {
+          "0": 0.016666666666666666,
+          "1": 0.005999999999999998,
+          "2": 0.09865,
+          "3": 0.0764031746031746,
+          "4": 0.03927142857142857,
+          "5": 0.01902857142857143
+        },
+        "gain_vs_baseline": 0.03227092203548086,
+        "mean_sat_by_level": {
+          "0": 0.83,
+          "1": 0.9580833333333334,
+          "2": 0.7594333333333333,
+          "3": 0.788215873015873,
+          "4": 0.7598714285714285,
+          "5": 0.8748761904761905
+        },
+        "quality_only_total": 0.8665081380415462,
+        "quality_only_total_uplift": 0.03227092203548086
+      }
+    },
+    "claudesonnet46": {
+      "baseline": {
+        "quality_only_total": 0.9018020924408092,
+        "strategy": "few-cot"
+      },
+      "caap_selection": {
+        "fallback_count": 0,
+        "gain_vs_baseline": 0.001165423573375346,
+        "level_means": [
+          0.9584857142857143,
+          0.9807039215686274,
+          0.9539692810457516,
+          0.8876679828825301,
+          0.8509153224831495,
+          0.89446007515552
+        ],
+        "quality_only_total": 0.9029675160141846,
+        "strategy_choice_counts": {
+          "0": {
+            "zero-shot": 100
+          },
+          "1": {
+            "few-cot": 90,
+            "zero-shot": 110
+          },
+          "2": {
+            "few-cot": 200
+          },
+          "3": {
+            "zero-cot": 150
+          },
+          "4": {
+            "few-cot": 100
+          },
+          "5": {
+            "few-cot": 50
+          }
+        }
+      },
+      "display_name": "Sonnet-4.6",
+      "oracle_per_instruction": {
+        "gain_vs_baseline": 0.014297309345311593,
+        "level_means": [
+          0.9784285714285714,
+          0.9890725490196078,
+          0.9722635294117647,
+          0.8970641506965804,
+          0.8549756364482718,
+          0.9170977985983311
+        ],
+        "quality_only_total": 0.9160994017861208,
+        "strategy_choice_counts": {
+          "0": {
+            "few-cot": 50,
+            "few-shot": 24,
+            "zero-cot": 14,
+            "zero-shot": 12
+          },
+          "1": {
+            "few-cot": 148,
+            "few-shot": 14,
+            "zero-cot": 31,
+            "zero-shot": 7
+          },
+          "2": {
+            "few-cot": 102,
+            "few-shot": 29,
+            "zero-cot": 58,
+            "zero-shot": 11
+          },
+          "3": {
+            "few-cot": 50,
+            "few-shot": 10,
+            "zero-cot": 69,
+            "zero-shot": 21
+          },
+          "4": {
+            "few-cot": 68,
+            "few-shot": 32
+          },
+          "5": {
+            "few-cot": 3,
+            "few-shot": 20,
+            "zero-cot": 6,
+            "zero-shot": 21
+          }
+        }
+      },
+      "oracle_per_level": {
+        "gain_vs_baseline": 0.0033238185313585467,
+        "level_means": [
+          0.9612571428571429,
+          0.9860176470588234,
+          0.9638922875816993,
+          0.8876679828825301,
+          0.8509153224831495,
+          0.89446007515552
+        ],
+        "level_strategy": {
+          "0": "few-shot",
+          "1": "zero-cot",
+          "2": "zero-cot",
+          "3": "zero-cot",
+          "4": "few-cot",
+          "5": "few-cot"
+        },
+        "quality_only_total": 0.9051259109721678
+      },
+      "sc_best_of_5": {
+        "base_strategy": "few-cot",
+        "bo5_sat_by_level": {
+          "0": 0.8933333333333333,
+          "1": 0.9785833333333334,
+          "2": 0.9169166666666666,
+          "3": 0.9291666666666667,
+          "4": 0.9292738095238096,
+          "5": 0.996
+        },
+        "d4_satisfaction_uplift_by_level": {
+          "0": 0.02666666666666667,
+          "1": 0.009299999999999998,
+          "2": 0.03721666666666667,
+          "3": 0.055336507936507955,
+          "4": 0.021471428571428572,
+          "5": 0.02253333333333334
+        },
+        "gain_vs_baseline": 0.020417308590102712,
+        "mean_sat_by_level": {
+          "0": 0.8666666666666667,
+          "1": 0.9692833333333333,
+          "2": 0.8797,
+          "3": 0.8738301587301588,
+          "4": 0.9078023809523809,
+          "5": 0.9734666666666666
+        },
+        "quality_only_total": 0.9222194010309119,
+        "quality_only_total_uplift": 0.020417308590102712
+      }
+    },
+    "deepseekaiDeepSeekV3": {
+      "baseline": {
+        "quality_only_total": 0.840476754597868,
+        "strategy": "few-shot"
+      },
+      "caap_selection": {
+        "fallback_count": 0,
+        "gain_vs_baseline": 0.012940964153227652,
+        "level_means": [
+          0.9448761904761905,
+          0.9724238562091503,
+          0.8495386928104576,
+          0.854848434951933,
+          0.7946907673375745,
+          0.8474333634400886
+        ],
+        "quality_only_total": 0.8534177187510956,
+        "strategy_choice_counts": {
+          "0": {
+            "zero-shot": 100
+          },
+          "1": {
+            "few-cot": 90,
+            "zero-shot": 110
+          },
+          "2": {
+            "few-cot": 200
+          },
+          "3": {
+            "zero-cot": 150
+          },
+          "4": {
+            "few-cot": 100
+          },
+          "5": {
+            "few-cot": 50
+          }
+        }
+      },
+      "display_name": "DeepSeek-V3",
+      "oracle_per_instruction": {
+        "gain_vs_baseline": 0.041310088366062536,
+        "level_means": [
+          0.9596380952380953,
+          0.9875856209150327,
+          0.900077037037037,
+          0.8736737304574143,
+          0.8293831908017085,
+          0.8718171070522277
+        ],
+        "quality_only_total": 0.8817868429639305,
+        "strategy_choice_counts": {
+          "0": {
+            "few-cot": 35,
+            "few-shot": 29,
+            "zero-cot": 19,
+            "zero-shot": 17
+          },
+          "1": {
+            "few-cot": 140,
+            "few-shot": 26,
+            "zero-cot": 22,
+            "zero-shot": 12
+          },
+          "2": {
+            "few-cot": 77,
+            "few-shot": 53,
+            "zero-cot": 33,
+            "zero-shot": 37
+          },
+          "3": {
+            "few-cot": 41,
+            "few-shot": 25,
+            "zero-cot": 57,
+            "zero-shot": 27
+          },
+          "4": {
+            "few-cot": 39,
+            "few-shot": 53,
+            "zero-cot": 5,
+            "zero-shot": 3
+          },
+          "5": {
+            "few-cot": 12,
+            "few-shot": 14,
+            "zero-cot": 3,
+            "zero-shot": 21
+          }
+        }
+      },
+      "oracle_per_level": {
+        "gain_vs_baseline": 0.017236369931721618,
+        "level_means": [
+          0.9448761904761905,
+          0.9796272875816993,
+          0.8495386928104576,
+          0.854848434951933,
+          0.8089910179025308,
+          0.8474333634400886
+        ],
+        "level_strategy": {
+          "0": "zero-shot",
+          "1": "zero-cot",
+          "2": "few-cot",
+          "3": "zero-cot",
+          "4": "few-shot",
+          "5": "few-cot"
+        },
+        "quality_only_total": 0.8577131245295896
+      },
+      "sc_best_of_5": {
+        "base_strategy": "few-shot",
+        "bo5_sat_by_level": {
+          "0": 0.8466666666666667,
+          "1": 0.9672499999999999,
+          "2": 0.8036666666666666,
+          "3": 0.8555873015873016,
+          "4": 0.9212738095238094,
+          "5": 0.9008095238095238
+        },
+        "d4_satisfaction_uplift_by_level": {
+          "0": 0.027999999999999997,
+          "1": 0.05201666666666666,
+          "2": 0.09465238095238096,
+          "3": 0.0900111111111111,
+          "4": 0.059995238095238095,
+          "5": 0.019085714285714282
+        },
+        "gain_vs_baseline": 0.04111472222222222,
+        "mean_sat_by_level": {
+          "0": 0.8186666666666667,
+          "1": 0.9152333333333335,
+          "2": 0.7090142857142857,
+          "3": 0.7655761904761905,
+          "4": 0.8612785714285713,
+          "5": 0.8817238095238095
+        },
+        "quality_only_total": 0.8815914768200902,
+        "quality_only_total_uplift": 0.04111472222222222
+      }
+    },
+    "gpt35turbo": {
+      "baseline": {
+        "quality_only_total": 0.7862381739841078,
+        "strategy": "zero-cot"
+      },
+      "caap_selection": {
+        "fallback_count": 0,
+        "gain_vs_baseline": 0.014170305055682508,
+        "level_means": [
+          0.8495357142857144,
+          0.9198080065359477,
+          0.7063171241830065,
+          0.8083067526683543,
+          0.7981379229446378,
+          0.7952299710985141
+        ],
+        "quality_only_total": 0.8004084790397903,
+        "strategy_choice_counts": {
+          "0": {
+            "zero-shot": 100
+          },
+          "1": {
+            "zero-cot": 90,
+            "zero-shot": 110
+          },
+          "2": {
+            "zero-cot": 200
+          },
+          "3": {
+            "zero-cot": 150
+          },
+          "4": {
+            "few-shot": 100
+          },
+          "5": {
+            "zero-cot": 50
+          }
+        }
+      },
+      "display_name": "GPT-3.5-turbo",
+      "oracle_per_instruction": {
+        "gain_vs_baseline": 0.052814260587464745,
+        "level_means": [
+          0.901054761904762,
+          0.9674901960784313,
+          0.7859065032679738,
+          0.831870555902997,
+          0.8266204508160264,
+          0.8253419099747566
+        ],
+        "quality_only_total": 0.8390524345715725,
+        "strategy_choice_counts": {
+          "0": {
+            "few-cot": 42,
+            "few-shot": 28,
+            "zero-cot": 20,
+            "zero-shot": 10
+          },
+          "1": {
+            "few-cot": 121,
+            "few-shot": 32,
+            "zero-cot": 32,
+            "zero-shot": 15
+          },
+          "2": {
+            "few-cot": 78,
+            "few-shot": 12,
+            "zero-cot": 77,
+            "zero-shot": 33
+          },
+          "3": {
+            "few-cot": 15,
+            "few-shot": 56,
+            "zero-cot": 56,
+            "zero-shot": 23
+          },
+          "4": {
+            "few-cot": 31,
+            "few-shot": 63,
+            "zero-cot": 2,
+            "zero-shot": 4
+          },
+          "5": {
+            "few-cot": 17,
+            "few-shot": 15,
+            "zero-cot": 6,
+            "zero-shot": 12
+          }
+        }
+      },
+      "oracle_per_level": {
+        "gain_vs_baseline": 0.01798883805501328,
+        "level_means": [
+          0.8747039682539683,
+          0.9202138888888889,
+          0.7063171241830065,
+          0.8083067526683543,
+          0.7981379229446378,
+          0.8053080993610098
+        ],
+        "level_strategy": {
+          "0": "zero-cot",
+          "1": "zero-cot",
+          "2": "zero-cot",
+          "3": "zero-cot",
+          "4": "few-shot",
+          "5": "few-cot"
+        },
+        "quality_only_total": 0.8042270120391211
+      },
+      "sc_best_of_5": {
+        "base_strategy": "zero-cot",
+        "bo5_sat_by_level": {
+          "0": 0.7866666666666667,
+          "1": 0.9230833333333334,
+          "2": 0.6511309523809524,
+          "3": 0.8005793650793651,
+          "4": 0.8656309523809524,
+          "5": 0.9166666666666667
+        },
+        "d4_satisfaction_uplift_by_level": {
+          "0": 0.07466666666666666,
+          "1": 0.06276666666666667,
+          "2": 0.15898333333333334,
+          "3": 0.09627936507936506,
+          "4": 0.08393809523809524,
+          "5": 0.050790476190476185
+        },
+        "gain_vs_baseline": 0.06155729108309991,
+        "mean_sat_by_level": {
+          "0": 0.7120000000000001,
+          "1": 0.8603166666666666,
+          "2": 0.49214761904761906,
+          "3": 0.7042999999999999,
+          "4": 0.7816928571428571,
+          "5": 0.8658761904761905
+        },
+        "quality_only_total": 0.8477954650672077,
+        "quality_only_total_uplift": 0.06155729108309991
+      }
+    },
+    "gpt41": {
+      "baseline": {
+        "quality_only_total": 0.8495729046140045,
+        "strategy": "few-shot"
+      },
+      "caap_selection": {
+        "fallback_count": 0,
+        "gain_vs_baseline": 0.005244451749489731,
+        "level_means": [
+          0.9226857142857143,
+          0.9793169934640522,
+          0.8904783115468409,
+          0.806593949373451,
+          0.8125024964556045,
+          0.8509408423287431
+        ],
+        "quality_only_total": 0.8548173563634942,
+        "strategy_choice_counts": {
+          "0": {
+            "zero-shot": 100
+          },
+          "1": {
+            "few-shot": 90,
+            "zero-shot": 110
+          },
+          "2": {
+            "few-shot": 200
+          },
+          "3": {
+            "zero-shot": 150
+          },
+          "4": {
+            "few-shot": 100
+          },
+          "5": {
+            "few-cot": 50
+          }
+        }
+      },
+      "display_name": "GPT-4.1",
+      "oracle_per_instruction": {
+        "gain_vs_baseline": 0.03364036167353246,
+        "level_means": [
+          0.945304761904762,
+          0.9871454248366013,
+          0.9341877777777777,
+          0.8406238754251615,
+          0.8205322092546163,
+          0.8953899665731424
+        ],
+        "quality_only_total": 0.8832132662875369,
+        "strategy_choice_counts": {
+          "0": {
+            "few-cot": 53,
+            "few-shot": 28,
+            "zero-cot": 15,
+            "zero-shot": 4
+          },
+          "1": {
+            "few-cot": 168,
+            "few-shot": 17,
+            "zero-cot": 10,
+            "zero-shot": 5
+          },
+          "2": {
+            "few-cot": 89,
+            "few-shot": 51,
+            "zero-cot": 38,
+            "zero-shot": 22
+          },
+          "3": {
+            "few-cot": 14,
+            "few-shot": 74,
+            "zero-cot": 10,
+            "zero-shot": 52
+          },
+          "4": {
+            "few-cot": 18,
+            "few-shot": 73,
+            "zero-cot": 2,
+            "zero-shot": 7
+          },
+          "5": {
+            "few-cot": 7,
+            "few-shot": 25,
+            "zero-cot": 5,
+            "zero-shot": 13
+          }
+        }
+      },
+      "oracle_per_level": {
+        "gain_vs_baseline": 0.010369155023947974,
+        "level_means": [
+          0.9305619047619048,
+          0.9801993464052288,
+          0.9005454793028322,
+          0.8191894238169899,
+          0.8125024964556045,
+          0.8533947959464416
+        ],
+        "level_strategy": {
+          "0": "zero-cot",
+          "1": "few-shot",
+          "2": "few-cot",
+          "3": "few-shot",
+          "4": "few-shot",
+          "5": "zero-cot"
+        },
+        "quality_only_total": 0.8599420596379524
+      },
+      "sc_best_of_5": {
+        "base_strategy": "few-shot",
+        "bo5_sat_by_level": {
+          "0": 0.8366666666666667,
+          "1": 0.9798333333333333,
+          "2": 0.8550833333333334,
+          "3": 0.8713253968253969,
+          "4": 0.9287380952380953,
+          "5": 0.9178095238095239
+        },
+        "d4_satisfaction_uplift_by_level": {
+          "0": 0.022666666666666665,
+          "1": 0.022400000000000003,
+          "2": 0.12209761904761905,
+          "3": 0.12913968253968255,
+          "4": 0.0641,
+          "5": 0.031866666666666654
+        },
+        "gain_vs_baseline": 0.04938952614379086,
+        "mean_sat_by_level": {
+          "0": 0.814,
+          "1": 0.9574333333333334,
+          "2": 0.7329857142857144,
+          "3": 0.7421857142857142,
+          "4": 0.8646380952380953,
+          "5": 0.8859428571428571
+        },
+        "quality_only_total": 0.8989624307577954,
+        "quality_only_total_uplift": 0.04938952614379086
+      }
+    },
+    "gpt4o": {
+      "baseline": {
+        "quality_only_total": 0.8442977095382801,
+        "strategy": "few-shot"
+      },
+      "caap_selection": {
+        "fallback_count": 0,
+        "gain_vs_baseline": -0.00847306293926997,
+        "level_means": [
+          0.9418428571428572,
+          0.9782717320261437,
+          0.8185059477124184,
+          0.8107605619389292,
+          0.8134594330484104,
+          0.8104498709300069
+        ],
+        "quality_only_total": 0.8358246465990101,
+        "strategy_choice_counts": {
+          "0": {
+            "zero-shot": 100
+          },
+          "1": {
+            "few-shot": 90,
+            "zero-shot": 110
+          },
+          "2": {
+            "few-shot": 200
+          },
+          "3": {
+            "zero-shot": 150
+          },
+          "4": {
+            "few-shot": 100
+          },
+          "5": {
+            "few-cot": 50
+          }
+        }
+      },
+      "display_name": "GPT-4o",
+      "oracle_per_instruction": {
+        "gain_vs_baseline": 0.026263130142766822,
+        "level_means": [
+          0.9649619047619048,
+          0.9877745098039216,
+          0.9204181045751634,
+          0.8419002015260406,
+          0.8199977673831712,
+          0.8483723825011364
+        ],
+        "quality_only_total": 0.8705608396810469,
+        "strategy_choice_counts": {
+          "0": {
+            "few-cot": 48,
+            "few-shot": 28,
+            "zero-cot": 15,
+            "zero-shot": 9
+          },
+          "1": {
+            "few-cot": 163,
+            "few-shot": 17,
+            "zero-cot": 10,
+            "zero-shot": 10
+          },
+          "2": {
+            "few-cot": 80,
+            "few-shot": 42,
+            "zero-cot": 51,
+            "zero-shot": 27
+          },
+          "3": {
+            "few-cot": 46,
+            "few-shot": 49,
+            "zero-cot": 28,
+            "zero-shot": 27
+          },
+          "4": {
+            "few-cot": 18,
+            "few-shot": 79,
+            "zero-cot": 1,
+            "zero-shot": 2
+          },
+          "5": {
+            "few-cot": 6,
+            "few-shot": 18,
+            "zero-cot": 5,
+            "zero-shot": 21
+          }
+        }
+      },
+      "oracle_per_level": {
+        "gain_vs_baseline": 0.0065808562091503875,
+        "level_means": [
+          0.9505,
+          0.9819142156862745,
+          0.8604323529411765,
+          0.8180473379860896,
+          0.8134594330484104,
+          0.8364918615132239
+        ],
+        "level_strategy": {
+          "0": "few-shot",
+          "1": "zero-shot",
+          "2": "zero-cot",
+          "3": "few-shot",
+          "4": "few-shot",
+          "5": "few-shot"
+        },
+        "quality_only_total": 0.8508785657474305
+      },
+      "sc_best_of_5": {
+        "base_strategy": "few-shot",
+        "bo5_sat_by_level": {
+          "0": 0.8833333333333333,
+          "1": 0.9773333333333334,
+          "2": 0.77925,
+          "3": 0.8369444444444445,
+          "4": 0.9177619047619048,
+          "5": 0.9031428571428571
+        },
+        "d4_satisfaction_uplift_by_level": {
+          "0": 0.04666666666666667,
+          "1": 0.025183333333333332,
+          "2": 0.12688095238095237,
+          "3": 0.10128095238095236,
+          "4": 0.03845238095238096,
+          "5": 0.038657142857142855
+        },
+        "gain_vs_baseline": 0.04466798669467787,
+        "mean_sat_by_level": {
+          "0": 0.8366666666666667,
+          "1": 0.95215,
+          "2": 0.6523690476190477,
+          "3": 0.7356634920634921,
+          "4": 0.8793095238095238,
+          "5": 0.8644857142857143
+        },
+        "quality_only_total": 0.888965696232958,
+        "quality_only_total_uplift": 0.04466798669467787
+      }
+    },
+    "gpt4omini": {
+      "baseline": {
+        "quality_only_total": 0.7843981220547683,
+        "strategy": "zero-cot"
+      },
+      "caap_selection": {
+        "fallback_count": 0,
+        "gain_vs_baseline": 0.014514460109750882,
+        "level_means": [
+          0.8521000000000001,
+          0.9197911764705883,
+          0.7256235294117647,
+          0.8040930218298001,
+          0.7981610995895814,
+          0.7805042233693613
+        ],
+        "quality_only_total": 0.7989125821645192,
+        "strategy_choice_counts": {
+          "0": {
+            "zero-shot": 100
+          },
+          "1": {
+            "zero-cot": 90,
+            "zero-shot": 110
+          },
+          "2": {
+            "zero-cot": 200
+          },
+          "3": {
+            "zero-cot": 150
+          },
+          "4": {
+            "few-shot": 100
+          },
+          "5": {
+            "zero-cot": 50
+          }
+        }
+      },
+      "display_name": "GPT-4o-mini",
+      "oracle_per_instruction": {
+        "gain_vs_baseline": 0.05287189056866515,
+        "level_means": [
+          0.9078373015873017,
+          0.9559820261437909,
+          0.770693725490196,
+          0.8296888876333859,
+          0.8275131515758836,
+          0.8314392827420471
+        ],
+        "quality_only_total": 0.8372700126234335,
+        "strategy_choice_counts": {
+          "0": {
+            "few-cot": 35,
+            "few-shot": 36,
+            "zero-cot": 23,
+            "zero-shot": 6
+          },
+          "1": {
+            "few-cot": 128,
+            "few-shot": 27,
+            "zero-cot": 31,
+            "zero-shot": 14
+          },
+          "2": {
+            "few-cot": 57,
+            "few-shot": 26,
+            "zero-cot": 82,
+            "zero-shot": 35
+          },
+          "3": {
+            "few-cot": 21,
+            "few-shot": 56,
+            "zero-cot": 50,
+            "zero-shot": 23
+          },
+          "4": {
+            "few-cot": 34,
+            "few-shot": 61,
+            "zero-cot": 2,
+            "zero-shot": 3
+          },
+          "5": {
+            "few-cot": 10,
+            "few-shot": 19,
+            "zero-cot": 8,
+            "zero-shot": 13
+          }
+        }
+      },
+      "oracle_per_level": {
+        "gain_vs_baseline": 0.021009370180265274,
+        "level_means": [
+          0.8802547619047619,
+          0.9195617647058824,
+          0.7256235294117647,
+          0.8040930218298001,
+          0.7981610995895814,
+          0.8009446759763486
+        ],
+        "level_strategy": {
+          "0": "zero-cot",
+          "1": "zero-cot",
+          "2": "zero-cot",
+          "3": "zero-cot",
+          "4": "few-shot",
+          "5": "few-cot"
+        },
+        "quality_only_total": 0.8054074922350336
+      },
+      "sc_best_of_5": {
+        "base_strategy": "zero-cot",
+        "bo5_sat_by_level": {
+          "0": 0.78,
+          "1": 0.9165000000000001,
+          "2": 0.6711309523809524,
+          "3": 0.7921746031746032,
+          "4": 0.8601904761904762,
+          "5": 0.9158095238095239
+        },
+        "d4_satisfaction_uplift_by_level": {
+          "0": 0.059333333333333335,
+          "1": 0.042166666666666665,
+          "2": 0.15700714285714285,
+          "3": 0.09228730158730157,
+          "4": 0.08632857142857145,
+          "5": 0.048304761904761906
+        },
+        "gain_vs_baseline": 0.05845885387488329,
+        "mean_sat_by_level": {
+          "0": 0.7206666666666667,
+          "1": 0.8743333333333334,
+          "2": 0.5141238095238095,
+          "3": 0.6998873015873016,
+          "4": 0.7738619047619048,
+          "5": 0.8675047619047619
+        },
+        "quality_only_total": 0.8428569759296516,
+        "quality_only_total_uplift": 0.05845885387488329
+      }
+    },
+    "metallamaLlama3370BInstructTurbo": {
+      "baseline": {
+        "quality_only_total": 0.8340788738121021,
+        "strategy": "few-cot"
+      },
+      "caap_selection": {
+        "fallback_count": 0,
+        "gain_vs_baseline": 0.009076693088999721,
+        "level_means": [
+          0.9048285714285714,
+          0.9655330065359478,
+          0.8499505773420479,
+          0.7840856876268361,
+          0.8092396990611697,
+          0.8589647551364468
+        ],
+        "quality_only_total": 0.8431555669011018,
+        "strategy_choice_counts": {
+          "0": {
+            "zero-shot": 100
+          },
+          "1": {
+            "few-cot": 90,
+            "zero-shot": 110
+          },
+          "2": {
+            "few-cot": 200
+          },
+          "3": {
+            "zero-cot": 150
+          },
+          "4": {
+            "few-cot": 100
+          },
+          "5": {
+            "few-cot": 50
+          }
+        }
+      },
+      "display_name": "Llama-3.3-70B",
+      "oracle_per_instruction": {
+        "gain_vs_baseline": 0.051195661305974194,
+        "level_means": [
+          0.9309809523809524,
+          0.9861,
+          0.9201910784313725,
+          0.8443854820119295,
+          0.8414305016936353,
+          0.8914084156341124
+        ],
+        "quality_only_total": 0.8852745351180763,
+        "strategy_choice_counts": {
+          "0": {
+            "few-cot": 28,
+            "few-shot": 31,
+            "zero-cot": 31,
+            "zero-shot": 10
+          },
+          "1": {
+            "few-cot": 140,
+            "few-shot": 21,
+            "zero-cot": 39
+          },
+          "2": {
+            "few-cot": 67,
+            "few-shot": 34,
+            "zero-cot": 62,
+            "zero-shot": 37
+          },
+          "3": {
+            "few-cot": 19,
+            "few-shot": 80,
+            "zero-cot": 18,
+            "zero-shot": 33
+          },
+          "4": {
+            "few-cot": 31,
+            "few-shot": 69
+          },
+          "5": {
+            "few-cot": 7,
+            "few-shot": 14,
+            "zero-cot": 11,
+            "zero-shot": 18
+          }
+        }
+      },
+      "oracle_per_level": {
+        "gain_vs_baseline": 0.029839556934769695,
+        "level_means": [
+          0.914752380952381,
+          0.9825176470588235,
+          0.8910262854030501,
+          0.8300169263502086,
+          0.822122120515038,
+          0.8589647551364468
+        ],
+        "level_strategy": {
+          "0": "zero-cot",
+          "1": "zero-cot",
+          "2": "zero-cot",
+          "3": "few-shot",
+          "4": "few-shot",
+          "5": "few-cot"
+        },
+        "quality_only_total": 0.8639184307468718
+      },
+      "sc_best_of_5": {
+        "base_strategy": "few-cot",
+        "bo5_sat_by_level": {
+          "0": 0.8133333333333332,
+          "1": 0.9640833333333333,
+          "2": 0.7615238095238095,
+          "3": 0.7803888888888889,
+          "4": 0.9298928571428572,
+          "5": 0.96
+        },
+        "d4_satisfaction_uplift_by_level": {
+          "0": 0.04866666666666667,
+          "1": 0.03918333333333333,
+          "2": 0.11766428571428572,
+          "3": 0.2402460317460317,
+          "4": 0.14719761904761905,
+          "5": 0.10634285714285713
+        },
+        "gain_vs_baseline": 0.09030578197945845,
+        "mean_sat_by_level": {
+          "0": 0.7646666666666667,
+          "1": 0.9248999999999999,
+          "2": 0.6438595238095237,
+          "3": 0.5401428571428571,
+          "4": 0.782695238095238,
+          "5": 0.8536571428571429
+        },
+        "quality_only_total": 0.9243846557915606,
+        "quality_only_total_uplift": 0.09030578197945845
+      }
+    },
+    "metallamaMetaLlama318BInstruct": {
+      "baseline": {
+        "quality_only_total": 0.7305432335323384,
+        "strategy": "zero-cot"
+      },
+      "caap_selection": {
+        "fallback_count": 0,
+        "gain_vs_baseline": 0.007971022642306091,
+        "level_means": [
+          0.89595,
+          0.7388246732026144,
+          0.6744379084967319,
+          0.762429219328003,
+          0.7205321045477094,
+          0.7441989303093812
+        ],
+        "quality_only_total": 0.7385142561746445,
+        "strategy_choice_counts": {
+          "0": {
+            "zero-shot": 100
+          },
+          "1": {
+            "zero-cot": 90,
+            "zero-shot": 110
+          },
+          "2": {
+            "zero-cot": 200
+          },
+          "3": {
+            "zero-cot": 150
+          },
+          "4": {
+            "few-shot": 100
+          },
+          "5": {
+            "zero-cot": 50
+          }
+        }
+      },
+      "display_name": "Llama-3.1-8B",
+      "oracle_per_instruction": {
+        "gain_vs_baseline": 0.06332162473516112,
+        "level_means": [
+          0.9161142857142858,
+          0.8616166666666666,
+          0.7547803921568627,
+          0.8052701116630446,
+          0.7694845207172892,
+          0.7810210639186319
+        ],
+        "quality_only_total": 0.7938648582674995,
+        "strategy_choice_counts": {
+          "0": {
+            "few-cot": 13,
+            "few-shot": 3,
+            "zero-cot": 51,
+            "zero-shot": 33
+          },
+          "1": {
+            "few-cot": 66,
+            "few-shot": 29,
+            "zero-cot": 79,
+            "zero-shot": 26
+          },
+          "2": {
+            "few-cot": 53,
+            "few-shot": 28,
+            "zero-cot": 87,
+            "zero-shot": 32
+          },
+          "3": {
+            "few-cot": 7,
+            "few-shot": 35,
+            "zero-cot": 36,
+            "zero-shot": 72
+          },
+          "4": {
+            "few-cot": 39,
+            "few-shot": 33,
+            "zero-cot": 8,
+            "zero-shot": 20
+          },
+          "5": {
+            "few-cot": 17,
+            "few-shot": 5,
+            "zero-cot": 18,
+            "zero-shot": 10
+          }
+        }
+      },
+      "oracle_per_level": {
+        "gain_vs_baseline": 0.011472782750130972,
+        "level_means": [
+          0.8979285714285714,
+          0.7369070261437908,
+          0.6744379084967319,
+          0.7804022005393965,
+          0.7205321045477094,
+          0.7441989303093812
+        ],
+        "level_strategy": {
+          "0": "zero-cot",
+          "1": "zero-cot",
+          "2": "zero-cot",
+          "3": "zero-shot",
+          "4": "few-shot",
+          "5": "zero-cot"
+        },
+        "quality_only_total": 0.7420160162824694
+      },
+      "sc_best_of_5": {
+        "base_strategy": "zero-cot",
+        "bo5_sat_by_level": {
+          "0": 0.7933333333333333,
+          "1": 0.8105833333333333,
+          "2": 0.6920595238095238,
+          "3": 0.7911904761904762,
+          "4": 0.8418928571428572,
+          "5": 0.893
+        },
+        "d4_satisfaction_uplift_by_level": {
+          "0": 0.057999999999999996,
+          "1": 0.12635,
+          "2": 0.14836428571428573,
+          "3": 0.17177777777777778,
+          "4": 0.17398809523809522,
+          "5": 0.1229142857142857
+        },
+        "gain_vs_baseline": 0.10004107376283847,
+        "mean_sat_by_level": {
+          "0": 0.7353333333333333,
+          "1": 0.6842333333333334,
+          "2": 0.5436952380952381,
+          "3": 0.6194126984126984,
+          "4": 0.6679047619047619,
+          "5": 0.7700857142857143
+        },
+        "quality_only_total": 0.8305843072951768,
+        "quality_only_total_uplift": 0.10004107376283847
+      }
+    },
+    "qwen35122ba10b": {
+      "baseline": {
+        "quality_only_total": 0.871417893335303,
+        "strategy": "few-cot"
+      },
+      "caap_selection": {
+        "fallback_count": 0,
+        "gain_vs_baseline": 0.008513442918387515,
+        "level_means": [
+          0.9466095238095238,
+          0.9771644880174292,
+          0.9040044444444445,
+          0.8682426107324058,
+          0.8308561860601378,
+          0.8716847037331561
+        ],
+        "quality_only_total": 0.8799313362536905,
+        "strategy_choice_counts": {
+          "0": {
+            "zero-shot": 100
+          },
+          "1": {
+            "few-cot": 90,
+            "zero-shot": 110
+          },
+          "2": {
+            "few-cot": 200
+          },
+          "3": {
+            "zero-cot": 150
+          },
+          "4": {
+            "few-cot": 100
+          },
+          "5": {
+            "few-cot": 50
+          }
+        }
+      },
+      "display_name": "Qwen3.5-122B-A10B",
+      "oracle_per_instruction": {
+        "gain_vs_baseline": 0.03415641665934732,
+        "level_means": [
+          0.9590380952380952,
+          0.9873373638344226,
+          0.9390219281045752,
+          0.8882871382195899,
+          0.8464266812794357,
+          0.9150851266793603
+        ],
+        "quality_only_total": 0.9055743099946503,
+        "strategy_choice_counts": {
+          "0": {
+            "few-cot": 44,
+            "few-shot": 30,
+            "zero-cot": 16,
+            "zero-shot": 10
+          },
+          "1": {
+            "few-cot": 149,
+            "few-shot": 28,
+            "zero-cot": 12,
+            "zero-shot": 11
+          },
+          "2": {
+            "few-cot": 68,
+            "few-shot": 57,
+            "zero-cot": 45,
+            "zero-shot": 30
+          },
+          "3": {
+            "few-cot": 63,
+            "few-shot": 6,
+            "zero-cot": 68,
+            "zero-shot": 13
+          },
+          "4": {
+            "few-cot": 54,
+            "few-shot": 45,
+            "zero-cot": 1
+          },
+          "5": {
+            "few-cot": 13,
+            "few-shot": 13,
+            "zero-cot": 7,
+            "zero-shot": 17
+          }
+        }
+      },
+      "oracle_per_level": {
+        "gain_vs_baseline": 0.01071016960519322,
+        "level_means": [
+          0.9466095238095238,
+          0.9796071895424836,
+          0.9109181045751633,
+          0.8682426107324058,
+          0.8308561860601378,
+          0.875346333791926
+        ],
+        "level_strategy": {
+          "0": "zero-shot",
+          "1": "zero-shot",
+          "2": "zero-shot",
+          "3": "zero-cot",
+          "4": "few-cot",
+          "5": "zero-cot"
+        },
+        "quality_only_total": 0.8821280629404962
+      },
+      "sc_best_of_5": {
+        "base_strategy": "few-cot",
+        "bo5_sat_by_level": {
+          "0": 0.8533333333333333,
+          "1": 0.9800833333333334,
+          "2": 0.86375,
+          "3": 0.8903571428571427,
+          "4": 0.9289404761904763,
+          "5": 0.976
+        },
+        "d4_satisfaction_uplift_by_level": {
+          "0": 0.028000000000000008,
+          "1": 0.029683333333333332,
+          "2": 0.10905,
+          "3": 0.09817460317460318,
+          "4": 0.0547,
+          "5": 0.0486
+        },
+        "gain_vs_baseline": 0.045829496965452854,
+        "mean_sat_by_level": {
+          "0": 0.8253333333333334,
+          "1": 0.9504,
+          "2": 0.7547,
+          "3": 0.7921825396825397,
+          "4": 0.8742404761904762,
+          "5": 0.9274
+        },
+        "quality_only_total": 0.9172473903007559,
+        "quality_only_total_uplift": 0.045829496965452854
+      }
+    },
+    "qwen3535ba3b": {
+      "baseline": {
+        "quality_only_total": 0.8606637264938249,
+        "strategy": "few-cot"
+      },
+      "caap_selection": {
+        "fallback_count": 0,
+        "gain_vs_baseline": 0.008026090177582268,
+        "level_means": [
+          0.9237619047619048,
+          0.947615522875817,
+          0.8798939215686274,
+          0.8599917534998074,
+          0.8177742848625222,
+          0.8772566359793764
+        ],
+        "quality_only_total": 0.8686898166714072,
+        "strategy_choice_counts": {
+          "0": {
+            "zero-shot": 100
+          },
+          "1": {
+            "few-cot": 90,
+            "zero-shot": 110
+          },
+          "2": {
+            "few-cot": 200
+          },
+          "3": {
+            "zero-cot": 150
+          },
+          "4": {
+            "few-cot": 100
+          },
+          "5": {
+            "few-cot": 50
+          }
+        }
+      },
+      "display_name": "Qwen3.5-35B-A3B",
+      "oracle_per_instruction": {
+        "gain_vs_baseline": 0.037147911899828134,
+        "level_means": [
+          0.9429619047619048,
+          0.981824183006536,
+          0.9405956209150327,
+          0.8763370348446397,
+          0.8324590713192679,
+          0.9120384276756175
+        ],
+        "quality_only_total": 0.8978116383936531,
+        "strategy_choice_counts": {
+          "0": {
+            "few-cot": 54,
+            "few-shot": 14,
+            "zero-cot": 23,
+            "zero-shot": 9
+          },
+          "1": {
+            "few-cot": 129,
+            "few-shot": 23,
+            "zero-cot": 34,
+            "zero-shot": 14
+          },
+          "2": {
+            "few-cot": 81,
+            "few-shot": 27,
+            "zero-cot": 62,
+            "zero-shot": 30
+          },
+          "3": {
+            "few-cot": 51,
+            "few-shot": 15,
+            "zero-cot": 78,
+            "zero-shot": 6
+          },
+          "4": {
+            "few-cot": 49,
+            "few-shot": 48,
+            "zero-cot": 2,
+            "zero-shot": 1
+          },
+          "5": {
+            "few-cot": 13,
+            "few-shot": 11,
+            "zero-cot": 7,
+            "zero-shot": 19
+          }
+        }
+      },
+      "oracle_per_level": {
+        "gain_vs_baseline": 0.011375112586545888,
+        "level_means": [
+          0.9276000000000001,
+          0.9642111111111111,
+          0.8898776470588236,
+          0.8599917534998074,
+          0.8177742848625222,
+          0.8772566359793764
+        ],
+        "level_strategy": {
+          "0": "zero-cot",
+          "1": "zero-cot",
+          "2": "zero-cot",
+          "3": "zero-cot",
+          "4": "few-cot",
+          "5": "few-cot"
+        },
+        "quality_only_total": 0.8720388390803708
+      },
+      "sc_best_of_5": {
+        "base_strategy": "few-cot",
+        "bo5_sat_by_level": {
+          "0": 0.8333333333333333,
+          "1": 0.9539166666666666,
+          "2": 0.8726071428571429,
+          "3": 0.9149920634920634,
+          "4": 0.9287619047619047,
+          "5": 0.9874285714285714
+        },
+        "d4_satisfaction_uplift_by_level": {
+          "0": 0.03866666666666667,
+          "1": 0.06725,
+          "2": 0.13349523809523808,
+          "3": 0.17883174603174604,
+          "4": 0.15220238095238095,
+          "5": 0.05395238095238097
+        },
+        "gain_vs_baseline": 0.07909096755368815,
+        "mean_sat_by_level": {
+          "0": 0.7946666666666666,
+          "1": 0.8866666666666667,
+          "2": 0.7391119047619048,
+          "3": 0.7361603174603174,
+          "4": 0.7765595238095239,
+          "5": 0.9334761904761905
+        },
+        "quality_only_total": 0.9397546940475131,
+        "quality_only_total_uplift": 0.07909096755368815
+      }
+    },
+    "qwen35397ba17b": {
+      "baseline": {
+        "quality_only_total": 0.8787812091095794,
+        "strategy": "few-cot"
+      },
+      "caap_selection": {
+        "fallback_count": 0,
+        "gain_vs_baseline": 5.265512492902413e-05,
+        "level_means": [
+          0.9520690476190476,
+          0.971057679738562,
+          0.8937244444444444,
+          0.8581328090572349,
+          0.8418626356914287,
+          0.8718950259149156
+        ],
+        "quality_only_total": 0.8788338642345084,
+        "strategy_choice_counts": {
+          "0": {
+            "zero-shot": 100
+          },
+          "1": {
+            "few-cot": 90,
+            "zero-shot": 110
+          },
+          "2": {
+            "few-cot": 200
+          },
+          "3": {
+            "zero-cot": 150
+          },
+          "4": {
+            "few-cot": 100
+          },
+          "5": {
+            "few-cot": 50
+          }
+        }
+      },
+      "display_name": "Qwen3.5-397B-A17B",
+      "oracle_per_instruction": {
+        "gain_vs_baseline": 0.024949885064249222,
+        "level_means": [
+          0.9597142857142857,
+          0.9845222222222222,
+          0.935823137254902,
+          0.8836119274029223,
+          0.847039157317305,
+          0.9137500490709844
+        ],
+        "quality_only_total": 0.9037310941738286,
+        "strategy_choice_counts": {
+          "0": {
+            "few-cot": 40,
+            "few-shot": 23,
+            "zero-cot": 21,
+            "zero-shot": 16
+          },
+          "1": {
+            "few-cot": 155,
+            "few-shot": 21,
+            "zero-cot": 14,
+            "zero-shot": 10
+          },
+          "2": {
+            "few-cot": 77,
+            "few-shot": 56,
+            "zero-cot": 44,
+            "zero-shot": 23
+          },
+          "3": {
+            "few-cot": 62,
+            "few-shot": 11,
+            "zero-cot": 67,
+            "zero-shot": 10
+          },
+          "4": {
+            "few-cot": 70,
+            "few-shot": 30
+          },
+          "5": {
+            "few-cot": 7,
+            "few-shot": 14,
+            "zero-cot": 5,
+            "zero-shot": 24
+          }
+        }
+      },
+      "oracle_per_level": {
+        "gain_vs_baseline": 0.006545417616105831,
+        "level_means": [
+          0.9520690476190476,
+          0.9805483660130718,
+          0.9032077777777778,
+          0.8645969143849709,
+          0.8418626356914287,
+          0.8832085171076304
+        ],
+        "level_strategy": {
+          "0": "zero-shot",
+          "1": "zero-cot",
+          "2": "zero-cot",
+          "3": "few-cot",
+          "4": "few-cot",
+          "5": "zero-cot"
+        },
+        "quality_only_total": 0.8853266267256852
+      },
+      "sc_best_of_5": {
+        "base_strategy": "few-cot",
+        "bo5_sat_by_level": {
+          "0": 0.85,
+          "1": 0.9686666666666666,
+          "2": 0.83475,
+          "3": 0.9256904761904762,
+          "4": 0.9419285714285713,
+          "5": 0.9893333333333334
+        },
+        "d4_satisfaction_uplift_by_level": {
+          "0": 0.012,
+          "1": 0.01115,
+          "2": 0.07541666666666667,
+          "3": 0.12337777777777778,
+          "4": 0.04865714285714286,
+          "5": 0.08152380952380951
+        },
+        "gain_vs_baseline": 0.0467800233426704,
+        "mean_sat_by_level": {
+          "0": 0.838,
+          "1": 0.9575166666666667,
+          "2": 0.7593333333333334,
+          "3": 0.8023126984126985,
+          "4": 0.8932714285714286,
+          "5": 0.9078095238095238
+        },
+        "quality_only_total": 0.9255612324522497,
+        "quality_only_total_uplift": 0.0467800233426704
+      }
+    }
+  },
+  "positive_counts": {
+    "caap_selection": {
+      "positive": 10,
+      "total": 12
+    },
+    "oracle_per_instruction": {
+      "positive": 11,
+      "total": 12
+    },
+    "oracle_per_level": {
+      "positive": 11,
+      "total": 12
+    },
+    "sc_best_of_5": {
+      "positive": 12,
+      "total": 12
+    }
+  },
+  "skipped_models": [
+    {
+      "display_name": "GLM-4.6",
+      "slug": "zaiorgGLM46"
+    },
+    {
+      "display_name": "Gemma-3-27B",
+      "slug": "googlegemma327bit"
+    },
+    {
+      "display_name": "Phi-4",
+      "slug": "microsoftphi4"
+    },
+    {
+      "display_name": "Mistral-Small-24B",
+      "slug": "mistralaiMistralSmall24BInstruct2501"
+    }
+  ],
+  "skipped_reason": "ext16 baseline-robustness models without CAAP/SC improvement runs; selection-improvement analysis is defined only on the improvement-study subset.",
+  "zero_api_zero_model_calls": true
+}

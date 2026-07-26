@@ -1,0 +1,469 @@
+{
+  "analysis": "D1 VGIG held-out dimension gains",
+  "held_out_definition": "D1/D2/D3 only; D4 is deliberately excluded. Null means the dimension is not defined at that level.",
+  "targets": {
+    "deepseekaiDeepSeekV3": {
+      "baseline": {
+        "quality_only_total": 0.840476754597868,
+        "selection": "highest default-LEVEL_WEIGHTS quality-only total among available baseline strategies",
+        "strategy": "few-shot"
+      },
+      "methods": {
+        "combined": {
+          "all_applicable_cells_positive": false,
+          "available": true,
+          "mean_gain_over_all_applicable_D1_D2_D3_cells": 0.0267205986482085,
+          "n_applicable_cells": 10,
+          "per_level_non_D4_dimension_gains": {
+            "0": {
+              "baseline_means": {
+                "D1": 0.8961999999999999,
+                "D2": null,
+                "D3": null
+              },
+              "gains": {
+                "D1": -0.013199999999999878,
+                "D2": null,
+                "D3": null
+              },
+              "method_means": {
+                "D1": 0.883,
+                "D2": null,
+                "D3": null
+              }
+            },
+            "1": {
+              "baseline_means": {
+                "D1": 0.9120999999999999,
+                "D2": null,
+                "D3": null
+              },
+              "gains": {
+                "D1": 0.05490000000000017,
+                "D2": null,
+                "D3": null
+              },
+              "method_means": {
+                "D1": 0.9670000000000001,
+                "D2": null,
+                "D3": null
+              }
+            },
+            "2": {
+              "baseline_means": {
+                "D1": 0.83195,
+                "D2": null,
+                "D3": null
+              },
+              "gains": {
+                "D1": 0.043883333333333274,
+                "D2": null,
+                "D3": null
+              },
+              "method_means": {
+                "D1": 0.8758333333333332,
+                "D2": null,
+                "D3": null
+              }
+            },
+            "3": {
+              "baseline_means": {
+                "D1": 0.927078258310453,
+                "D2": null,
+                "D3": 0.5851133035816856
+              },
+              "gains": {
+                "D1": 0.03824626906016537,
+                "D2": null,
+                "D3": 0.022469118050589376
+              },
+              "method_means": {
+                "D1": 0.9653245273706184,
+                "D2": null,
+                "D3": 0.6075824216322749
+              }
+            },
+            "4": {
+              "baseline_means": {
+                "D1": 0.8808900381699187,
+                "D2": 0.530676497768523,
+                "D3": 0.5832716057595979
+              },
+              "gains": {
+                "D1": 0.05064978776540796,
+                "D2": -0.05237751227105908,
+                "D3": -7.063063160561711e-06
+              },
+              "method_means": {
+                "D1": 0.9315398259353267,
+                "D2": 0.4782989854974639,
+                "D3": 0.5832645426964373
+              }
+            },
+            "5": {
+              "baseline_means": {
+                "D1": 0.7759999999999999,
+                "D2": null,
+                "D3": 0.7605071136934345
+              },
+              "gains": {
+                "D1": 0.04833333333333334,
+                "D2": null,
+                "D3": 0.07430872027347502
+              },
+              "method_means": {
+                "D1": 0.8243333333333333,
+                "D2": null,
+                "D3": 0.8348158339669095
+              }
+            }
+          },
+          "positive_cells": 7
+        },
+        "vgig": {
+          "all_applicable_cells_positive": false,
+          "available": true,
+          "mean_gain_over_all_applicable_D1_D2_D3_cells": -0.02642000265875139,
+          "n_applicable_cells": 10,
+          "per_level_non_D4_dimension_gains": {
+            "0": {
+              "baseline_means": {
+                "D1": 0.8961999999999999,
+                "D2": null,
+                "D3": null
+              },
+              "gains": {
+                "D1": -0.012199999999999989,
+                "D2": null,
+                "D3": null
+              },
+              "method_means": {
+                "D1": 0.8839999999999999,
+                "D2": null,
+                "D3": null
+              }
+            },
+            "1": {
+              "baseline_means": {
+                "D1": 0.9120999999999999,
+                "D2": null,
+                "D3": null
+              },
+              "gains": {
+                "D1": 0.04506666666666681,
+                "D2": null,
+                "D3": null
+              },
+              "method_means": {
+                "D1": 0.9571666666666667,
+                "D2": null,
+                "D3": null
+              }
+            },
+            "2": {
+              "baseline_means": {
+                "D1": 0.83195,
+                "D2": null,
+                "D3": null
+              },
+              "gains": {
+                "D1": -0.013033333333333341,
+                "D2": null,
+                "D3": null
+              },
+              "method_means": {
+                "D1": 0.8189166666666666,
+                "D2": null,
+                "D3": null
+              }
+            },
+            "3": {
+              "baseline_means": {
+                "D1": 0.927078258310453,
+                "D2": null,
+                "D3": 0.5851133035816856
+              },
+              "gains": {
+                "D1": 0.019635611753631488,
+                "D2": null,
+                "D3": 0.02513807133868118
+              },
+              "method_means": {
+                "D1": 0.9467138700640845,
+                "D2": null,
+                "D3": 0.6102513749203667
+              }
+            },
+            "4": {
+              "baseline_means": {
+                "D1": 0.8808900381699187,
+                "D2": 0.530676497768523,
+                "D3": 0.5832716057595979
+              },
+              "gains": {
+                "D1": 0.0431089332845882,
+                "D2": -0.45287104010339746,
+                "D3": -0.00106795024232198
+              },
+              "method_means": {
+                "D1": 0.9239989714545069,
+                "D2": 0.07780545766512552,
+                "D3": 0.5822036555172759
+              }
+            },
+            "5": {
+              "baseline_means": {
+                "D1": 0.7759999999999999,
+                "D2": null,
+                "D3": 0.7605071136934345
+              },
+              "gains": {
+                "D1": 0.04200000000000004,
+                "D2": null,
+                "D3": 0.04002301404797115
+              },
+              "method_means": {
+                "D1": 0.818,
+                "D2": null,
+                "D3": 0.8005301277414056
+              }
+            }
+          },
+          "positive_cells": 6
+        }
+      }
+    },
+    "gpt4omini": {
+      "baseline": {
+        "quality_only_total": 0.7843981220547683,
+        "selection": "highest default-LEVEL_WEIGHTS quality-only total among available baseline strategies",
+        "strategy": "zero-cot"
+      },
+      "methods": {
+        "combined": {
+          "all_applicable_cells_positive": false,
+          "available": true,
+          "mean_gain_over_all_applicable_D1_D2_D3_cells": 0.07937292349321771,
+          "n_applicable_cells": 10,
+          "per_level_non_D4_dimension_gains": {
+            "0": {
+              "baseline_means": {
+                "D1": 0.80845,
+                "D2": null,
+                "D3": null
+              },
+              "gains": {
+                "D1": 0.03988333333333327,
+                "D2": null,
+                "D3": null
+              },
+              "method_means": {
+                "D1": 0.8483333333333333,
+                "D2": null,
+                "D3": null
+              }
+            },
+            "1": {
+              "baseline_means": {
+                "D1": 0.8693333333333334,
+                "D2": null,
+                "D3": null
+              },
+              "gains": {
+                "D1": 0.043333333333333224,
+                "D2": null,
+                "D3": null
+              },
+              "method_means": {
+                "D1": 0.9126666666666666,
+                "D2": null,
+                "D3": null
+              }
+            },
+            "2": {
+              "baseline_means": {
+                "D1": 0.6514166666666666,
+                "D2": null,
+                "D3": null
+              },
+              "gains": {
+                "D1": 0.09525000000000006,
+                "D2": null,
+                "D3": null
+              },
+              "method_means": {
+                "D1": 0.7466666666666667,
+                "D2": null,
+                "D3": null
+              }
+            },
+            "3": {
+              "baseline_means": {
+                "D1": 0.9401427178113387,
+                "D2": null,
+                "D3": 0.5805438748047386
+              },
+              "gains": {
+                "D1": 0.028894871697206836,
+                "D2": null,
+                "D3": 0.004941148361228054
+              },
+              "method_means": {
+                "D1": 0.9690375895085456,
+                "D2": null,
+                "D3": 0.5854850231659666
+              }
+            },
+            "4": {
+              "baseline_means": {
+                "D1": 0.9343660198041647,
+                "D2": 0.027299999999999994,
+                "D3": 0.5776724960325843
+              },
+              "gains": {
+                "D1": -0.023523595719658563,
+                "D2": 0.4994819453990099,
+                "D3": 0.0015416035694144625
+              },
+              "method_means": {
+                "D1": 0.9108424240845061,
+                "D2": 0.5267819453990099,
+                "D3": 0.5792140996019988
+              }
+            },
+            "5": {
+              "baseline_means": {
+                "D1": 0.7803999999999999,
+                "D2": null,
+                "D3": 0.7475974739095436
+              },
+              "gains": {
+                "D1": 0.05293333333333339,
+                "D2": null,
+                "D3": 0.05099326162497653
+              },
+              "method_means": {
+                "D1": 0.8333333333333333,
+                "D2": null,
+                "D3": 0.7985907355345201
+              }
+            }
+          },
+          "positive_cells": 9
+        },
+        "vgig": {
+          "all_applicable_cells_positive": false,
+          "available": true,
+          "mean_gain_over_all_applicable_D1_D2_D3_cells": 0.011336071610620401,
+          "n_applicable_cells": 10,
+          "per_level_non_D4_dimension_gains": {
+            "0": {
+              "baseline_means": {
+                "D1": 0.80845,
+                "D2": null,
+                "D3": null
+              },
+              "gains": {
+                "D1": 0.05188333333333328,
+                "D2": null,
+                "D3": null
+              },
+              "method_means": {
+                "D1": 0.8603333333333333,
+                "D2": null,
+                "D3": null
+              }
+            },
+            "1": {
+              "baseline_means": {
+                "D1": 0.8693333333333334,
+                "D2": null,
+                "D3": null
+              },
+              "gains": {
+                "D1": 0.018999999999999906,
+                "D2": null,
+                "D3": null
+              },
+              "method_means": {
+                "D1": 0.8883333333333333,
+                "D2": null,
+                "D3": null
+              }
+            },
+            "2": {
+              "baseline_means": {
+                "D1": 0.6514166666666666,
+                "D2": null,
+                "D3": null
+              },
+              "gains": {
+                "D1": -0.04525000000000001,
+                "D2": null,
+                "D3": null
+              },
+              "method_means": {
+                "D1": 0.6061666666666666,
+                "D2": null,
+                "D3": null
+              }
+            },
+            "3": {
+              "baseline_means": {
+                "D1": 0.9401427178113387,
+                "D2": null,
+                "D3": 0.5805438748047386
+              },
+              "gains": {
+                "D1": 0.02090922096876613,
+                "D2": null,
+                "D3": 0.005850234242978036
+              },
+              "method_means": {
+                "D1": 0.9610519387801049,
+                "D2": null,
+                "D3": 0.5863941090477166
+              }
+            },
+            "4": {
+              "baseline_means": {
+                "D1": 0.9343660198041647,
+                "D2": 0.027299999999999994,
+                "D3": 0.5776724960325843
+              },
+              "gains": {
+                "D1": -0.03129632208776256,
+                "D2": 0.0091,
+                "D3": 0.006430408376512653
+              },
+              "method_means": {
+                "D1": 0.9030696977164021,
+                "D2": 0.036399999999999995,
+                "D3": 0.584102904409097
+              }
+            },
+            "5": {
+              "baseline_means": {
+                "D1": 0.7803999999999999,
+                "D2": null,
+                "D3": 0.7475974739095436
+              },
+              "gains": {
+                "D1": 0.042266666666666786,
+                "D2": null,
+                "D3": 0.034467174605709805
+              },
+              "method_means": {
+                "D1": 0.8226666666666667,
+                "D2": null,
+                "D3": 0.7820646485152534
+              }
+            }
+          },
+          "positive_cells": 8
+        }
+      }
+    }
+  },
+  "zero_api_zero_model_calls": true
+}

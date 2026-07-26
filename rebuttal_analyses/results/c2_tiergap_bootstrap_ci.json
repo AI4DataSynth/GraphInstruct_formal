@@ -1,0 +1,119 @@
+{
+  "analysis": "C2 bootstrap 95% CI for continuous-D4 Q-tier gap",
+  "bootstrap_method": "Paired cluster bootstrap over common per-instruction IDs within each level; all model scores for a sampled instruction remain paired. Unit is the five-sample-aggregated per_instruction score, because per-sample quality detail is unavailable.",
+  "l2_ci_lower_exceeds_neighbor_ci_upper": {
+    "both": true,
+    "values": {
+      "L1_upper": 0.14276633487654314,
+      "L2_lower": 0.18166868518518509,
+      "L3_upper": 0.12473060846560852
+    },
+    "vs_L1": true,
+    "vs_L3": true
+  },
+  "levels": {
+    "0": {
+      "ci_95_percentile": [
+        0.04539783950617295,
+        0.08251913580246917
+      ],
+      "n_bootstrap": 2000,
+      "n_instruction_ids": 100,
+      "observed_gap": 0.06321604938271608,
+      "seed": 3970
+    },
+    "1": {
+      "ci_95_percentile": [
+        0.08299590277777785,
+        0.14276633487654314
+      ],
+      "n_bootstrap": 2000,
+      "n_instruction_ids": 200,
+      "observed_gap": 0.11222253086419753,
+      "seed": 3971
+    },
+    "2": {
+      "ci_95_percentile": [
+        0.18166868518518509,
+        0.24500102777777777
+      ],
+      "n_bootstrap": 2000,
+      "n_instruction_ids": 200,
+      "observed_gap": 0.21285555555555558,
+      "seed": 3972
+    },
+    "3": {
+      "ci_95_percentile": [
+        0.10122552028218694,
+        0.12473060846560852
+      ],
+      "n_bootstrap": 2000,
+      "n_instruction_ids": 150,
+      "observed_gap": 0.11355202821869481,
+      "seed": 3973
+    },
+    "4": {
+      "ci_95_percentile": [
+        0.04853789323816352,
+        0.06696253317140372
+      ],
+      "n_bootstrap": 2000,
+      "n_instruction_ids": 100,
+      "observed_gap": 0.057528819745200965,
+      "seed": 3974
+    },
+    "5": {
+      "ci_95_percentile": [
+        0.07426134552447454,
+        0.22660211913322412
+      ],
+      "n_bootstrap": 2000,
+      "n_instruction_ids": 50,
+      "observed_gap": 0.1426324054513255,
+      "seed": 3975
+    }
+  },
+  "observed_gap_peak": {
+    "l2_is_peak": true,
+    "l2_is_unique_peak": true,
+    "peak_levels": [
+      2
+    ]
+  },
+  "selected_strategies": {
+    "claudesonnet420250514": "zero-shot",
+    "claudesonnet46": "few-cot",
+    "deepseekaiDeepSeekV3": "few-shot",
+    "gpt35turbo": "zero-cot",
+    "gpt41": "few-shot",
+    "gpt4o": "few-shot",
+    "gpt4omini": "zero-cot",
+    "metallamaLlama3370BInstructTurbo": "few-cot",
+    "metallamaMetaLlama318BInstruct": "zero-cot",
+    "qwen35122ba10b": "few-cot",
+    "qwen3535ba3b": "few-cot",
+    "qwen35397ba17b": "few-cot"
+  },
+  "selection": "Default LEVEL_WEIGHTS quality-only best baseline strategy per model, selected once on the full dataset; Q tiers are externally specified by the paper.",
+  "tiers": {
+    "T1": [
+      "claudesonnet46",
+      "qwen35397ba17b",
+      "qwen35122ba10b"
+    ],
+    "T2": [
+      "qwen3535ba3b",
+      "gpt41",
+      "gpt4o",
+      "deepseekaiDeepSeekV3",
+      "metallamaLlama3370BInstructTurbo",
+      "claudesonnet420250514"
+    ],
+    "T3": [
+      "gpt35turbo",
+      "gpt4omini",
+      "metallamaMetaLlama318BInstruct"
+    ]
+  },
+  "zero_api_zero_model_calls": true
+}

@@ -1,0 +1,209 @@
+{
+  "analysis": "UNI unified tier-gap robustness table",
+  "columns": {
+    "q_tier_continuous_d4": {
+      "gaps": [
+        0.06177314814814816,
+        0.08940300925925926,
+        0.19392620370370373,
+        0.09510873015873011,
+        0.04784945764969428,
+        0.13173849896304513
+      ],
+      "l2_is_peak": true,
+      "l2_is_unique_peak": true,
+      "label": "② Q-tier + continuous D4",
+      "peak_levels": [
+        2
+      ],
+      "selected_strategies": {
+        "claudesonnet420250514": "zero-shot",
+        "claudesonnet46": "few-cot",
+        "deepseekaiDeepSeekV3": "few-shot",
+        "googlegemma327bit": "few-cot",
+        "gpt35turbo": "zero-cot",
+        "gpt41": "few-shot",
+        "gpt4o": "few-shot",
+        "gpt4omini": "zero-cot",
+        "metallamaLlama3370BInstructTurbo": "few-cot",
+        "metallamaMetaLlama318BInstruct": "zero-cot",
+        "microsoftphi4": "few-cot",
+        "mistralaiMistralSmall24BInstruct2501": "zero-shot",
+        "qwen35122ba10b": "few-cot",
+        "qwen3535ba3b": "few-cot",
+        "qwen35397ba17b": "few-cot",
+        "zaiorgGLM46": "few-shot"
+      }
+    },
+    "q_tier_default_quality_only": {
+      "gaps": [
+        0.05655912698412702,
+        0.09430468409586057,
+        0.19272525599128554,
+        0.05605636352091836,
+        0.11566776208348817,
+        0.09989961059912889
+      ],
+      "l2_is_peak": true,
+      "l2_is_unique_peak": true,
+      "label": "① Q-tier + default quality-only",
+      "level_weights": [
+        0.05,
+        0.1,
+        0.15,
+        0.2,
+        0.25,
+        0.25
+      ],
+      "peak_levels": [
+        2
+      ],
+      "selected_strategies": {
+        "claudesonnet420250514": "zero-shot",
+        "claudesonnet46": "few-cot",
+        "deepseekaiDeepSeekV3": "few-shot",
+        "googlegemma327bit": "few-cot",
+        "gpt35turbo": "zero-cot",
+        "gpt41": "few-shot",
+        "gpt4o": "few-shot",
+        "gpt4omini": "zero-cot",
+        "metallamaLlama3370BInstructTurbo": "few-cot",
+        "metallamaMetaLlama318BInstruct": "zero-cot",
+        "microsoftphi4": "few-cot",
+        "mistralaiMistralSmall24BInstruct2501": "zero-shot",
+        "qwen35122ba10b": "few-cot",
+        "qwen3535ba3b": "few-cot",
+        "qwen35397ba17b": "few-cot",
+        "zaiorgGLM46": "few-shot"
+      }
+    },
+    "q_tier_n_proportional_quality_only": {
+      "gaps": [
+        0.05655912698412702,
+        0.09430468409586057,
+        0.19272525599128554,
+        0.05605636352091836,
+        0.11566776208348817,
+        0.09989961059912889
+      ],
+      "l2_is_peak": true,
+      "l2_is_unique_peak": true,
+      "label": "⑤ Q-tier + N-proportional quality-only",
+      "level_weights": [
+        0.125,
+        0.25,
+        0.25,
+        0.1875,
+        0.125,
+        0.0625
+      ],
+      "peak_levels": [
+        2
+      ],
+      "selected_strategies": {
+        "claudesonnet420250514": "zero-shot",
+        "claudesonnet46": "few-cot",
+        "deepseekaiDeepSeekV3": "few-shot",
+        "googlegemma327bit": "zero-cot",
+        "gpt35turbo": "zero-cot",
+        "gpt41": "few-shot",
+        "gpt4o": "few-shot",
+        "gpt4omini": "zero-cot",
+        "metallamaLlama3370BInstructTurbo": "zero-cot",
+        "metallamaMetaLlama318BInstruct": "zero-cot",
+        "microsoftphi4": "zero-cot",
+        "mistralaiMistralSmall24BInstruct2501": "zero-shot",
+        "qwen35122ba10b": "few-cot",
+        "qwen3535ba3b": "zero-cot",
+        "qwen35397ba17b": "few-cot",
+        "zaiorgGLM46": "few-shot"
+      }
+    },
+    "q_tier_uniform_quality_only": {
+      "gaps": [
+        0.05655912698412702,
+        0.09430468409586057,
+        0.19272525599128554,
+        0.05605636352091836,
+        0.11566776208348817,
+        0.09989961059912889
+      ],
+      "l2_is_peak": true,
+      "l2_is_unique_peak": true,
+      "label": "④ Q-tier + uniform-level quality-only",
+      "level_weights": [
+        0.16666666666666666,
+        0.16666666666666666,
+        0.16666666666666666,
+        0.16666666666666666,
+        0.16666666666666666,
+        0.16666666666666666
+      ],
+      "peak_levels": [
+        2
+      ],
+      "selected_strategies": {
+        "claudesonnet420250514": "zero-shot",
+        "claudesonnet46": "few-cot",
+        "deepseekaiDeepSeekV3": "few-shot",
+        "googlegemma327bit": "few-cot",
+        "gpt35turbo": "zero-cot",
+        "gpt41": "few-shot",
+        "gpt4o": "few-shot",
+        "gpt4omini": "zero-cot",
+        "metallamaLlama3370BInstructTurbo": "zero-cot",
+        "metallamaMetaLlama318BInstruct": "zero-cot",
+        "microsoftphi4": "few-cot",
+        "mistralaiMistralSmall24BInstruct2501": "zero-shot",
+        "qwen35122ba10b": "few-cot",
+        "qwen3535ba3b": "few-cot",
+        "qwen35397ba17b": "few-cot",
+        "zaiorgGLM46": "few-shot"
+      }
+    },
+    "split_data_continuous_d4": {
+      "gaps": [
+        0.05072804232804238,
+        0.07323354497354495,
+        0.1504803880070547,
+        0.09004109851347948,
+        0.04646551141569895,
+        0.12005227778993774
+      ],
+      "l2_is_peak": true,
+      "l2_is_unique_peak": true,
+      "l2_peak_frequency": 0.8,
+      "label": "③ split-data tier + continuous D4",
+      "peak_levels": [
+        2
+      ],
+      "seeds": [
+        2026,
+        2027,
+        2028,
+        2029,
+        2030
+      ],
+      "std_gaps": [
+        0.00402438363171804,
+        0.006214069884710666,
+        0.02602731905925625,
+        0.010466686803571254,
+        0.01116260143383616,
+        0.009923885809279973
+      ]
+    }
+  },
+  "l2_is_peak_in_all_columns": true,
+  "l2_is_unique_peak_in_all_columns": true,
+  "levels": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5
+  ],
+  "tier_gap_definition": "mean(T1) - mean(T3); Q-tier groups are the supplied paper groups. Quality-only means D5=0 with D1-D4 weights renormalized from graphinstruct.scoring.",
+  "zero_api_zero_model_calls": true
+}

@@ -1,0 +1,284 @@
+{
+  "analysis": "B1B dimension-subset leaderboards (D1-only / D4-only / D1+D4)",
+  "construction": "each model's best quality-only baseline run held fixed; the run is re-scored as the unweighted per-instruction mean over the subset dimensions, aggregated with default level weights",
+  "reference": "full quality-only (D1-D4 renormalized) leaderboard",
+  "reference_ranking": [
+    "Sonnet-4.6",
+    "Qwen3.5-397B-A17B",
+    "Qwen3.5-122B-A10B",
+    "Qwen3.5-35B-A3B",
+    "GPT-4.1",
+    "GPT-4o",
+    "DeepSeek-V3",
+    "Sonnet-4",
+    "Llama-3.3-70B",
+    "GPT-3.5-turbo",
+    "GPT-4o-mini",
+    "Llama-3.1-8B"
+  ],
+  "subsets": {
+    "D1_D4": {
+      "dimensions": [
+        "D1",
+        "D4"
+      ],
+      "ranking": [
+        "Sonnet-4.6",
+        "Qwen3.5-397B-A17B",
+        "Qwen3.5-122B-A10B",
+        "Qwen3.5-35B-A3B",
+        "GPT-4.1",
+        "GPT-4o",
+        "Sonnet-4",
+        "DeepSeek-V3",
+        "Llama-3.3-70B",
+        "GPT-4o-mini",
+        "GPT-3.5-turbo",
+        "Llama-3.1-8B"
+      ],
+      "totals": {
+        "DeepSeek-V3": 0.8697,
+        "GPT-3.5-turbo": 0.8379,
+        "GPT-4.1": 0.8777,
+        "GPT-4o": 0.8756,
+        "GPT-4o-mini": 0.8403,
+        "Llama-3.1-8B": 0.804,
+        "Llama-3.3-70B": 0.8564,
+        "Qwen3.5-122B-A10B": 0.893,
+        "Qwen3.5-35B-A3B": 0.8846,
+        "Qwen3.5-397B-A17B": 0.8932,
+        "Sonnet-4": 0.8729,
+        "Sonnet-4.6": 0.9202
+      },
+      "vs_full_quality_only": {
+        "kendall_tau_b": 0.9393939393939394,
+        "max_rank_displacement": 1,
+        "rank_moves": [
+          {
+            "model": "DeepSeek-V3",
+            "reference_rank": 7,
+            "subset_rank": 8
+          },
+          {
+            "model": "Sonnet-4",
+            "reference_rank": 8,
+            "subset_rank": 7
+          },
+          {
+            "model": "GPT-3.5-turbo",
+            "reference_rank": 10,
+            "subset_rank": 11
+          },
+          {
+            "model": "GPT-4o-mini",
+            "reference_rank": 11,
+            "subset_rank": 10
+          }
+        ],
+        "spearman_rho": 0.986013986013986,
+        "top_retention": [
+          {
+            "effective_k": 5,
+            "requested_k": 5,
+            "retained": 5
+          },
+          {
+            "effective_k": 9,
+            "requested_k": 9,
+            "retained": 9
+          },
+          {
+            "effective_k": 12,
+            "requested_k": 12,
+            "retained": 12
+          }
+        ]
+      }
+    },
+    "D1_only": {
+      "dimensions": [
+        "D1"
+      ],
+      "ranking": [
+        "Sonnet-4.6",
+        "GPT-4.1",
+        "GPT-4o",
+        "Qwen3.5-122B-A10B",
+        "Qwen3.5-35B-A3B",
+        "DeepSeek-V3",
+        "Qwen3.5-397B-A17B",
+        "Sonnet-4",
+        "GPT-4o-mini",
+        "Llama-3.3-70B",
+        "Llama-3.1-8B",
+        "GPT-3.5-turbo"
+      ],
+      "totals": {
+        "DeepSeek-V3": 0.8605,
+        "GPT-3.5-turbo": 0.8321,
+        "GPT-4.1": 0.8653,
+        "GPT-4o": 0.8636,
+        "GPT-4o-mini": 0.8418,
+        "Llama-3.1-8B": 0.8359,
+        "Llama-3.3-70B": 0.8364,
+        "Qwen3.5-122B-A10B": 0.8635,
+        "Qwen3.5-35B-A3B": 0.8606,
+        "Qwen3.5-397B-A17B": 0.8519,
+        "Sonnet-4": 0.8421,
+        "Sonnet-4.6": 0.8856
+      },
+      "vs_full_quality_only": {
+        "kendall_tau_b": 0.6363636363636364,
+        "max_rank_displacement": 5,
+        "rank_moves": [
+          {
+            "model": "Qwen3.5-397B-A17B",
+            "reference_rank": 2,
+            "subset_rank": 7
+          },
+          {
+            "model": "Qwen3.5-122B-A10B",
+            "reference_rank": 3,
+            "subset_rank": 4
+          },
+          {
+            "model": "Qwen3.5-35B-A3B",
+            "reference_rank": 4,
+            "subset_rank": 5
+          },
+          {
+            "model": "GPT-4.1",
+            "reference_rank": 5,
+            "subset_rank": 2
+          },
+          {
+            "model": "GPT-4o",
+            "reference_rank": 6,
+            "subset_rank": 3
+          },
+          {
+            "model": "DeepSeek-V3",
+            "reference_rank": 7,
+            "subset_rank": 6
+          },
+          {
+            "model": "Llama-3.3-70B",
+            "reference_rank": 9,
+            "subset_rank": 10
+          },
+          {
+            "model": "GPT-3.5-turbo",
+            "reference_rank": 10,
+            "subset_rank": 12
+          },
+          {
+            "model": "GPT-4o-mini",
+            "reference_rank": 11,
+            "subset_rank": 9
+          },
+          {
+            "model": "Llama-3.1-8B",
+            "reference_rank": 12,
+            "subset_rank": 11
+          }
+        ],
+        "spearman_rho": 0.8041958041958042,
+        "top_retention": [
+          {
+            "effective_k": 5,
+            "requested_k": 5,
+            "retained": 4
+          },
+          {
+            "effective_k": 9,
+            "requested_k": 9,
+            "retained": 8
+          },
+          {
+            "effective_k": 12,
+            "requested_k": 12,
+            "retained": 12
+          }
+        ]
+      }
+    },
+    "D4_only": {
+      "dimensions": [
+        "D4"
+      ],
+      "ranking": [
+        "Sonnet-4.6",
+        "Qwen3.5-397B-A17B",
+        "Qwen3.5-122B-A10B",
+        "Qwen3.5-35B-A3B",
+        "Sonnet-4",
+        "GPT-4.1",
+        "GPT-4o",
+        "DeepSeek-V3",
+        "Llama-3.3-70B",
+        "GPT-3.5-turbo",
+        "GPT-4o-mini",
+        "Llama-3.1-8B"
+      ],
+      "totals": {
+        "DeepSeek-V3": 0.879,
+        "GPT-3.5-turbo": 0.8436,
+        "GPT-4.1": 0.8901,
+        "GPT-4o": 0.8877,
+        "GPT-4o-mini": 0.8389,
+        "Llama-3.1-8B": 0.772,
+        "Llama-3.3-70B": 0.8764,
+        "Qwen3.5-122B-A10B": 0.9226,
+        "Qwen3.5-35B-A3B": 0.9086,
+        "Qwen3.5-397B-A17B": 0.9344,
+        "Sonnet-4": 0.9037,
+        "Sonnet-4.6": 0.9548
+      },
+      "vs_full_quality_only": {
+        "kendall_tau_b": 0.9090909090909091,
+        "max_rank_displacement": 3,
+        "rank_moves": [
+          {
+            "model": "GPT-4.1",
+            "reference_rank": 5,
+            "subset_rank": 6
+          },
+          {
+            "model": "GPT-4o",
+            "reference_rank": 6,
+            "subset_rank": 7
+          },
+          {
+            "model": "DeepSeek-V3",
+            "reference_rank": 7,
+            "subset_rank": 8
+          },
+          {
+            "model": "Sonnet-4",
+            "reference_rank": 8,
+            "subset_rank": 5
+          }
+        ],
+        "spearman_rho": 0.958041958041958,
+        "top_retention": [
+          {
+            "effective_k": 5,
+            "requested_k": 5,
+            "retained": 4
+          },
+          {
+            "effective_k": 9,
+            "requested_k": 9,
+            "retained": 9
+          },
+          {
+            "effective_k": 12,
+            "requested_k": 12,
+            "retained": 12
+          }
+        ]
+      }
+    }
+  },
+  "zero_api_zero_model_calls": true
+}

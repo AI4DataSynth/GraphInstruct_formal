@@ -1,0 +1,125 @@
+{
+  "analysis": "C1 continuous D4 tier gaps across three tier definitions",
+  "best_baseline_selection": {
+    "criterion": "default LEVEL_WEIGHTS quality-only total (D5 excluded; D1-D4 renormalized)",
+    "strategies": {
+      "claudesonnet420250514": "zero-shot",
+      "claudesonnet46": "few-cot",
+      "deepseekaiDeepSeekV3": "few-shot",
+      "gpt35turbo": "zero-cot",
+      "gpt41": "few-shot",
+      "gpt4o": "few-shot",
+      "gpt4omini": "zero-cot",
+      "metallamaLlama3370BInstructTurbo": "few-cot",
+      "metallamaMetaLlama318BInstruct": "zero-cot",
+      "qwen35122ba10b": "few-cot",
+      "qwen3535ba3b": "few-cot",
+      "qwen35397ba17b": "few-cot"
+    }
+  },
+  "external_param_tier": {
+    "active_params_billions": {
+      "deepseekaiDeepSeekV3": 37,
+      "metallamaLlama3370BInstructTurbo": 70,
+      "metallamaMetaLlama318BInstruct": 8,
+      "qwen35122ba10b": 10,
+      "qwen3535ba3b": 3,
+      "qwen35397ba17b": 17
+    },
+    "coverage_limitation": "Only six open-weight models have the supplied active-parameter anchor; all closed models are excluded.",
+    "d4_tier_gaps_high_minus_low": [
+      0.011111111111111294,
+      0.0798033950617284,
+      0.04245592592592595,
+      0.012298765432098735,
+      0.020190362504613812,
+      0.02594992307967503
+    ],
+    "groups": {
+      "high": [
+        "metallamaLlama3370BInstructTurbo",
+        "deepseekaiDeepSeekV3",
+        "qwen35397ba17b"
+      ],
+      "low": [
+        "qwen35122ba10b",
+        "metallamaMetaLlama318BInstruct",
+        "qwen3535ba3b"
+      ]
+    },
+    "l2_is_peak": false,
+    "l2_is_unique_peak": false,
+    "peak_levels": [
+      1
+    ]
+  },
+  "metric": "Mean d4_instruction_score, a continuous [0,1] value present across all six levels.",
+  "q_based_tier": {
+    "d4_tier_gaps_T1_minus_T3": [
+      0.06321604938271608,
+      0.11222253086419753,
+      0.21285555555555558,
+      0.11355202821869503,
+      0.057528819745200965,
+      0.14263240545132527
+    ],
+    "groups": {
+      "T1": [
+        "claudesonnet46",
+        "qwen35397ba17b",
+        "qwen35122ba10b"
+      ],
+      "T2": [
+        "qwen3535ba3b",
+        "gpt41",
+        "gpt4o",
+        "deepseekaiDeepSeekV3",
+        "metallamaLlama3370BInstructTurbo",
+        "claudesonnet420250514"
+      ],
+      "T3": [
+        "gpt35turbo",
+        "gpt4omini",
+        "metallamaMetaLlama318BInstruct"
+      ]
+    },
+    "l2_is_peak": true,
+    "l2_is_unique_peak": true,
+    "peak_levels": [
+      2
+    ]
+  },
+  "split_data_tier": {
+    "l2_is_peak": true,
+    "l2_is_unique_peak": true,
+    "l2_peak_frequency": 1.0,
+    "mean_d4_tier_gaps_T1_minus_T3": [
+      0.06150123456790124,
+      0.11505308641975309,
+      0.21196535802469132,
+      0.1135082892416226,
+      0.05676257673280423,
+      0.15930663716470111
+    ],
+    "peak_levels": [
+      2
+    ],
+    "seeds": [
+      2026,
+      2027,
+      2028,
+      2029,
+      2030
+    ],
+    "selection_analysis_disjoint": true,
+    "std_d4_tier_gaps": [
+      0.0072716971634722806,
+      0.011254991229656217,
+      0.02374649480749595,
+      0.005697640180018713,
+      0.004053742509900871,
+      0.01549503027392617
+    ]
+  },
+  "zero_api_zero_model_calls": true
+}

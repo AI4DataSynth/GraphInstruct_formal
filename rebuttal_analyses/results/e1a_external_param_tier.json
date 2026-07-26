@@ -1,0 +1,47 @@
+{
+  "active_params_billions": {
+    "deepseekaiDeepSeekV3": 37,
+    "metallamaLlama3370BInstructTurbo": 70,
+    "metallamaMetaLlama318BInstruct": 8,
+    "qwen35122ba10b": 10,
+    "qwen3535ba3b": 3,
+    "qwen35397ba17b": 17
+  },
+  "analysis": "E1a active-parameter high/low tier control",
+  "coverage_limitation": "This external anchor covers only six open-weight models. Closed models have no supplied active-parameter value and are intentionally excluded.",
+  "groups": {
+    "high": [
+      "metallamaLlama3370BInstructTurbo",
+      "deepseekaiDeepSeekV3",
+      "qwen35397ba17b"
+    ],
+    "low": [
+      "qwen35122ba10b",
+      "metallamaMetaLlama318BInstruct",
+      "qwen3535ba3b"
+    ]
+  },
+  "l2_is_peak": false,
+  "l2_is_unique_peak": false,
+  "metric": "Quality-only D1-D4 level score, using imported repository dimension weights and default LEVEL_WEIGHTS for best-baseline selection.",
+  "peak_levels": [
+    1
+  ],
+  "quality_only_tier_gaps_high_minus_low": [
+    0.004866666666666575,
+    0.08044691358024691,
+    0.03879164488017417,
+    0.006776985171110139,
+    0.04081450773872308,
+    0.018286130641629872
+  ],
+  "selected_strategies": {
+    "deepseekaiDeepSeekV3": "few-shot",
+    "metallamaLlama3370BInstructTurbo": "few-cot",
+    "metallamaMetaLlama318BInstruct": "zero-cot",
+    "qwen35122ba10b": "few-cot",
+    "qwen3535ba3b": "few-cot",
+    "qwen35397ba17b": "few-cot"
+  },
+  "zero_api_zero_model_calls": true
+}

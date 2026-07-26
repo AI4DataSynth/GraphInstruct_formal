@@ -1,0 +1,624 @@
+{
+  "analysis": "OFF-4 cross-validation of CAAP-style per-(level,tier) strategy selection",
+  "five_fold_by_instruction": {
+    "folds": [
+      {
+        "counts_by_level": {
+          "0": 20,
+          "1": 40,
+          "2": 40,
+          "3": 30,
+          "4": 20,
+          "5": 10
+        },
+        "fold": 0,
+        "learned_strategy_per_tier_level": {
+          "T1|L0": "zero-cot",
+          "T1|L1": "zero-cot",
+          "T1|L2": "zero-cot",
+          "T1|L3": "zero-cot",
+          "T1|L4": "few-cot",
+          "T1|L5": "few-cot",
+          "T2|L0": "zero-cot",
+          "T2|L1": "zero-cot",
+          "T2|L2": "zero-cot",
+          "T2|L3": "zero-shot",
+          "T2|L4": "few-shot",
+          "T2|L5": "few-cot",
+          "T3|L0": "zero-cot",
+          "T3|L1": "zero-cot",
+          "T3|L2": "zero-cot",
+          "T3|L3": "zero-cot",
+          "T3|L4": "few-shot",
+          "T3|L5": "zero-cot"
+        },
+        "mean_gain_vs_best_single": 0.005062648170601099,
+        "per_model_gain_vs_best_single": {
+          "claudesonnet420250514": 0.0,
+          "claudesonnet46": 0.004021888516609229,
+          "deepseekaiDeepSeekV3": 0.010548643714234585,
+          "googlegemma327bit": 0.010289894518708764,
+          "gpt35turbo": 0.018597713431510732,
+          "gpt41": -0.00273733264806153,
+          "gpt4o": -0.009497629578391398,
+          "gpt4omini": 0.021632788896080335,
+          "metallamaLlama3370BInstructTurbo": 0.022052467296368783,
+          "metallamaMetaLlama318BInstruct": -0.010262555279193397,
+          "microsoftphi4": 0.014585170524711644,
+          "mistralaiMistralSmall24BInstruct2501": -0.006605968055632183,
+          "qwen35122ba10b": 0.006824229547660932,
+          "qwen3535ba3b": -0.003501392391103364,
+          "qwen35397ba17b": 0.004667217324388462,
+          "zaiorgGLM46": 0.00038723491172598656
+        }
+      },
+      {
+        "counts_by_level": {
+          "0": 20,
+          "1": 40,
+          "2": 40,
+          "3": 30,
+          "4": 20,
+          "5": 10
+        },
+        "fold": 1,
+        "learned_strategy_per_tier_level": {
+          "T1|L0": "zero-cot",
+          "T1|L1": "zero-cot",
+          "T1|L2": "zero-cot",
+          "T1|L3": "zero-cot",
+          "T1|L4": "few-cot",
+          "T1|L5": "zero-cot",
+          "T2|L0": "zero-cot",
+          "T2|L1": "zero-cot",
+          "T2|L2": "zero-cot",
+          "T2|L3": "zero-shot",
+          "T2|L4": "few-shot",
+          "T2|L5": "few-cot",
+          "T3|L0": "zero-cot",
+          "T3|L1": "zero-cot",
+          "T3|L2": "zero-cot",
+          "T3|L3": "zero-cot",
+          "T3|L4": "few-shot",
+          "T3|L5": "few-cot"
+        },
+        "mean_gain_vs_best_single": 0.0023119003509087174,
+        "per_model_gain_vs_best_single": {
+          "claudesonnet420250514": 0.0,
+          "claudesonnet46": -0.01783296785234767,
+          "deepseekaiDeepSeekV3": 0.004424860787516582,
+          "googlegemma327bit": 0.0013022878515773773,
+          "gpt35turbo": 0.005783337698146207,
+          "gpt41": 0.017452818413350668,
+          "gpt4o": -0.01811439018529515,
+          "gpt4omini": 0.017317018832332942,
+          "metallamaLlama3370BInstructTurbo": 0.0156943386655517,
+          "metallamaMetaLlama318BInstruct": -0.013547522088783848,
+          "microsoftphi4": 0.024424311467920012,
+          "mistralaiMistralSmall24BInstruct2501": -0.00615672342542295,
+          "qwen35122ba10b": 0.006092669629672476,
+          "qwen3535ba3b": -0.0004892574489142598,
+          "qwen35397ba17b": 0.013030073854728319,
+          "zaiorgGLM46": -0.01239045058549293
+        }
+      },
+      {
+        "counts_by_level": {
+          "0": 20,
+          "1": 40,
+          "2": 40,
+          "3": 30,
+          "4": 20,
+          "5": 10
+        },
+        "fold": 2,
+        "learned_strategy_per_tier_level": {
+          "T1|L0": "zero-cot",
+          "T1|L1": "zero-cot",
+          "T1|L2": "zero-cot",
+          "T1|L3": "zero-cot",
+          "T1|L4": "few-cot",
+          "T1|L5": "few-cot",
+          "T2|L0": "zero-cot",
+          "T2|L1": "zero-cot",
+          "T2|L2": "zero-cot",
+          "T2|L3": "zero-shot",
+          "T2|L4": "few-shot",
+          "T2|L5": "few-cot",
+          "T3|L0": "zero-cot",
+          "T3|L1": "zero-cot",
+          "T3|L2": "zero-cot",
+          "T3|L3": "zero-cot",
+          "T3|L4": "few-shot",
+          "T3|L5": "zero-cot"
+        },
+        "mean_gain_vs_best_single": 0.0041520573232896735,
+        "per_model_gain_vs_best_single": {
+          "claudesonnet420250514": 0.0,
+          "claudesonnet46": 0.001790836262325346,
+          "deepseekaiDeepSeekV3": -0.005846800534401786,
+          "googlegemma327bit": -0.0011855791091039958,
+          "gpt35turbo": 0.016045503169652697,
+          "gpt41": -0.0017665425877810836,
+          "gpt4o": 0.009273252628348772,
+          "gpt4omini": 0.01286348296094908,
+          "metallamaLlama3370BInstructTurbo": 0.024532755695181763,
+          "metallamaMetaLlama318BInstruct": 0.005480975856884451,
+          "microsoftphi4": 0.008491776527715489,
+          "mistralaiMistralSmall24BInstruct2501": -0.0039007445260550444,
+          "qwen35122ba10b": -0.0006879173075281519,
+          "qwen3535ba3b": -0.004711409251840326,
+          "qwen35397ba17b": 0.001582496563212188,
+          "zaiorgGLM46": 0.004470830825075378
+        }
+      },
+      {
+        "counts_by_level": {
+          "0": 20,
+          "1": 40,
+          "2": 40,
+          "3": 30,
+          "4": 20,
+          "5": 10
+        },
+        "fold": 3,
+        "learned_strategy_per_tier_level": {
+          "T1|L0": "zero-shot",
+          "T1|L1": "zero-cot",
+          "T1|L2": "zero-cot",
+          "T1|L3": "zero-cot",
+          "T1|L4": "few-cot",
+          "T1|L5": "few-cot",
+          "T2|L0": "zero-cot",
+          "T2|L1": "zero-cot",
+          "T2|L2": "zero-cot",
+          "T2|L3": "zero-shot",
+          "T2|L4": "few-shot",
+          "T2|L5": "few-cot",
+          "T3|L0": "zero-cot",
+          "T3|L1": "zero-cot",
+          "T3|L2": "zero-cot",
+          "T3|L3": "zero-cot",
+          "T3|L4": "few-shot",
+          "T3|L5": "zero-cot"
+        },
+        "mean_gain_vs_best_single": 0.007706916417607568,
+        "per_model_gain_vs_best_single": {
+          "claudesonnet420250514": 0.0,
+          "claudesonnet46": 0.0043559678733048335,
+          "deepseekaiDeepSeekV3": 0.001198889047630436,
+          "googlegemma327bit": 0.003544079772143993,
+          "gpt35turbo": 0.019205105444665138,
+          "gpt41": -0.004082304967495176,
+          "gpt4o": 0.00875265758924848,
+          "gpt4omini": 0.01800847471231859,
+          "metallamaLlama3370BInstructTurbo": 0.02356908355596965,
+          "metallamaMetaLlama318BInstruct": 0.005377380636207185,
+          "microsoftphi4": 0.016402392746570404,
+          "mistralaiMistralSmall24BInstruct2501": 0.012670005028653786,
+          "qwen35122ba10b": 0.007842553156027443,
+          "qwen3535ba3b": -0.0033337944607687575,
+          "qwen35397ba17b": 0.006036716079449556,
+          "zaiorgGLM46": 0.003763456467795523
+        }
+      },
+      {
+        "counts_by_level": {
+          "0": 20,
+          "1": 40,
+          "2": 40,
+          "3": 30,
+          "4": 20,
+          "5": 10
+        },
+        "fold": 4,
+        "learned_strategy_per_tier_level": {
+          "T1|L0": "zero-cot",
+          "T1|L1": "zero-cot",
+          "T1|L2": "zero-cot",
+          "T1|L3": "zero-cot",
+          "T1|L4": "few-cot",
+          "T1|L5": "few-cot",
+          "T2|L0": "zero-cot",
+          "T2|L1": "zero-cot",
+          "T2|L2": "zero-cot",
+          "T2|L3": "few-shot",
+          "T2|L4": "few-shot",
+          "T2|L5": "few-cot",
+          "T3|L0": "zero-cot",
+          "T3|L1": "zero-cot",
+          "T3|L2": "zero-cot",
+          "T3|L3": "zero-cot",
+          "T3|L4": "few-shot",
+          "T3|L5": "zero-cot"
+        },
+        "mean_gain_vs_best_single": 0.008177684839631202,
+        "per_model_gain_vs_best_single": {
+          "claudesonnet420250514": 0.0,
+          "claudesonnet46": 0.004194122006258905,
+          "deepseekaiDeepSeekV3": 0.0011321004525975953,
+          "googlegemma327bit": 0.013071571802790727,
+          "gpt35turbo": 0.014837052389561456,
+          "gpt41": 0.01841454657497088,
+          "gpt4o": 0.0022428783698866805,
+          "gpt4omini": 0.011264790479642461,
+          "metallamaLlama3370BInstructTurbo": 0.026831724102409638,
+          "metallamaMetaLlama318BInstruct": 0.007425168556787098,
+          "microsoftphi4": 0.025900436577483754,
+          "mistralaiMistralSmall24BInstruct2501": 0.01065482456933875,
+          "qwen35122ba10b": 0.00885279821322349,
+          "qwen3535ba3b": -0.0022896824024268847,
+          "qwen35397ba17b": -0.003931354576296342,
+          "zaiorgGLM46": -0.007758019682128969
+        }
+      }
+    ],
+    "n_folds": 5,
+    "overall_mean_gain_vs_best_single": 0.005482241420407652,
+    "positive_share": {
+      "positive": 53,
+      "total": 80
+    },
+    "seed": 2026
+  },
+  "leave_one_model_out": {
+    "mean_gain_vs_best_single_strategy": 0.0054339972383948484,
+    "mean_gain_vs_zero_shot": 0.030081869661282276,
+    "per_model": {
+      "claudesonnet420250514": {
+        "best_single_strategy": {
+          "strategy": "zero-shot",
+          "total": 0.8342372160060654
+        },
+        "cv_selected_total": 0.8342372160060654,
+        "display_name": "Sonnet-4",
+        "gain_vs_best_single_strategy": 0.0,
+        "gain_vs_zero_shot": 0.0,
+        "learned_strategy_per_level": {
+          "0": "zero-shot",
+          "1": "zero-shot",
+          "2": "zero-shot",
+          "3": "zero-shot",
+          "4": "zero-shot",
+          "5": "zero-shot"
+        },
+        "tier": "T2"
+      },
+      "claudesonnet46": {
+        "best_single_strategy": {
+          "strategy": "few-cot",
+          "total": 0.9018020924408092
+        },
+        "cv_selected_total": 0.8981895952000157,
+        "display_name": "Sonnet-4.6",
+        "gain_vs_best_single_strategy": -0.0036124972407934886,
+        "gain_vs_zero_shot": 0.039040778622103756,
+        "learned_strategy_per_level": {
+          "0": "zero-shot",
+          "1": "zero-cot",
+          "2": "zero-cot",
+          "3": "zero-cot",
+          "4": "few-cot",
+          "5": "zero-cot"
+        },
+        "tier": "T1"
+      },
+      "deepseekaiDeepSeekV3": {
+        "best_single_strategy": {
+          "strategy": "few-shot",
+          "total": 0.840476754597868
+        },
+        "cv_selected_total": 0.8473558745594167,
+        "display_name": "DeepSeek-V3",
+        "gain_vs_best_single_strategy": 0.006879119961548774,
+        "gain_vs_zero_shot": 0.025838212594998078,
+        "learned_strategy_per_level": {
+          "0": "zero-cot",
+          "1": "zero-cot",
+          "2": "zero-cot",
+          "3": "zero-shot",
+          "4": "few-shot",
+          "5": "few-cot"
+        },
+        "tier": "T2"
+      },
+      "googlegemma327bit": {
+        "best_single_strategy": {
+          "strategy": "few-cot",
+          "total": 0.818736165551354
+        },
+        "cv_selected_total": 0.8304473413618528,
+        "display_name": "Gemma-3-27B",
+        "gain_vs_best_single_strategy": 0.011711175810498853,
+        "gain_vs_zero_shot": 0.02746963895633181,
+        "learned_strategy_per_level": {
+          "0": "zero-cot",
+          "1": "zero-cot",
+          "2": "zero-cot",
+          "3": "few-shot",
+          "4": "few-shot",
+          "5": "few-cot"
+        },
+        "tier": "T2"
+      },
+      "gpt35turbo": {
+        "best_single_strategy": {
+          "strategy": "zero-cot",
+          "total": 0.7862381739841078
+        },
+        "cv_selected_total": 0.7968538988880582,
+        "display_name": "GPT-3.5-turbo",
+        "gain_vs_best_single_strategy": 0.010615724903950463,
+        "gain_vs_zero_shot": 0.04237935348635491,
+        "learned_strategy_per_level": {
+          "0": "zero-cot",
+          "1": "zero-cot",
+          "2": "zero-cot",
+          "3": "zero-shot",
+          "4": "few-shot",
+          "5": "zero-cot"
+        },
+        "tier": "T3"
+      },
+      "gpt41": {
+        "best_single_strategy": {
+          "strategy": "few-shot",
+          "total": 0.8495729046140045
+        },
+        "cv_selected_total": 0.8362319544273922,
+        "display_name": "GPT-4.1",
+        "gain_vs_best_single_strategy": -0.0133409501866123,
+        "gain_vs_zero_shot": 0.023313150851006603,
+        "learned_strategy_per_level": {
+          "0": "zero-cot",
+          "1": "zero-cot",
+          "2": "zero-cot",
+          "3": "zero-cot",
+          "4": "few-shot",
+          "5": "few-cot"
+        },
+        "tier": "T2"
+      },
+      "gpt4o": {
+        "best_single_strategy": {
+          "strategy": "few-shot",
+          "total": 0.8442977095382801
+        },
+        "cv_selected_total": 0.8423669337138561,
+        "display_name": "GPT-4o",
+        "gain_vs_best_single_strategy": -0.0019307758244240247,
+        "gain_vs_zero_shot": 0.014974266310335937,
+        "learned_strategy_per_level": {
+          "0": "zero-cot",
+          "1": "zero-cot",
+          "2": "zero-cot",
+          "3": "zero-shot",
+          "4": "few-shot",
+          "5": "few-cot"
+        },
+        "tier": "T2"
+      },
+      "gpt4omini": {
+        "best_single_strategy": {
+          "strategy": "zero-cot",
+          "total": 0.7843981220547683
+        },
+        "cv_selected_total": 0.8002973790832868,
+        "display_name": "GPT-4o-mini",
+        "gain_vs_best_single_strategy": 0.015899257028518465,
+        "gain_vs_zero_shot": 0.04799536836129237,
+        "learned_strategy_per_level": {
+          "0": "zero-cot",
+          "1": "zero-cot",
+          "2": "zero-cot",
+          "3": "zero-cot",
+          "4": "few-shot",
+          "5": "zero-cot"
+        },
+        "tier": "T3"
+      },
+      "metallamaLlama3370BInstructTurbo": {
+        "best_single_strategy": {
+          "strategy": "few-cot",
+          "total": 0.8340788738121021
+        },
+        "cv_selected_total": 0.8597293565560368,
+        "display_name": "Llama-3.3-70B",
+        "gain_vs_best_single_strategy": 0.025650482743934666,
+        "gain_vs_zero_shot": 0.04337001262162332,
+        "learned_strategy_per_level": {
+          "0": "zero-cot",
+          "1": "zero-cot",
+          "2": "zero-cot",
+          "3": "zero-shot",
+          "4": "few-shot",
+          "5": "few-cot"
+        },
+        "tier": "T2"
+      },
+      "metallamaMetaLlama318BInstruct": {
+        "best_single_strategy": {
+          "strategy": "zero-cot",
+          "total": 0.7305432335323384
+        },
+        "cv_selected_total": 0.7286857565754139,
+        "display_name": "Llama-3.1-8B",
+        "gain_vs_best_single_strategy": -0.0018574769569245086,
+        "gain_vs_zero_shot": 0.007630514636329799,
+        "learned_strategy_per_level": {
+          "0": "zero-cot",
+          "1": "zero-cot",
+          "2": "zero-cot",
+          "3": "zero-cot",
+          "4": "few-shot",
+          "5": "few-cot"
+        },
+        "tier": "T3"
+      },
+      "microsoftphi4": {
+        "best_single_strategy": {
+          "strategy": "few-cot",
+          "total": 0.8247462554287424
+        },
+        "cv_selected_total": 0.8438258183537627,
+        "display_name": "Phi-4",
+        "gain_vs_best_single_strategy": 0.019079562925020332,
+        "gain_vs_zero_shot": 0.03239335347783867,
+        "learned_strategy_per_level": {
+          "0": "zero-cot",
+          "1": "zero-cot",
+          "2": "zero-cot",
+          "3": "few-shot",
+          "4": "few-shot",
+          "5": "few-cot"
+        },
+        "tier": "T2"
+      },
+      "mistralaiMistralSmall24BInstruct2501": {
+        "best_single_strategy": {
+          "strategy": "zero-shot",
+          "total": 0.7947907922356912
+        },
+        "cv_selected_total": 0.8012003389979819,
+        "display_name": "Mistral-Small-24B",
+        "gain_vs_best_single_strategy": 0.006409546762290774,
+        "gain_vs_zero_shot": 0.006409546762290774,
+        "learned_strategy_per_level": {
+          "0": "zero-cot",
+          "1": "zero-cot",
+          "2": "zero-cot",
+          "3": "zero-cot",
+          "4": "few-shot",
+          "5": "zero-cot"
+        },
+        "tier": "T3"
+      },
+      "qwen35122ba10b": {
+        "best_single_strategy": {
+          "strategy": "few-cot",
+          "total": 0.871417893335303
+        },
+        "cv_selected_total": 0.8806222832658286,
+        "display_name": "Qwen3.5-122B-A10B",
+        "gain_vs_best_single_strategy": 0.009204389930525636,
+        "gain_vs_zero_shot": 0.049254816454445516,
+        "learned_strategy_per_level": {
+          "0": "zero-cot",
+          "1": "zero-cot",
+          "2": "zero-cot",
+          "3": "zero-cot",
+          "4": "few-cot",
+          "5": "few-cot"
+        },
+        "tier": "T1"
+      },
+      "qwen3535ba3b": {
+        "best_single_strategy": {
+          "strategy": "few-cot",
+          "total": 0.8606637264938249
+        },
+        "cv_selected_total": 0.8579301287877621,
+        "display_name": "Qwen3.5-35B-A3B",
+        "gain_vs_best_single_strategy": -0.0027335977060628514,
+        "gain_vs_zero_shot": 0.04870565399629034,
+        "learned_strategy_per_level": {
+          "0": "zero-cot",
+          "1": "zero-cot",
+          "2": "zero-cot",
+          "3": "few-shot",
+          "4": "few-shot",
+          "5": "few-cot"
+        },
+        "tier": "T2"
+      },
+      "qwen35397ba17b": {
+        "best_single_strategy": {
+          "strategy": "few-cot",
+          "total": 0.8787812091095794
+        },
+        "cv_selected_total": 0.8810215042905307,
+        "display_name": "Qwen3.5-397B-A17B",
+        "gain_vs_best_single_strategy": 0.0022402951809513683,
+        "gain_vs_zero_shot": 0.05190479190370556,
+        "learned_strategy_per_level": {
+          "0": "zero-cot",
+          "1": "zero-cot",
+          "2": "zero-cot",
+          "3": "zero-cot",
+          "4": "few-cot",
+          "5": "few-cot"
+        },
+        "tier": "T1"
+      },
+      "zaiorgGLM46": {
+        "best_single_strategy": {
+          "strategy": "few-shot",
+          "total": 0.8690504430505069
+        },
+        "cv_selected_total": 0.8717801415324024,
+        "display_name": "GLM-4.6",
+        "gain_vs_best_single_strategy": 0.002729698481895415,
+        "gain_vs_zero_shot": 0.02063045554556897,
+        "learned_strategy_per_level": {
+          "0": "zero-shot",
+          "1": "zero-cot",
+          "2": "zero-cot",
+          "3": "zero-cot",
+          "4": "few-cot",
+          "5": "few-cot"
+        },
+        "tier": "T1"
+      }
+    },
+    "positive_gain_vs_best_single": {
+      "nonnegative": 11,
+      "positive": 10,
+      "total": 16
+    },
+    "positive_gain_vs_zero_shot": {
+      "positive": 15,
+      "total": 16
+    }
+  },
+  "level_weights": [
+    0.05,
+    0.1,
+    0.15,
+    0.2,
+    0.25,
+    0.25
+  ],
+  "method_notes": {
+    "caveat": "Sonnet-4 has only zero-shot, so its held-out selection falls back to zero-shot and its gain vs best-single-strategy is ~0 by construction.",
+    "five_fold_by_instruction": "Best strategy per (level, tier) learned on 4/5 of instructions (all models pooled), applied to the held-out fifth; per-model gain vs best single strategy measured on the same held-out instructions.",
+    "leave_one_model_out": "Best strategy per (level, tier) learned from the other 11 models (tier-mates only), applied to the held-out model; gain vs the held-out model's own best single fixed strategy. The held-out model never informs its selection."
+  },
+  "tiering": {
+    "groups": {
+      "T1": [
+        "claudesonnet46",
+        "qwen35397ba17b",
+        "qwen35122ba10b",
+        "zaiorgGLM46"
+      ],
+      "T2": [
+        "qwen3535ba3b",
+        "gpt41",
+        "gpt4o",
+        "deepseekaiDeepSeekV3",
+        "claudesonnet420250514",
+        "metallamaLlama3370BInstructTurbo",
+        "microsoftphi4",
+        "googlegemma327bit"
+      ],
+      "T3": [
+        "mistralaiMistralSmall24BInstruct2501",
+        "gpt35turbo",
+        "gpt4omini",
+        "metallamaMetaLlama318BInstruct"
+      ]
+    },
+    "scheme": "paper coarse Q-tiers"
+  },
+  "zero_api_zero_model_calls": true
+}

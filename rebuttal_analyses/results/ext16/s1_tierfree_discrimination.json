@@ -1,0 +1,94 @@
+{
+  "analysis": "S1 tier-free cross-model discrimination (zero-shot quality-only level scores)",
+  "l2_is_peak": true,
+  "l2_is_unique_peak": true,
+  "l2_std_over_runnerup": 1.838,
+  "metric": "Per-level cross-model population std / mean / range of zero-shot quality-only level_score. No tiers.",
+  "models": [
+    "Sonnet-4.6",
+    "Qwen3.5-397B-A17B",
+    "Qwen3.5-122B-A10B",
+    "Qwen3.5-35B-A3B",
+    "GPT-4.1",
+    "GPT-4o",
+    "DeepSeek-V3",
+    "Llama-3.3-70B",
+    "Sonnet-4",
+    "GPT-3.5-turbo",
+    "GPT-4o-mini",
+    "Llama-3.1-8B",
+    "GLM-4.6",
+    "Gemma-3-27B",
+    "Phi-4",
+    "Mistral-Small-24B"
+  ],
+  "n_models": 16,
+  "peak_levels": [
+    2
+  ],
+  "per_level": [
+    {
+      "level": 0,
+      "max": 0.9601,
+      "mean": 0.9203,
+      "min": 0.8495,
+      "name": "format",
+      "range": 0.1106,
+      "std": 0.0327
+    },
+    {
+      "level": 1,
+      "max": 0.9874,
+      "mean": 0.9448,
+      "min": 0.7295,
+      "name": "single-constraint",
+      "range": 0.2579,
+      "std": 0.0613
+    },
+    {
+      "level": 2,
+      "max": 0.9338,
+      "mean": 0.8178,
+      "min": 0.5847,
+      "name": "multi-constraint",
+      "range": 0.3491,
+      "std": 0.1127
+    },
+    {
+      "level": 3,
+      "max": 0.8628,
+      "mean": 0.8136,
+      "min": 0.7804,
+      "name": "property",
+      "range": 0.0824,
+      "std": 0.0209
+    },
+    {
+      "level": 4,
+      "max": 0.7629,
+      "mean": 0.733,
+      "min": 0.7035,
+      "name": "semantic",
+      "range": 0.0594,
+      "std": 0.0159
+    },
+    {
+      "level": 5,
+      "max": 0.8845,
+      "mean": 0.7958,
+      "min": 0.7274,
+      "name": "multi-step",
+      "range": 0.1571,
+      "std": 0.0363
+    }
+  ],
+  "std_by_level": [
+    0.0327,
+    0.0613,
+    0.1127,
+    0.0209,
+    0.0159,
+    0.0363
+  ],
+  "zero_api_zero_model_calls": true
+}

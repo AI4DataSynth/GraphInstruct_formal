@@ -1,0 +1,193 @@
+{
+  "analysis": "UNI unified tier-gap robustness table",
+  "columns": {
+    "q_tier_continuous_d4": {
+      "gaps": [
+        0.06321604938271608,
+        0.11222253086419753,
+        0.21285555555555558,
+        0.11355202821869503,
+        0.057528819745200965,
+        0.14263240545132527
+      ],
+      "l2_is_peak": true,
+      "l2_is_unique_peak": true,
+      "label": "② Q-tier + continuous D4",
+      "peak_levels": [
+        2
+      ],
+      "selected_strategies": {
+        "claudesonnet420250514": "zero-shot",
+        "claudesonnet46": "few-cot",
+        "deepseekaiDeepSeekV3": "few-shot",
+        "gpt35turbo": "zero-cot",
+        "gpt41": "few-shot",
+        "gpt4o": "few-shot",
+        "gpt4omini": "zero-cot",
+        "metallamaLlama3370BInstructTurbo": "few-cot",
+        "metallamaMetaLlama318BInstruct": "zero-cot",
+        "qwen35122ba10b": "few-cot",
+        "qwen3535ba3b": "few-cot",
+        "qwen35397ba17b": "few-cot"
+      }
+    },
+    "q_tier_default_quality_only": {
+      "gaps": [
+        0.056623280423280575,
+        0.11622247639796657,
+        0.21510653594771256,
+        0.06698219222430601,
+        0.12126333841860937,
+        0.10603556000877834
+      ],
+      "l2_is_peak": true,
+      "l2_is_unique_peak": true,
+      "label": "① Q-tier + default quality-only",
+      "level_weights": [
+        0.05,
+        0.1,
+        0.15,
+        0.2,
+        0.25,
+        0.25
+      ],
+      "peak_levels": [
+        2
+      ],
+      "selected_strategies": {
+        "claudesonnet420250514": "zero-shot",
+        "claudesonnet46": "few-cot",
+        "deepseekaiDeepSeekV3": "few-shot",
+        "gpt35turbo": "zero-cot",
+        "gpt41": "few-shot",
+        "gpt4o": "few-shot",
+        "gpt4omini": "zero-cot",
+        "metallamaLlama3370BInstructTurbo": "few-cot",
+        "metallamaMetaLlama318BInstruct": "zero-cot",
+        "qwen35122ba10b": "few-cot",
+        "qwen3535ba3b": "few-cot",
+        "qwen35397ba17b": "few-cot"
+      }
+    },
+    "q_tier_n_proportional_quality_only": {
+      "gaps": [
+        0.056623280423280575,
+        0.11622247639796657,
+        0.21510653594771256,
+        0.06698219222430601,
+        0.12126333841860937,
+        0.10603556000877834
+      ],
+      "l2_is_peak": true,
+      "l2_is_unique_peak": true,
+      "label": "⑤ Q-tier + N-proportional quality-only",
+      "level_weights": [
+        0.125,
+        0.25,
+        0.25,
+        0.1875,
+        0.125,
+        0.0625
+      ],
+      "peak_levels": [
+        2
+      ],
+      "selected_strategies": {
+        "claudesonnet420250514": "zero-shot",
+        "claudesonnet46": "few-cot",
+        "deepseekaiDeepSeekV3": "few-shot",
+        "gpt35turbo": "zero-cot",
+        "gpt41": "few-shot",
+        "gpt4o": "few-shot",
+        "gpt4omini": "zero-cot",
+        "metallamaLlama3370BInstructTurbo": "zero-cot",
+        "metallamaMetaLlama318BInstruct": "zero-cot",
+        "qwen35122ba10b": "few-cot",
+        "qwen3535ba3b": "zero-cot",
+        "qwen35397ba17b": "few-cot"
+      }
+    },
+    "q_tier_uniform_quality_only": {
+      "gaps": [
+        0.056623280423280575,
+        0.11622247639796657,
+        0.21510653594771256,
+        0.06698219222430601,
+        0.12126333841860937,
+        0.10603556000877834
+      ],
+      "l2_is_peak": true,
+      "l2_is_unique_peak": true,
+      "label": "④ Q-tier + uniform-level quality-only",
+      "level_weights": [
+        0.16666666666666666,
+        0.16666666666666666,
+        0.16666666666666666,
+        0.16666666666666666,
+        0.16666666666666666,
+        0.16666666666666666
+      ],
+      "peak_levels": [
+        2
+      ],
+      "selected_strategies": {
+        "claudesonnet420250514": "zero-shot",
+        "claudesonnet46": "few-cot",
+        "deepseekaiDeepSeekV3": "few-shot",
+        "gpt35turbo": "zero-cot",
+        "gpt41": "few-shot",
+        "gpt4o": "few-shot",
+        "gpt4omini": "zero-cot",
+        "metallamaLlama3370BInstructTurbo": "zero-cot",
+        "metallamaMetaLlama318BInstruct": "zero-cot",
+        "qwen35122ba10b": "few-cot",
+        "qwen3535ba3b": "few-cot",
+        "qwen35397ba17b": "few-cot"
+      }
+    },
+    "split_data_continuous_d4": {
+      "gaps": [
+        0.06150123456790124,
+        0.11505308641975309,
+        0.21196535802469132,
+        0.1135082892416226,
+        0.05676257673280423,
+        0.15930663716470111
+      ],
+      "l2_is_peak": true,
+      "l2_is_unique_peak": true,
+      "l2_peak_frequency": 1.0,
+      "label": "③ split-data tier + continuous D4",
+      "peak_levels": [
+        2
+      ],
+      "seeds": [
+        2026,
+        2027,
+        2028,
+        2029,
+        2030
+      ],
+      "std_gaps": [
+        0.0072716971634722806,
+        0.011254991229656217,
+        0.02374649480749595,
+        0.005697640180018713,
+        0.004053742509900871,
+        0.01549503027392617
+      ]
+    }
+  },
+  "l2_is_peak_in_all_columns": true,
+  "l2_is_unique_peak_in_all_columns": true,
+  "levels": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5
+  ],
+  "tier_gap_definition": "mean(T1) - mean(T3); Q-tier groups are the supplied paper groups. Quality-only means D5=0 with D1-D4 weights renormalized from graphinstruct.scoring.",
+  "zero_api_zero_model_calls": true
+}

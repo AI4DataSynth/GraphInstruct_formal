@@ -1,0 +1,978 @@
+{
+  "universe": "12 baseline models x baseline strategies (45 cells; frozen, no ext16)",
+  "n_cells": 45,
+  "schemes": {
+    "default": [
+      0.05,
+      0.1,
+      0.15,
+      0.2,
+      0.25,
+      0.25
+    ],
+    "N-balanced (1/n_l)": [
+      0.1764705882352941,
+      0.08823529411764705,
+      0.08823529411764705,
+      0.11764705882352941,
+      0.1764705882352941,
+      0.3529411764705882
+    ],
+    "Uniform (1/6)": [
+      0.16666666666666666,
+      0.16666666666666666,
+      0.16666666666666666,
+      0.16666666666666666,
+      0.16666666666666666,
+      0.16666666666666666
+    ],
+    "Mass-balanced (n_l)": [
+      0.125,
+      0.25,
+      0.25,
+      0.1875,
+      0.125,
+      0.0625
+    ],
+    "L5-zero (renorm)": [
+      0.06666666666666667,
+      0.13333333333333333,
+      0.19999999999999998,
+      0.26666666666666666,
+      0.3333333333333333,
+      0.0
+    ]
+  },
+  "default_ranking_top20": [
+    [
+      "claudesonnet46",
+      "few-cot",
+      0.9018
+    ],
+    [
+      "claudesonnet46",
+      "few-shot",
+      0.8836
+    ],
+    [
+      "qwen35397ba17b",
+      "few-cot",
+      0.8788
+    ],
+    [
+      "claudesonnet46",
+      "zero-cot",
+      0.878
+    ],
+    [
+      "qwen35122ba10b",
+      "few-cot",
+      0.8714
+    ],
+    [
+      "qwen35397ba17b",
+      "zero-cot",
+      0.8615
+    ],
+    [
+      "qwen35122ba10b",
+      "zero-cot",
+      0.8608
+    ],
+    [
+      "qwen3535ba3b",
+      "few-cot",
+      0.8607
+    ],
+    [
+      "claudesonnet46",
+      "zero-shot",
+      0.8591
+    ],
+    [
+      "qwen35122ba10b",
+      "few-shot",
+      0.853
+    ],
+    [
+      "gpt41",
+      "few-shot",
+      0.8496
+    ],
+    [
+      "qwen35397ba17b",
+      "few-shot",
+      0.8479
+    ],
+    [
+      "qwen3535ba3b",
+      "zero-cot",
+      0.8458
+    ],
+    [
+      "gpt4o",
+      "few-shot",
+      0.8443
+    ],
+    [
+      "deepseekaiDeepSeekV3",
+      "few-shot",
+      0.8405
+    ],
+    [
+      "deepseekaiDeepSeekV3",
+      "few-cot",
+      0.8395
+    ],
+    [
+      "claudesonnet420250514",
+      "zero-shot",
+      0.8342
+    ],
+    [
+      "metallamaLlama3370BInstructTurbo",
+      "few-cot",
+      0.8341
+    ],
+    [
+      "qwen35122ba10b",
+      "zero-shot",
+      0.8314
+    ],
+    [
+      "metallamaLlama3370BInstructTurbo",
+      "few-shot",
+      0.8312
+    ]
+  ],
+  "per_scheme": {
+    "default": {
+      "top9_retained": 9,
+      "top15_retained": 15,
+      "top15_jaccard": 1.0,
+      "max_rank_shift_top15": 0,
+      "spearman_rho_45cells": 1.0,
+      "kendall_tau_45cells": 1.0,
+      "top15_ranking": [
+        [
+          "claudesonnet46",
+          "few-cot",
+          0.9018
+        ],
+        [
+          "claudesonnet46",
+          "few-shot",
+          0.8836
+        ],
+        [
+          "qwen35397ba17b",
+          "few-cot",
+          0.8788
+        ],
+        [
+          "claudesonnet46",
+          "zero-cot",
+          0.878
+        ],
+        [
+          "qwen35122ba10b",
+          "few-cot",
+          0.8714
+        ],
+        [
+          "qwen35397ba17b",
+          "zero-cot",
+          0.8615
+        ],
+        [
+          "qwen35122ba10b",
+          "zero-cot",
+          0.8608
+        ],
+        [
+          "qwen3535ba3b",
+          "few-cot",
+          0.8607
+        ],
+        [
+          "claudesonnet46",
+          "zero-shot",
+          0.8591
+        ],
+        [
+          "qwen35122ba10b",
+          "few-shot",
+          0.853
+        ],
+        [
+          "gpt41",
+          "few-shot",
+          0.8496
+        ],
+        [
+          "qwen35397ba17b",
+          "few-shot",
+          0.8479
+        ],
+        [
+          "qwen3535ba3b",
+          "zero-cot",
+          0.8458
+        ],
+        [
+          "gpt4o",
+          "few-shot",
+          0.8443
+        ],
+        [
+          "deepseekaiDeepSeekV3",
+          "few-shot",
+          0.8405
+        ]
+      ],
+      "top9_dropped": [],
+      "top9_entered": [],
+      "top15_dropped": [],
+      "top15_entered": []
+    },
+    "N-balanced (1/n_l)": {
+      "top9_retained": 9,
+      "top15_retained": 14,
+      "top15_jaccard": 0.875,
+      "max_rank_shift_top15": 4,
+      "spearman_rho_45cells": 0.9808,
+      "kendall_tau_45cells": 0.9071,
+      "top15_ranking": [
+        [
+          "claudesonnet46",
+          "few-cot",
+          0.9087
+        ],
+        [
+          "claudesonnet46",
+          "few-shot",
+          0.8938
+        ],
+        [
+          "claudesonnet46",
+          "zero-cot",
+          0.888
+        ],
+        [
+          "qwen35397ba17b",
+          "few-cot",
+          0.8867
+        ],
+        [
+          "qwen35122ba10b",
+          "few-cot",
+          0.883
+        ],
+        [
+          "qwen35397ba17b",
+          "zero-cot",
+          0.8791
+        ],
+        [
+          "qwen35122ba10b",
+          "zero-cot",
+          0.8763
+        ],
+        [
+          "qwen3535ba3b",
+          "few-cot",
+          0.8719
+        ],
+        [
+          "claudesonnet46",
+          "zero-shot",
+          0.8706
+        ],
+        [
+          "gpt4o",
+          "few-shot",
+          0.8614
+        ],
+        [
+          "qwen35122ba10b",
+          "few-shot",
+          0.859
+        ],
+        [
+          "qwen3535ba3b",
+          "zero-cot",
+          0.8588
+        ],
+        [
+          "gpt41",
+          "few-shot",
+          0.8574
+        ],
+        [
+          "deepseekaiDeepSeekV3",
+          "few-cot",
+          0.8562
+        ],
+        [
+          "qwen35397ba17b",
+          "few-shot",
+          0.8538
+        ]
+      ],
+      "top9_dropped": [],
+      "top9_entered": [],
+      "top15_dropped": [
+        {
+          "cell": [
+            "deepseekaiDeepSeekV3",
+            "few-shot"
+          ],
+          "display": "DeepSeek-V3 few-shot",
+          "default_rank": 15,
+          "new_rank": 16
+        }
+      ],
+      "top15_entered": [
+        {
+          "cell": [
+            "deepseekaiDeepSeekV3",
+            "few-cot"
+          ],
+          "display": "DeepSeek-V3 few-cot",
+          "default_rank": 16,
+          "new_rank": 14
+        }
+      ]
+    },
+    "Uniform (1/6)": {
+      "top9_retained": 8,
+      "top15_retained": 14,
+      "top15_jaccard": 0.875,
+      "max_rank_shift_top15": 3,
+      "spearman_rho_45cells": 0.9829,
+      "kendall_tau_45cells": 0.9212,
+      "top15_ranking": [
+        [
+          "claudesonnet46",
+          "few-cot",
+          0.9194
+        ],
+        [
+          "claudesonnet46",
+          "few-shot",
+          0.9061
+        ],
+        [
+          "claudesonnet46",
+          "zero-cot",
+          0.9059
+        ],
+        [
+          "qwen35397ba17b",
+          "few-cot",
+          0.8953
+        ],
+        [
+          "qwen35122ba10b",
+          "few-cot",
+          0.8915
+        ],
+        [
+          "claudesonnet46",
+          "zero-shot",
+          0.8892
+        ],
+        [
+          "qwen35397ba17b",
+          "zero-cot",
+          0.8877
+        ],
+        [
+          "qwen35122ba10b",
+          "zero-cot",
+          0.8872
+        ],
+        [
+          "qwen35122ba10b",
+          "few-shot",
+          0.8789
+        ],
+        [
+          "gpt41",
+          "few-shot",
+          0.8747
+        ],
+        [
+          "qwen3535ba3b",
+          "few-cot",
+          0.8743
+        ],
+        [
+          "qwen35397ba17b",
+          "few-shot",
+          0.8735
+        ],
+        [
+          "qwen3535ba3b",
+          "zero-cot",
+          0.8719
+        ],
+        [
+          "gpt4o",
+          "few-shot",
+          0.8693
+        ],
+        [
+          "claudesonnet420250514",
+          "zero-shot",
+          0.8677
+        ]
+      ],
+      "top9_dropped": [
+        {
+          "cell": [
+            "qwen3535ba3b",
+            "few-cot"
+          ],
+          "display": "Qwen3.5-35B few-cot",
+          "default_rank": 8,
+          "new_rank": 11
+        }
+      ],
+      "top9_entered": [
+        {
+          "cell": [
+            "qwen35122ba10b",
+            "few-shot"
+          ],
+          "display": "Qwen3.5-122B few-shot",
+          "default_rank": 10,
+          "new_rank": 9
+        }
+      ],
+      "top15_dropped": [
+        {
+          "cell": [
+            "deepseekaiDeepSeekV3",
+            "few-shot"
+          ],
+          "display": "DeepSeek-V3 few-shot",
+          "default_rank": 15,
+          "new_rank": 17
+        }
+      ],
+      "top15_entered": [
+        {
+          "cell": [
+            "claudesonnet420250514",
+            "zero-shot"
+          ],
+          "display": "Sonnet-4 zero-shot",
+          "default_rank": 17,
+          "new_rank": 15
+        }
+      ]
+    },
+    "Mass-balanced (n_l)": {
+      "top9_retained": 8,
+      "top15_retained": 12,
+      "top15_jaccard": 0.6667,
+      "max_rank_shift_top15": 8,
+      "spearman_rho_45cells": 0.9466,
+      "kendall_tau_45cells": 0.8384,
+      "top15_ranking": [
+        [
+          "claudesonnet46",
+          "few-cot",
+          0.9307
+        ],
+        [
+          "claudesonnet46",
+          "zero-cot",
+          0.9244
+        ],
+        [
+          "claudesonnet46",
+          "few-shot",
+          0.918
+        ],
+        [
+          "claudesonnet46",
+          "zero-shot",
+          0.9071
+        ],
+        [
+          "qwen35397ba17b",
+          "few-cot",
+          0.9037
+        ],
+        [
+          "qwen35122ba10b",
+          "few-cot",
+          0.9011
+        ],
+        [
+          "qwen35122ba10b",
+          "zero-cot",
+          0.9009
+        ],
+        [
+          "qwen35397ba17b",
+          "zero-cot",
+          0.8997
+        ],
+        [
+          "qwen35122ba10b",
+          "few-shot",
+          0.8951
+        ],
+        [
+          "gpt41",
+          "few-shot",
+          0.8899
+        ],
+        [
+          "qwen35397ba17b",
+          "few-shot",
+          0.8897
+        ],
+        [
+          "claudesonnet420250514",
+          "zero-shot",
+          0.8883
+        ],
+        [
+          "qwen35122ba10b",
+          "zero-shot",
+          0.8871
+        ],
+        [
+          "qwen3535ba3b",
+          "zero-cot",
+          0.8864
+        ],
+        [
+          "qwen35397ba17b",
+          "zero-shot",
+          0.8818
+        ]
+      ],
+      "top9_dropped": [
+        {
+          "cell": [
+            "qwen3535ba3b",
+            "few-cot"
+          ],
+          "display": "Qwen3.5-35B few-cot",
+          "default_rank": 8,
+          "new_rank": 16
+        }
+      ],
+      "top9_entered": [
+        {
+          "cell": [
+            "qwen35122ba10b",
+            "few-shot"
+          ],
+          "display": "Qwen3.5-122B few-shot",
+          "default_rank": 10,
+          "new_rank": 9
+        }
+      ],
+      "top15_dropped": [
+        {
+          "cell": [
+            "qwen3535ba3b",
+            "few-cot"
+          ],
+          "display": "Qwen3.5-35B few-cot",
+          "default_rank": 8,
+          "new_rank": 16
+        },
+        {
+          "cell": [
+            "gpt4o",
+            "few-shot"
+          ],
+          "display": "GPT-4o few-shot",
+          "default_rank": 14,
+          "new_rank": 17
+        },
+        {
+          "cell": [
+            "deepseekaiDeepSeekV3",
+            "few-shot"
+          ],
+          "display": "DeepSeek-V3 few-shot",
+          "default_rank": 15,
+          "new_rank": 18
+        }
+      ],
+      "top15_entered": [
+        {
+          "cell": [
+            "claudesonnet420250514",
+            "zero-shot"
+          ],
+          "display": "Sonnet-4 zero-shot",
+          "default_rank": 17,
+          "new_rank": 12
+        },
+        {
+          "cell": [
+            "qwen35122ba10b",
+            "zero-shot"
+          ],
+          "display": "Qwen3.5-122B zero-shot",
+          "default_rank": 19,
+          "new_rank": 13
+        },
+        {
+          "cell": [
+            "qwen35397ba17b",
+            "zero-shot"
+          ],
+          "display": "Qwen3.5-397B zero-shot",
+          "default_rank": 23,
+          "new_rank": 15
+        }
+      ]
+    },
+    "L5-zero (renorm)": {
+      "top9_retained": 6,
+      "top15_retained": 15,
+      "top15_jaccard": 1.0,
+      "max_rank_shift_top15": 6,
+      "spearman_rho_45cells": 0.9825,
+      "kendall_tau_45cells": 0.903,
+      "top15_ranking": [
+        [
+          "claudesonnet46",
+          "few-cot",
+          0.9042
+        ],
+        [
+          "claudesonnet46",
+          "few-shot",
+          0.8878
+        ],
+        [
+          "claudesonnet46",
+          "zero-cot",
+          0.8815
+        ],
+        [
+          "qwen35397ba17b",
+          "few-cot",
+          0.8811
+        ],
+        [
+          "qwen35122ba10b",
+          "few-cot",
+          0.8713
+        ],
+        [
+          "qwen35122ba10b",
+          "few-shot",
+          0.8677
+        ],
+        [
+          "claudesonnet46",
+          "zero-shot",
+          0.8653
+        ],
+        [
+          "qwen35397ba17b",
+          "few-shot",
+          0.8622
+        ],
+        [
+          "gpt41",
+          "few-shot",
+          0.8599
+        ],
+        [
+          "qwen35122ba10b",
+          "zero-cot",
+          0.8559
+        ],
+        [
+          "qwen3535ba3b",
+          "few-cot",
+          0.8551
+        ],
+        [
+          "qwen35397ba17b",
+          "zero-cot",
+          0.8543
+        ],
+        [
+          "deepseekaiDeepSeekV3",
+          "few-shot",
+          0.8483
+        ],
+        [
+          "gpt4o",
+          "few-shot",
+          0.8469
+        ],
+        [
+          "qwen3535ba3b",
+          "zero-cot",
+          0.8449
+        ]
+      ],
+      "top9_dropped": [
+        {
+          "cell": [
+            "qwen35397ba17b",
+            "zero-cot"
+          ],
+          "display": "Qwen3.5-397B zero-cot",
+          "default_rank": 6,
+          "new_rank": 12
+        },
+        {
+          "cell": [
+            "qwen35122ba10b",
+            "zero-cot"
+          ],
+          "display": "Qwen3.5-122B zero-cot",
+          "default_rank": 7,
+          "new_rank": 10
+        },
+        {
+          "cell": [
+            "qwen3535ba3b",
+            "few-cot"
+          ],
+          "display": "Qwen3.5-35B few-cot",
+          "default_rank": 8,
+          "new_rank": 11
+        }
+      ],
+      "top9_entered": [
+        {
+          "cell": [
+            "qwen35122ba10b",
+            "few-shot"
+          ],
+          "display": "Qwen3.5-122B few-shot",
+          "default_rank": 10,
+          "new_rank": 6
+        },
+        {
+          "cell": [
+            "qwen35397ba17b",
+            "few-shot"
+          ],
+          "display": "Qwen3.5-397B few-shot",
+          "default_rank": 12,
+          "new_rank": 8
+        },
+        {
+          "cell": [
+            "gpt41",
+            "few-shot"
+          ],
+          "display": "GPT-4.1 few-shot",
+          "default_rank": 11,
+          "new_rank": 9
+        }
+      ],
+      "top15_dropped": [],
+      "top15_entered": []
+    }
+  },
+  "model_level_l5_zero": {
+    "construction": "best baseline strategy per model under each scheme",
+    "default_ranking": [
+      [
+        "claudesonnet46",
+        "Sonnet-4.6",
+        0.9018
+      ],
+      [
+        "qwen35397ba17b",
+        "Qwen3.5-397B-A17B",
+        0.8788
+      ],
+      [
+        "qwen35122ba10b",
+        "Qwen3.5-122B-A10B",
+        0.8714
+      ],
+      [
+        "qwen3535ba3b",
+        "Qwen3.5-35B-A3B",
+        0.8607
+      ],
+      [
+        "gpt41",
+        "GPT-4.1",
+        0.8496
+      ],
+      [
+        "gpt4o",
+        "GPT-4o",
+        0.8443
+      ],
+      [
+        "deepseekaiDeepSeekV3",
+        "DeepSeek-V3",
+        0.8405
+      ],
+      [
+        "claudesonnet420250514",
+        "Sonnet-4",
+        0.8342
+      ],
+      [
+        "metallamaLlama3370BInstructTurbo",
+        "Llama-3.3-70B",
+        0.8341
+      ],
+      [
+        "gpt35turbo",
+        "GPT-3.5-turbo",
+        0.7862
+      ],
+      [
+        "gpt4omini",
+        "GPT-4o-mini",
+        0.7844
+      ],
+      [
+        "metallamaMetaLlama318BInstruct",
+        "Llama-3.1-8B",
+        0.7305
+      ]
+    ],
+    "l5_zero_ranking": [
+      [
+        "claudesonnet46",
+        "Sonnet-4.6",
+        0.9042
+      ],
+      [
+        "qwen35397ba17b",
+        "Qwen3.5-397B-A17B",
+        0.8811
+      ],
+      [
+        "qwen35122ba10b",
+        "Qwen3.5-122B-A10B",
+        0.8713
+      ],
+      [
+        "gpt41",
+        "GPT-4.1",
+        0.8599
+      ],
+      [
+        "qwen3535ba3b",
+        "Qwen3.5-35B-A3B",
+        0.8551
+      ],
+      [
+        "deepseekaiDeepSeekV3",
+        "DeepSeek-V3",
+        0.8483
+      ],
+      [
+        "gpt4o",
+        "GPT-4o",
+        0.8469
+      ],
+      [
+        "metallamaLlama3370BInstructTurbo",
+        "Llama-3.3-70B",
+        0.8438
+      ],
+      [
+        "claudesonnet420250514",
+        "Sonnet-4",
+        0.8435
+      ],
+      [
+        "gpt4omini",
+        "GPT-4o-mini",
+        0.7857
+      ],
+      [
+        "gpt35turbo",
+        "GPT-3.5-turbo",
+        0.7832
+      ],
+      [
+        "metallamaMetaLlama318BInstruct",
+        "Llama-3.1-8B",
+        0.726
+      ]
+    ],
+    "vs_default": {
+      "spearman_rho": 0.972027972027972,
+      "kendall_tau_b": 0.8787878787878788,
+      "top_retention": [
+        {
+          "requested_k": 5,
+          "effective_k": 5,
+          "retained": 5
+        },
+        {
+          "requested_k": 9,
+          "effective_k": 9,
+          "retained": 9
+        },
+        {
+          "requested_k": 12,
+          "effective_k": 12,
+          "retained": 12
+        }
+      ],
+      "max_rank_displacement": 1,
+      "rank_moves": [
+        {
+          "model": "Qwen3.5-35B-A3B",
+          "default_rank": 4,
+          "l5_zero_rank": 5
+        },
+        {
+          "model": "GPT-4.1",
+          "default_rank": 5,
+          "l5_zero_rank": 4
+        },
+        {
+          "model": "GPT-4o",
+          "default_rank": 6,
+          "l5_zero_rank": 7
+        },
+        {
+          "model": "DeepSeek-V3",
+          "default_rank": 7,
+          "l5_zero_rank": 6
+        },
+        {
+          "model": "Sonnet-4",
+          "default_rank": 8,
+          "l5_zero_rank": 9
+        },
+        {
+          "model": "Llama-3.3-70B",
+          "default_rank": 9,
+          "l5_zero_rank": 8
+        },
+        {
+          "model": "GPT-3.5-turbo",
+          "default_rank": 10,
+          "l5_zero_rank": 11
+        },
+        {
+          "model": "GPT-4o-mini",
+          "default_rank": 11,
+          "l5_zero_rank": 10
+        }
+      ]
+    }
+  }
+}

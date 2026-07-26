@@ -1,0 +1,356 @@
+{
+  "analysis": "OFF-A task-family regrouping of the tier-gap discrimination metric",
+  "best_baseline_strategies": {
+    "claudesonnet420250514": "zero-shot",
+    "claudesonnet46": "few-cot",
+    "deepseekaiDeepSeekV3": "few-shot",
+    "googlegemma327bit": "few-cot",
+    "gpt35turbo": "zero-cot",
+    "gpt41": "few-shot",
+    "gpt4o": "few-shot",
+    "gpt4omini": "zero-cot",
+    "metallamaLlama3370BInstructTurbo": "few-cot",
+    "metallamaMetaLlama318BInstruct": "zero-cot",
+    "microsoftphi4": "few-cot",
+    "mistralaiMistralSmall24BInstruct2501": "zero-shot",
+    "qwen35122ba10b": "few-cot",
+    "qwen3535ba3b": "few-cot",
+    "qwen35397ba17b": "few-cot",
+    "zaiorgGLM46": "few-shot"
+  },
+  "family_mapping": {
+    "DomainSemantic": [
+      4
+    ],
+    "EditingReasoning": [
+      5
+    ],
+    "Format": [
+      0
+    ],
+    "NumericProperty": [
+      3
+    ],
+    "StructuralConstraint": [
+      1,
+      2
+    ]
+  },
+  "family_mapping_justification": {
+    "DomainSemantic": "L4 domain-grounded graphs with a domain label (~5.4).",
+    "EditingReasoning": "L5 edit-a-base-graph / multi-step task_type.",
+    "Format": "L0: bare 'graph with n nodes' (mean 1.8 explicit constraints).",
+    "NumericProperty": "L3 distributional targets density/modularity/clustering/path-length (~6.9).",
+    "StructuralConstraint": "L1 single structural constraint (~2.5) + L2 composed multi-constraint (~3.9); contains the paper's multi-constraint composition family (L2)."
+  },
+  "fine_scheme_continuous_d4": {
+    "T1_family_means": {
+      "DomainSemantic": 0.9237063439861786,
+      "EditingReasoning": 0.9221126170079921,
+      "Format": 0.9564444444444444,
+      "MultiConstraint": 0.9264001851851852,
+      "NumericProperty": 0.9138333333333333,
+      "SingleConstraint": 0.9866953703703704
+    },
+    "T3_family_means": {
+      "DomainSemantic": 0.8758568863364843,
+      "EditingReasoning": 0.790374118044947,
+      "Format": 0.8946712962962963,
+      "MultiConstraint": 0.7324739814814815,
+      "NumericProperty": 0.8187246031746032,
+      "SingleConstraint": 0.8972923611111111
+    },
+    "bootstrap_ci_95": {
+      "DomainSemantic": {
+        "ci_95_percentile": [
+          0.03866007272424274,
+          0.05742102406513721
+        ],
+        "n_bootstrap": 5000,
+        "n_instruction_ids": 100,
+        "observed_gap": 0.047849457649694394,
+        "seed": 2026
+      },
+      "EditingReasoning": {
+        "ci_95_percentile": [
+          0.07064075899856025,
+          0.2060902856870711
+        ],
+        "n_bootstrap": 5000,
+        "n_instruction_ids": 50,
+        "observed_gap": 0.13173849896304513,
+        "seed": 2026
+      },
+      "Format": {
+        "ci_95_percentile": [
+          0.04434675925925935,
+          0.08002800925925929
+        ],
+        "n_bootstrap": 5000,
+        "n_instruction_ids": 100,
+        "observed_gap": 0.06177314814814816,
+        "seed": 2026
+      },
+      "MultiConstraint": {
+        "ci_95_percentile": [
+          0.166439050925926,
+          0.22335062499999994
+        ],
+        "n_bootstrap": 5000,
+        "n_instruction_ids": 200,
+        "observed_gap": 0.19392620370370373,
+        "seed": 2026
+      },
+      "NumericProperty": {
+        "ci_95_percentile": [
+          0.0846375529100529,
+          0.10415049603174599
+        ],
+        "n_bootstrap": 5000,
+        "n_instruction_ids": 150,
+        "observed_gap": 0.09510873015873023,
+        "seed": 2026
+      },
+      "SingleConstraint": {
+        "ci_95_percentile": [
+          0.06875718750000002,
+          0.11202024305555554
+        ],
+        "n_bootstrap": 5000,
+        "n_instruction_ids": 200,
+        "observed_gap": 0.08940300925925926,
+        "seed": 2026
+      }
+    },
+    "metric": "continuous d4_instruction_score",
+    "peak_family": "MultiConstraint",
+    "peak_is_structural_constraint": false,
+    "peak_significant_over_runner_up": false,
+    "ranking_desc": [
+      "MultiConstraint",
+      "EditingReasoning",
+      "NumericProperty",
+      "SingleConstraint",
+      "Format",
+      "DomainSemantic"
+    ],
+    "runner_up_family": "EditingReasoning",
+    "tier_gaps_T1_minus_T3": {
+      "DomainSemantic": 0.04784945764969428,
+      "EditingReasoning": 0.13173849896304513,
+      "Format": 0.06177314814814816,
+      "MultiConstraint": 0.19392620370370373,
+      "NumericProperty": 0.09510873015873011,
+      "SingleConstraint": 0.08940300925925926
+    }
+  },
+  "per_level_d4_tier_gaps_reference": {
+    "gaps_T1_minus_T3": [
+      0.06177314814814816,
+      0.08940300925925926,
+      0.19392620370370373,
+      0.09510873015873011,
+      0.04784945764969428,
+      0.13173849896304513
+    ],
+    "levels": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  "primary_continuous_d4": {
+    "T1_family_means": {
+      "DomainSemantic": 0.9237063439861786,
+      "EditingReasoning": 0.9221126170079921,
+      "Format": 0.9564444444444444,
+      "NumericProperty": 0.9138333333333333,
+      "StructuralConstraint": 0.9565477777777778
+    },
+    "T3_family_means": {
+      "DomainSemantic": 0.8758568863364843,
+      "EditingReasoning": 0.790374118044947,
+      "Format": 0.8946712962962963,
+      "NumericProperty": 0.8187246031746032,
+      "StructuralConstraint": 0.8148831712962963
+    },
+    "bootstrap_ci_95": {
+      "DomainSemantic": {
+        "ci_95_percentile": [
+          0.03866007272424274,
+          0.05742102406513721
+        ],
+        "n_bootstrap": 5000,
+        "n_instruction_ids": 100,
+        "observed_gap": 0.047849457649694394,
+        "seed": 2026
+      },
+      "EditingReasoning": {
+        "ci_95_percentile": [
+          0.07064075899856025,
+          0.2060902856870711
+        ],
+        "n_bootstrap": 5000,
+        "n_instruction_ids": 50,
+        "observed_gap": 0.13173849896304513,
+        "seed": 2026
+      },
+      "Format": {
+        "ci_95_percentile": [
+          0.04434675925925935,
+          0.08002800925925929
+        ],
+        "n_bootstrap": 5000,
+        "n_instruction_ids": 100,
+        "observed_gap": 0.06177314814814816,
+        "seed": 2026
+      },
+      "NumericProperty": {
+        "ci_95_percentile": [
+          0.0846375529100529,
+          0.10415049603174599
+        ],
+        "n_bootstrap": 5000,
+        "n_instruction_ids": 150,
+        "observed_gap": 0.09510873015873023,
+        "seed": 2026
+      },
+      "StructuralConstraint": {
+        "ci_95_percentile": [
+          0.12328245833333326,
+          0.1605989056712963
+        ],
+        "n_bootstrap": 5000,
+        "n_instruction_ids": 400,
+        "observed_gap": 0.14166460648148138,
+        "seed": 2026
+      }
+    },
+    "metric": "continuous d4_instruction_score",
+    "peak_family": "StructuralConstraint",
+    "peak_is_structural_constraint": true,
+    "peak_significant_over_runner_up": false,
+    "ranking_desc": [
+      "StructuralConstraint",
+      "EditingReasoning",
+      "NumericProperty",
+      "Format",
+      "DomainSemantic"
+    ],
+    "runner_up_family": "EditingReasoning",
+    "tier_gaps_T1_minus_T3": {
+      "DomainSemantic": 0.04784945764969428,
+      "EditingReasoning": 0.13173849896304513,
+      "Format": 0.06177314814814816,
+      "NumericProperty": 0.09510873015873011,
+      "StructuralConstraint": 0.1416646064814815
+    }
+  },
+  "question": "Does the discrimination peak survive a grouping by task family rather than by L-level?",
+  "secondary_quality_only": {
+    "T1_family_means": {
+      "DomainSemantic": 0.8324218447110381,
+      "EditingReasoning": 0.8761871056723922,
+      "Format": 0.9458488095238096,
+      "NumericProperty": 0.8487142725284171,
+      "StructuralConstraint": 0.9500716993464051
+    },
+    "T3_family_means": {
+      "DomainSemantic": 0.7167540826275499,
+      "EditingReasoning": 0.7762874950732633,
+      "Format": 0.8892896825396825,
+      "NumericProperty": 0.7926579090074988,
+      "StructuralConstraint": 0.8065567293028322
+    },
+    "bootstrap_ci_95": {
+      "DomainSemantic": {
+        "ci_95_percentile": [
+          0.10879404329538891,
+          0.12289738970275256
+        ],
+        "n_bootstrap": 5000,
+        "n_instruction_ids": 100,
+        "observed_gap": 0.11566776208348795,
+        "seed": 2026
+      },
+      "EditingReasoning": {
+        "ci_95_percentile": [
+          0.04659615311124485,
+          0.16497031366300416
+        ],
+        "n_bootstrap": 5000,
+        "n_instruction_ids": 50,
+        "observed_gap": 0.09989961059912889,
+        "seed": 2026
+      },
+      "Format": {
+        "ci_95_percentile": [
+          0.04140355158730158,
+          0.07234152281746042
+        ],
+        "n_bootstrap": 5000,
+        "n_instruction_ids": 100,
+        "observed_gap": 0.05655912698412702,
+        "seed": 2026
+      },
+      "NumericProperty": {
+        "ci_95_percentile": [
+          0.046573659376182075,
+          0.06405587384151284
+        ],
+        "n_bootstrap": 5000,
+        "n_instruction_ids": 150,
+        "observed_gap": 0.05605636352091836,
+        "seed": 2026
+      },
+      "StructuralConstraint": {
+        "ci_95_percentile": [
+          0.1252471373910675,
+          0.16249102062908485
+        ],
+        "n_bootstrap": 5000,
+        "n_instruction_ids": 400,
+        "observed_gap": 0.14351497004357294,
+        "seed": 2026
+      }
+    },
+    "metric": "quality-only level_score",
+    "peak_family": "StructuralConstraint",
+    "peak_is_structural_constraint": true,
+    "peak_significant_over_runner_up": true,
+    "ranking_desc": [
+      "StructuralConstraint",
+      "DomainSemantic",
+      "EditingReasoning",
+      "Format",
+      "NumericProperty"
+    ],
+    "runner_up_family": "DomainSemantic",
+    "tier_gaps_T1_minus_T3": {
+      "DomainSemantic": 0.11566776208348817,
+      "EditingReasoning": 0.09989961059912889,
+      "Format": 0.05655912698412702,
+      "NumericProperty": 0.05605636352091836,
+      "StructuralConstraint": 0.14351497004357294
+    }
+  },
+  "tiering": {
+    "T1": [
+      "claudesonnet46",
+      "qwen35397ba17b",
+      "qwen35122ba10b",
+      "zaiorgGLM46"
+    ],
+    "T3": [
+      "mistralaiMistralSmall24BInstruct2501",
+      "gpt35turbo",
+      "gpt4omini",
+      "metallamaMetaLlama318BInstruct"
+    ],
+    "scheme": "paper coarse Q-tiers"
+  },
+  "zero_api_zero_model_calls": true
+}

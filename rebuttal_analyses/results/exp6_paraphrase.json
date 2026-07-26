@@ -1,0 +1,112 @@
+{
+  "across_model_std": {
+    "original": {
+      "1": 0.10197158225935969,
+      "2": 0.11467841435411714,
+      "3": 0.02622762697800971
+    },
+    "paraphrased": {
+      "1": 0.07227241697317197,
+      "2": 0.08579846783724647,
+      "3": 0.027375182730817457
+    }
+  },
+  "analysis": "EXP-6 paraphrase robustness of the L2 discrimination peak",
+  "excluded": [],
+  "l2_is_peak_original": true,
+  "l2_is_peak_paraphrased": true,
+  "l2_peak_survives_paraphrase": true,
+  "levels": [
+    1,
+    2,
+    3
+  ],
+  "metric": "across-model std of per-level mean D4 (tier-split-free discrimination)",
+  "models_matched": [
+    "deepseekaiDeepSeekV3",
+    "metallamaLlama3370BInstructTurbo",
+    "googlegemma327bit",
+    "metallamaMetaLlama318BInstruct",
+    "microsoftphi4",
+    "mistralaiMistralSmall24BInstruct2501"
+  ],
+  "n_models_matched": 6,
+  "note": "Discrimination compresses under paraphrase (std shrinks) but the peak LEVEL is the claim, not its magnitude. SUMMARY_ext_EXP6.md used a 4-model matched subset; this script uses all models with both runs present.",
+  "peak_level_original": 2,
+  "peak_level_paraphrased": 2,
+  "per_model_d4": {
+    "deepseekaiDeepSeekV3": {
+      "original": {
+        "1": 0.9934222222222222,
+        "2": 0.8549614814814815,
+        "3": 0.8928253968253967
+      },
+      "paraphrased": {
+        "1": 0.9688,
+        "2": 0.8105814814814815,
+        "3": 0.8672126984126983
+      }
+    },
+    "googlegemma327bit": {
+      "original": {
+        "1": 0.966,
+        "2": 0.7937222222222222,
+        "3": 0.8498285714285714
+      },
+      "paraphrased": {
+        "1": 0.9417777777777778,
+        "2": 0.7384444444444445,
+        "3": 0.8438603174603174
+      }
+    },
+    "metallamaLlama3370BInstructTurbo": {
+      "original": {
+        "1": 0.9603111111111111,
+        "2": 0.8664377777777778,
+        "3": 0.8469333333333333
+      },
+      "paraphrased": {
+        "1": 0.9593111111111111,
+        "2": 0.8134533333333333,
+        "3": 0.8446095238095238
+      }
+    },
+    "metallamaMetaLlama318BInstruct": {
+      "original": {
+        "1": 0.7236888888888889,
+        "2": 0.5642888888888888,
+        "3": 0.816263492063492
+      },
+      "paraphrased": {
+        "1": 0.7758888888888889,
+        "2": 0.5944851851851852,
+        "3": 0.7863746031746031
+      }
+    },
+    "microsoftphi4": {
+      "original": {
+        "1": 0.9615555555555555,
+        "2": 0.8583555555555555,
+        "3": 0.8406984126984126
+      },
+      "paraphrased": {
+        "1": 0.9226666666666666,
+        "2": 0.8103148148148148,
+        "3": 0.8443809523809523
+      }
+    },
+    "mistralaiMistralSmall24BInstruct2501": {
+      "original": {
+        "1": 0.9768444444444444,
+        "2": 0.7770999999999999,
+        "3": 0.8281333333333333
+      },
+      "paraphrased": {
+        "1": 0.9506666666666667,
+        "2": 0.7916222222222222,
+        "3": 0.8256825396825397
+      }
+    }
+  },
+  "zero_api_zero_model_calls": true
+}

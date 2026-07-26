@@ -1,0 +1,87 @@
+{
+  "analysis": "D2 VGIG versus retry/SC quality-only comparison",
+  "metric": "D5=0 and D1-D4 reweighted from repository constants; all values are recomputed from per_instruction scores.",
+  "selection_signal_note": "This artifact compares only scored outputs. The quality JSON schema has no method-selection-signal field, so satisfaction-rate selection is not independently asserted from these files.",
+  "targets": {
+    "deepseekaiDeepSeekV3": {
+      "baseline": {
+        "quality_only_total": 0.840476754597868,
+        "strategy": "few-shot"
+      },
+      "methods": {
+        "combined": {
+          "available": true,
+          "gain_vs_best_baseline": 0.05358333369428525,
+          "quality_only_total": 0.8940600882921532
+        },
+        "retry": {
+          "available": true,
+          "gain_vs_best_baseline": -0.01316883792685275,
+          "quality_only_total": 0.8273079166710152
+        },
+        "sc": {
+          "available": true,
+          "gain_vs_best_baseline": -0.020155506960739533,
+          "quality_only_total": 0.8203212476371284
+        },
+        "vgig": {
+          "available": true,
+          "gain_over_retry": 0.03549781832773824,
+          "gain_over_sc": 0.04248448736162502,
+          "gain_vs_best_baseline": 0.02232898040088549,
+          "quality_only_total": 0.8628057349987535
+        }
+      }
+    },
+    "gpt4omini": {
+      "baseline": {
+        "quality_only_total": 0.7843981220547683,
+        "strategy": "zero-cot"
+      },
+      "methods": {
+        "combined": {
+          "available": true,
+          "gain_vs_best_baseline": 0.07047739327464575,
+          "quality_only_total": 0.8548755153294141
+        },
+        "retry": {
+          "available": true,
+          "gain_vs_best_baseline": -0.03563107443866087,
+          "quality_only_total": 0.7487670476161075
+        },
+        "sc": {
+          "available": true,
+          "gain_vs_best_baseline": -0.03344439776604191,
+          "quality_only_total": 0.7509537242887264
+        },
+        "vgig": {
+          "available": true,
+          "gain_over_retry": 0.061157695580474014,
+          "gain_over_sc": 0.058971018907855055,
+          "gain_vs_best_baseline": 0.025526621141813144,
+          "quality_only_total": 0.8099247431965815
+        }
+      }
+    }
+  },
+  "verify_only_feedback_ablation": {
+    "available": true,
+    "best_baseline_strategy": "zero-cot",
+    "files": {
+      "vgig": "gpt4omini-vgig.quality.json",
+      "vgig-fbcoarse": "gpt4omini-vgig-fbcoarse.quality.json",
+      "vgig-fbnone": "gpt4omini-vgig-fbnone.quality.json",
+      "zero-shot": "gpt4omini-zero-shot.quality.json"
+    },
+    "formula": "verify-only proportion = (fbnone - baseline)/(fine_vgig - baseline); fbnone is the local no-feedback verifier/early-stop ablation.",
+    "proportion_vs_best_baseline": 0.3995509249064835,
+    "proportion_vs_zero_shot": 0.7340036579899424,
+    "quality_only_totals": {
+      "vgig": 0.8099247431965815,
+      "vgig-fbcoarse": 0.8021121673478426,
+      "vgig-fbnone": 0.7945973071417172,
+      "zero-shot": 0.7523020107219944
+    }
+  },
+  "zero_api_zero_model_calls": true
+}

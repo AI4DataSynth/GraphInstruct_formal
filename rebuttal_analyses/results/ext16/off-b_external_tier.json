@@ -1,0 +1,314 @@
+{
+  "analysis": "OFF-B external independent-capability anchor tier control (Elo / MMLU-Pro)",
+  "external_scores": {
+    "claudesonnet420250514": {
+      "confidence": "HIGH",
+      "elo": 1389,
+      "mmlu_pro": 80.0,
+      "src": "Arena Text Overall 1389±4 (2026-07-21); MMLU-Pro 80.0 estimate MED"
+    },
+    "claudesonnet46": {
+      "confidence": "HIGH",
+      "elo": 1473,
+      "mmlu_pro": 78.5,
+      "src": "Arena Text Overall 1473±4 (2026-07-21, clean); MMLU-Pro 78.5 benchlm.ai MED"
+    },
+    "deepseekaiDeepSeekV3": {
+      "confidence": "HIGH",
+      "elo": 1396,
+      "mmlu_pro": 75.9,
+      "src": "Arena Text Overall DeepSeek-V3-0324 1396±4 (2026-07-21); MMLU-Pro tech report 2412.19437"
+    },
+    "googlegemma327bit": {
+      "confidence": "HIGH",
+      "elo": 1366,
+      "mmlu_pro": 67.5,
+      "src": "Arena.ai Text Elo 1366±4 rank168; MMLU-Pro 67.5 Gemma-3 tech report 2503.19786"
+    },
+    "gpt35turbo": {
+      "confidence": "HIGH",
+      "elo": 1224,
+      "mmlu_pro": 43.3,
+      "src": "Arena Text Overall GPT-3.5-Turbo-0125 1224±5 (2026-07-21); MMLU-Pro leaderboard historical"
+    },
+    "gpt41": {
+      "confidence": "HIGH",
+      "elo": 1414,
+      "mmlu_pro": 80.5,
+      "src": "Arena Text Overall GPT-4.1-2025-04-14 1414±4 (2026-07-21); MMLU-Pro llm-stats.com"
+    },
+    "gpt4o": {
+      "confidence": "HIGH",
+      "elo": 1443,
+      "mmlu_pro": 72.6,
+      "src": "Arena Text Overall GPT-4o Mar-2025 1443±3 (2026-07-21); MMLU-Pro paper 2406.01574"
+    },
+    "gpt4omini": {
+      "confidence": "HIGH",
+      "elo": 1318,
+      "mmlu_pro": 64.0,
+      "src": "Arena Text Overall GPT-4o-mini 1318±4 (2026-07-21); MMLU-Pro public leaderboard MED"
+    },
+    "metallamaLlama3370BInstructTurbo": {
+      "confidence": "HIGH",
+      "elo": 1318,
+      "mmlu_pro": 68.9,
+      "src": "Arena Text Overall Llama-3.3-70B 1318±3 (2026-07-21); MMLU-Pro artificialanalysis.ai"
+    },
+    "metallamaMetaLlama318BInstruct": {
+      "confidence": "HIGH",
+      "elo": 1211,
+      "mmlu_pro": 48.3,
+      "src": "Arena Text Overall Llama-3.1-8B 1211±4 (2026-07-21); MMLU-Pro artificialanalysis.ai"
+    },
+    "microsoftphi4": {
+      "confidence": "HIGH",
+      "elo": 1256,
+      "mmlu_pro": 71.4,
+      "src": "Arena.ai Text Elo 1256±5 rank282; MMLU-Pro 71.4 Phi-4 tech report 2412.08905"
+    },
+    "mistralaiMistralSmall24BInstruct2501": {
+      "confidence": "HIGH",
+      "elo": 1274,
+      "mmlu_pro": 66.3,
+      "src": "Arena.ai Text Elo 1274±6 rank270; MMLU-Pro 66.3 langdb/n8n benchmark"
+    },
+    "qwen35122ba10b": {
+      "confidence": "HIGH",
+      "elo": 1417,
+      "mmlu_pro": 86.1,
+      "src": "Arena Text Overall Qwen3.5-122B-A10B 1417±4 (2026-07-21, clean); MMLU-Pro benchlm.ai MED"
+    },
+    "qwen3535ba3b": {
+      "confidence": "HIGH",
+      "elo": 1396,
+      "mmlu_pro": 85.0,
+      "src": "Arena Text Overall Qwen3.5-35B-A3B 1396±4 (2026-07-21, clean); MMLU-Pro search approx LOW"
+    },
+    "qwen35397ba17b": {
+      "confidence": "HIGH",
+      "elo": 1442,
+      "mmlu_pro": 87.8,
+      "src": "Arena Text Overall Qwen3.5-397B-A17B 1442±4 (2026-07-21, clean); MMLU-Pro digitalapplied/benchlm.ai MED"
+    },
+    "zaiorgGLM46": {
+      "confidence": "HIGH-ELO/MED-MMLU",
+      "elo": 1425,
+      "mmlu_pro": 83.2,
+      "src": "Arena.ai Text Elo 1425±4 rank91 (clean); MMLU-Pro 83.2 official z.ai (AA independent 78.4, diff=prompt/sampling/judge); cross-model tables use 83.2"
+    }
+  },
+  "l2_unique_peak_all_external_tierings": true,
+  "metric": "Continuous d4_instruction_score per-level tier gap (primary) + quality-only D1-D4 level gap. Best baseline per model.",
+  "model_set": "ext16",
+  "n_total_models": 16,
+  "reference_Q_tier": {
+    "anchor": "GraphInstruct Q (paper own, circular)",
+    "d4": {
+      "gaps": [
+        0.06177314814814816,
+        0.08940300925925926,
+        0.19392620370370373,
+        0.09510873015873011,
+        0.04784945764969428,
+        0.13173849896304513
+      ],
+      "l2_is_peak": true,
+      "l2_is_unique_peak": true,
+      "peak_levels": [
+        2
+      ]
+    },
+    "quality_only": {
+      "gaps": [
+        0.05655912698412702,
+        0.09430468409586057,
+        0.19272525599128554,
+        0.05605636352091836,
+        0.11566776208348817,
+        0.09989961059912889
+      ],
+      "l2_is_peak": true,
+      "l2_is_unique_peak": true,
+      "peak_levels": [
+        2
+      ]
+    }
+  },
+  "selected_strategies": {
+    "claudesonnet420250514": "zero-shot",
+    "claudesonnet46": "few-cot",
+    "deepseekaiDeepSeekV3": "few-shot",
+    "googlegemma327bit": "few-cot",
+    "gpt35turbo": "zero-cot",
+    "gpt41": "few-shot",
+    "gpt4o": "few-shot",
+    "gpt4omini": "zero-cot",
+    "metallamaLlama3370BInstructTurbo": "few-cot",
+    "metallamaMetaLlama318BInstruct": "zero-cot",
+    "microsoftphi4": "few-cot",
+    "mistralaiMistralSmall24BInstruct2501": "zero-shot",
+    "qwen35122ba10b": "few-cot",
+    "qwen3535ba3b": "few-cot",
+    "qwen35397ba17b": "few-cot",
+    "zaiorgGLM46": "few-shot"
+  },
+  "tiering_key": "EXTERNAL published capability scores (LMArena Elo / MMLU-Pro), independent of GraphInstruct Q.",
+  "tierings": {
+    "elo16_4-8-4": {
+      "anchor": "elo",
+      "d4": {
+        "gaps": [
+          0.0582731481481481,
+          0.07847708333333325,
+          0.14646675925925934,
+          0.08253650793650791,
+          0.051595629187467185,
+          0.10192804567068525
+        ],
+        "l2_is_peak": true,
+        "l2_is_unique_peak": true,
+        "peak_levels": [
+          2
+        ]
+      },
+      "groups": {
+        "T1": [
+          "Sonnet-4.6",
+          "GPT-4o",
+          "Qwen3.5-397B-A17B",
+          "GLM-4.6"
+        ],
+        "T2": [
+          "Qwen3.5-122B-A10B",
+          "GPT-4.1",
+          "DeepSeek-V3",
+          "Qwen3.5-35B-A3B",
+          "Sonnet-4",
+          "Gemma-3-27B",
+          "GPT-4o-mini",
+          "Llama-3.3-70B"
+        ],
+        "T3": [
+          "Mistral-Small-24B",
+          "Phi-4",
+          "GPT-3.5-turbo",
+          "Llama-3.1-8B"
+        ]
+      },
+      "n_models": 16,
+      "order_desc": [
+        "Sonnet-4.6",
+        "GPT-4o",
+        "Qwen3.5-397B-A17B",
+        "GLM-4.6",
+        "Qwen3.5-122B-A10B",
+        "GPT-4.1",
+        "DeepSeek-V3",
+        "Qwen3.5-35B-A3B",
+        "Sonnet-4",
+        "Gemma-3-27B",
+        "GPT-4o-mini",
+        "Llama-3.3-70B",
+        "Mistral-Small-24B",
+        "Phi-4",
+        "GPT-3.5-turbo",
+        "Llama-3.1-8B"
+      ],
+      "quality_only": {
+        "gaps": [
+          0.05115376984126985,
+          0.08606274509803935,
+          0.13750130174291952,
+          0.059572789073428,
+          0.10251333434326815,
+          0.08028480030306384
+        ],
+        "l2_is_peak": true,
+        "l2_is_unique_peak": true,
+        "peak_levels": [
+          2
+        ]
+      },
+      "split": "4-8-4"
+    },
+    "mmlu16_4-8-4": {
+      "anchor": "mmlu_pro",
+      "d4": {
+        "gaps": [
+          0.04743981481481485,
+          0.07707523148148154,
+          0.17373189814814816,
+          0.08028783068783063,
+          0.03785987454880679,
+          0.12731842710157326
+        ],
+        "l2_is_peak": true,
+        "l2_is_unique_peak": true,
+        "peak_levels": [
+          2
+        ]
+      },
+      "groups": {
+        "T1": [
+          "Qwen3.5-397B-A17B",
+          "Qwen3.5-122B-A10B",
+          "Qwen3.5-35B-A3B",
+          "GLM-4.6"
+        ],
+        "T2": [
+          "GPT-4.1",
+          "Sonnet-4",
+          "Sonnet-4.6",
+          "DeepSeek-V3",
+          "GPT-4o",
+          "Phi-4",
+          "Llama-3.3-70B",
+          "Gemma-3-27B"
+        ],
+        "T3": [
+          "Mistral-Small-24B",
+          "GPT-4o-mini",
+          "Llama-3.1-8B",
+          "GPT-3.5-turbo"
+        ]
+      },
+      "n_models": 16,
+      "order_desc": [
+        "Qwen3.5-397B-A17B",
+        "Qwen3.5-122B-A10B",
+        "Qwen3.5-35B-A3B",
+        "GLM-4.6",
+        "GPT-4.1",
+        "Sonnet-4",
+        "Sonnet-4.6",
+        "DeepSeek-V3",
+        "GPT-4o",
+        "Phi-4",
+        "Llama-3.3-70B",
+        "Gemma-3-27B",
+        "Mistral-Small-24B",
+        "GPT-4o-mini",
+        "Llama-3.1-8B",
+        "GPT-3.5-turbo"
+      ],
+      "quality_only": {
+        "gaps": [
+          0.04525912698412704,
+          0.0815682053376906,
+          0.1742064161220045,
+          0.043448424367224736,
+          0.10738250267833127,
+          0.09559875080509295
+        ],
+        "l2_is_peak": true,
+        "l2_is_unique_peak": true,
+        "peak_levels": [
+          2
+        ]
+      },
+      "split": "4-8-4"
+    }
+  },
+  "zero_api_zero_model_calls": true
+}

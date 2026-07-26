@@ -1,0 +1,449 @@
+{
+  "analysis": "B1 pooled dimension correlations by level",
+  "d1_d4_curve": [
+    {
+      "level": 0,
+      "n": 12400,
+      "pearson_r": 0.23008414935487273,
+      "spearman_rho": -0.30782106771147233
+    },
+    {
+      "level": 1,
+      "n": 24800,
+      "pearson_r": 0.7102194679263505,
+      "spearman_rho": 0.33233333761345113
+    },
+    {
+      "level": 2,
+      "n": 24800,
+      "pearson_r": 0.8029003288401007,
+      "spearman_rho": 0.22742827288696182
+    },
+    {
+      "level": 3,
+      "n": 18600,
+      "pearson_r": 0.44108995129942963,
+      "spearman_rho": 0.047917698269027476
+    },
+    {
+      "level": 4,
+      "n": 12400,
+      "pearson_r": 0.18997571999334795,
+      "spearman_rho": -0.11731035294049783
+    },
+    {
+      "level": 5,
+      "n": 6200,
+      "pearson_r": 0.6589879695106864,
+      "spearman_rho": -0.07685697505654389
+    }
+  ],
+  "levels": {
+    "0": {
+      "available_dimensions": [
+        "D1",
+        "D4"
+      ],
+      "orthogonal_failure_cases": {
+        "D1_equals_1_D4_below_1": [
+          {
+            "D1": 1.0,
+            "D4": 0.3333333333333333,
+            "instruction_id": "L0-055",
+            "run": "gpt4omini-few-shot-heldout"
+          },
+          {
+            "D1": 1.0,
+            "D4": 0.39999999999999997,
+            "instruction_id": "L0-062",
+            "run": "googlegemma327bit-few-shot"
+          },
+          {
+            "D1": 1.0,
+            "D4": 0.4666666666666666,
+            "instruction_id": "L0-098",
+            "run": "gpt4omini-few-cot"
+          }
+        ],
+        "D4_high_D1_low": [
+          {
+            "D1": 0.13999999999999999,
+            "D4": 1.0,
+            "instruction_id": "L0-014",
+            "run": "gpt4omini-few-cot"
+          },
+          {
+            "D1": 0.13999999999999999,
+            "D4": 1.0,
+            "instruction_id": "L0-027",
+            "run": "gpt4omini-few-cot-heldout"
+          },
+          {
+            "D1": 0.13999999999999999,
+            "D4": 1.0,
+            "instruction_id": "L0-006",
+            "run": "gpt4omini-few-shot"
+          }
+        ],
+        "empty_predicates": {
+          "D1_equals_1_D4_below_1": false,
+          "D4_high_D1_low": false
+        }
+      },
+      "pairwise_correlations": {
+        "D1__D4": {
+          "n": 12400,
+          "pearson_r": 0.23008414935487273,
+          "spearman_rho": -0.30782106771147233
+        }
+      }
+    },
+    "1": {
+      "available_dimensions": [
+        "D1",
+        "D4"
+      ],
+      "orthogonal_failure_cases": {
+        "D1_equals_1_D4_below_1": [
+          {
+            "D1": 1.0,
+            "D4": 0.33333333333333337,
+            "instruction_id": "L1-157",
+            "run": "gpt4omini-few-cot"
+          },
+          {
+            "D1": 1.0,
+            "D4": 0.33333333333333337,
+            "instruction_id": "L1-159",
+            "run": "gpt4omini-few-cot-heldout"
+          },
+          {
+            "D1": 1.0,
+            "D4": 0.44000000000000006,
+            "instruction_id": "L1-163",
+            "run": "mistralaiMistralSmall24BInstruct2501-few-cot"
+          }
+        ],
+        "D4_high_D1_low": [
+          {
+            "D1": 0.13999999999999999,
+            "D4": 1.0,
+            "instruction_id": "L1-101",
+            "run": "gpt41-zero-shot"
+          },
+          {
+            "D1": 0.13999999999999999,
+            "D4": 1.0,
+            "instruction_id": "L1-168",
+            "run": "gpt4o-few-cot"
+          },
+          {
+            "D1": 0.13999999999999999,
+            "D4": 1.0,
+            "instruction_id": "L1-168",
+            "run": "gpt4omini-few-cot-heldout"
+          }
+        ],
+        "empty_predicates": {
+          "D1_equals_1_D4_below_1": false,
+          "D4_high_D1_low": false
+        }
+      },
+      "pairwise_correlations": {
+        "D1__D4": {
+          "n": 24800,
+          "pearson_r": 0.7102194679263505,
+          "spearman_rho": 0.33233333761345113
+        }
+      }
+    },
+    "2": {
+      "available_dimensions": [
+        "D1",
+        "D4"
+      ],
+      "orthogonal_failure_cases": {
+        "D1_equals_1_D4_below_1": [
+          {
+            "D1": 1.0,
+            "D4": 0.2962962962962963,
+            "instruction_id": "L2-029",
+            "run": "deepseekaiDeepSeekR10528-zero-shot"
+          },
+          {
+            "D1": 1.0,
+            "D4": 0.3333333333333333,
+            "instruction_id": "L2-020",
+            "run": "microsoftphi4-few-shot"
+          },
+          {
+            "D1": 1.0,
+            "D4": 0.35555555555555557,
+            "instruction_id": "L2-117",
+            "run": "deepseekaiDeepSeekR10528-zero-shot"
+          }
+        ],
+        "D4_high_D1_low": [
+          {
+            "D1": 0.13999999999999999,
+            "D4": 1.0,
+            "instruction_id": "L2-156",
+            "run": "claudesonnet420250514-zero-shot"
+          },
+          {
+            "D1": 0.13999999999999999,
+            "D4": 1.0,
+            "instruction_id": "L2-006",
+            "run": "deepseekaiDeepSeekV3-zero-cot"
+          },
+          {
+            "D1": 0.13999999999999999,
+            "D4": 1.0,
+            "instruction_id": "L2-022",
+            "run": "deepseekaiDeepSeekV3-zero-cot"
+          }
+        ],
+        "empty_predicates": {
+          "D1_equals_1_D4_below_1": false,
+          "D4_high_D1_low": false
+        }
+      },
+      "pairwise_correlations": {
+        "D1__D4": {
+          "n": 24800,
+          "pearson_r": 0.8029003288401007,
+          "spearman_rho": 0.22742827288696182
+        }
+      }
+    },
+    "3": {
+      "available_dimensions": [
+        "D1",
+        "D3",
+        "D4"
+      ],
+      "orthogonal_failure_cases": {
+        "D1_equals_1_D4_below_1": [
+          {
+            "D1": 1.0,
+            "D4": 0.4126984126984126,
+            "instruction_id": "L3-062",
+            "run": "deepseekaiDeepSeekR10528-zero-shot"
+          },
+          {
+            "D1": 1.0,
+            "D4": 0.4444444444444444,
+            "instruction_id": "L3-078",
+            "run": "deepseekaiDeepSeekR10528-zero-shot"
+          },
+          {
+            "D1": 1.0,
+            "D4": 0.45714285714285713,
+            "instruction_id": "L3-101",
+            "run": "metallamaMetaLlama318BInstruct-few-shot"
+          }
+        ],
+        "D4_high_D1_low": [
+          {
+            "D1": 0.13999999999999999,
+            "D4": 1.0,
+            "instruction_id": "L3-131",
+            "run": "deepseekaiDeepSeekV3-few-cot-heldout"
+          },
+          {
+            "D1": 0.13999999999999999,
+            "D4": 1.0,
+            "instruction_id": "L3-107",
+            "run": "gpt4omini-few-cot"
+          },
+          {
+            "D1": 0.13999999999999999,
+            "D4": 1.0,
+            "instruction_id": "L3-137",
+            "run": "gpt4omini-few-cot"
+          }
+        ],
+        "empty_predicates": {
+          "D1_equals_1_D4_below_1": false,
+          "D4_high_D1_low": false
+        }
+      },
+      "pairwise_correlations": {
+        "D1__D3": {
+          "n": 18600,
+          "pearson_r": 0.40499540801018186,
+          "spearman_rho": 0.06414003581607973
+        },
+        "D1__D4": {
+          "n": 18600,
+          "pearson_r": 0.44108995129942963,
+          "spearman_rho": 0.047917698269027476
+        },
+        "D3__D4": {
+          "n": 18600,
+          "pearson_r": 0.6258061339011769,
+          "spearman_rho": 0.3351230539491969
+        }
+      }
+    },
+    "4": {
+      "available_dimensions": [
+        "D1",
+        "D2",
+        "D3",
+        "D4"
+      ],
+      "orthogonal_failure_cases": {
+        "D1_equals_1_D4_below_1": [
+          {
+            "D1": 1.0,
+            "D4": 0.43294156503952613,
+            "instruction_id": "L4-013",
+            "run": "metallamaMetaLlama318BInstruct-few-shot"
+          },
+          {
+            "D1": 1.0,
+            "D4": 0.4553264097058191,
+            "instruction_id": "L4-039",
+            "run": "metallamaMetaLlama318BInstruct-few-shot"
+          },
+          {
+            "D1": 1.0,
+            "D4": 0.5098728439899692,
+            "instruction_id": "L4-072",
+            "run": "gpt4omini-few-shot"
+          }
+        ],
+        "D4_high_D1_low": [
+          {
+            "D1": 0.13999999999999999,
+            "D4": 0.99025,
+            "instruction_id": "L4-085",
+            "run": "gpt35turbo-few-cot"
+          },
+          {
+            "D1": 0.13999999999999999,
+            "D4": 0.9732531194295899,
+            "instruction_id": "L4-084",
+            "run": "gpt4omini-few-cot"
+          },
+          {
+            "D1": 0.13999999999999999,
+            "D4": 0.9706330582774628,
+            "instruction_id": "L4-005",
+            "run": "qwen3535ba3b-few-cot-heldout"
+          }
+        ],
+        "empty_predicates": {
+          "D1_equals_1_D4_below_1": false,
+          "D4_high_D1_low": false
+        }
+      },
+      "pairwise_correlations": {
+        "D1__D2": {
+          "n": 12400,
+          "pearson_r": 0.009590911485850128,
+          "spearman_rho": 0.009850169595070199
+        },
+        "D1__D3": {
+          "n": 12400,
+          "pearson_r": 0.05850285786655726,
+          "spearman_rho": -0.15858055906871307
+        },
+        "D1__D4": {
+          "n": 12400,
+          "pearson_r": 0.18997571999334795,
+          "spearman_rho": -0.11731035294049783
+        },
+        "D2__D3": {
+          "n": 12400,
+          "pearson_r": -0.047059980380401024,
+          "spearman_rho": -0.023199318172366805
+        },
+        "D2__D4": {
+          "n": 12400,
+          "pearson_r": -0.06366453391312749,
+          "spearman_rho": -0.038130824613982636
+        },
+        "D3__D4": {
+          "n": 12400,
+          "pearson_r": 0.43691290635923724,
+          "spearman_rho": 0.3335746418020305
+        }
+      }
+    },
+    "5": {
+      "available_dimensions": [
+        "D1",
+        "D3",
+        "D4"
+      ],
+      "orthogonal_failure_cases": {
+        "D1_equals_1_D4_below_1": [
+          {
+            "D1": 1.0,
+            "D4": 0.5376727272727274,
+            "instruction_id": "L5-044",
+            "run": "gpt4omini-caap"
+          },
+          {
+            "D1": 1.0,
+            "D4": 0.5524036363636364,
+            "instruction_id": "L5-044",
+            "run": "zaiorgGLM46-few-cot-nt"
+          },
+          {
+            "D1": 1.0,
+            "D4": 0.5716545454545455,
+            "instruction_id": "L5-044",
+            "run": "googlegemma327bit-zero-shot"
+          }
+        ],
+        "D4_high_D1_low": [
+          {
+            "D1": 0.13999999999999999,
+            "D4": 0.9550000000000001,
+            "instruction_id": "L5-016",
+            "run": "microsoftphi4-few-cot"
+          },
+          {
+            "D1": 0.13999999999999999,
+            "D4": 0.9550000000000001,
+            "instruction_id": "L5-049",
+            "run": "microsoftphi4-few-cot"
+          },
+          {
+            "D1": 0.13999999999999999,
+            "D4": 0.9550000000000001,
+            "instruction_id": "L5-008",
+            "run": "qwen3535ba3b-few-cot-heldout"
+          }
+        ],
+        "empty_predicates": {
+          "D1_equals_1_D4_below_1": false,
+          "D4_high_D1_low": false
+        }
+      },
+      "pairwise_correlations": {
+        "D1__D3": {
+          "n": 6200,
+          "pearson_r": 0.547791264035696,
+          "spearman_rho": -0.10795638196375903
+        },
+        "D1__D4": {
+          "n": 6200,
+          "pearson_r": 0.6589879695106864,
+          "spearman_rho": -0.07685697505654389
+        },
+        "D3__D4": {
+          "n": 6200,
+          "pearson_r": 0.8816847447986047,
+          "spearman_rho": 0.5998642271642548
+        }
+      }
+    }
+  },
+  "n_quality_files": 124,
+  "pooling": "All readable results/*.quality.json runs; each per_instruction value is a five-sample aggregate, not an independent sample-level observation.",
+  "zero_api_zero_model_calls": true
+}

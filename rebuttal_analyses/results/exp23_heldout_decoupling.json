@@ -1,0 +1,94 @@
+{
+  "analysis": "EXP23: held-out exemplar anti-leakage (EXP-2) + decoupled verifier (EXP-3)",
+  "metric": "quality-only total_score (D1-D4, D5=0 renormalized)",
+  "exp2_heldout": [
+    {
+      "model": "DeepSeek-V3",
+      "slug": "deepseekaiDeepSeekV3",
+      "strategy": "few-shot",
+      "ref0_original": 0.8405,
+      "ref1_heldout": 0.8397,
+      "delta": -0.0008,
+      "clean": true
+    },
+    {
+      "model": "DeepSeek-V3",
+      "slug": "deepseekaiDeepSeekV3",
+      "strategy": "few-cot",
+      "ref0_original": 0.8395,
+      "ref1_heldout": 0.8299,
+      "delta": -0.0096,
+      "clean": false
+    },
+    {
+      "model": "GPT-4o-mini",
+      "slug": "gpt4omini",
+      "strategy": "few-shot",
+      "ref0_original": 0.7424,
+      "ref1_heldout": 0.7443,
+      "delta": 0.0019,
+      "clean": true
+    },
+    {
+      "model": "GPT-4o-mini",
+      "slug": "gpt4omini",
+      "strategy": "few-cot",
+      "ref0_original": 0.7148,
+      "ref1_heldout": 0.6786,
+      "delta": -0.0362,
+      "clean": false
+    },
+    {
+      "model": "Qwen3.5-35B-A3B",
+      "slug": "qwen3535ba3b",
+      "strategy": "few-cot",
+      "ref0_original": 0.8607,
+      "ref1_heldout": 0.8413,
+      "delta": -0.0194,
+      "clean": false
+    }
+  ],
+  "exp2_summary": {
+    "few_shot_mean_delta": 0.0005,
+    "few_shot_all_near_zero": true,
+    "n_models_support_heldout": 3,
+    "note": "few-shot held-out delta ~0 -> no exemplar-into-context leakage; few-cot small drop (CoT length sensitivity), not leakage."
+  },
+  "exp3_decoupled": [
+    {
+      "model": "GPT-4o-mini",
+      "slug": "gpt4omini",
+      "best_baseline": 0.7844,
+      "best_baseline_strategy": "zero-cot",
+      "vgig_d4": 0.8099,
+      "delta_vgig_vs_bl": 0.0255,
+      "vgig_structural": 0.7886,
+      "delta_struct_vs_bl": 0.0042
+    },
+    {
+      "model": "DeepSeek-V3",
+      "slug": "deepseekaiDeepSeekV3",
+      "best_baseline": 0.8405,
+      "best_baseline_strategy": "few-shot",
+      "vgig_d4": 0.8628,
+      "delta_vgig_vs_bl": 0.0223,
+      "vgig_structural": 0.8375,
+      "delta_struct_vs_bl": -0.003
+    },
+    {
+      "model": "Qwen3.5-35B-A3B",
+      "slug": "qwen3535ba3b",
+      "best_baseline": 0.8607,
+      "best_baseline_strategy": "few-cot",
+      "vgig_d4": 0.8959,
+      "delta_vgig_vs_bl": 0.0353,
+      "vgig_structural": 0.8467,
+      "delta_struct_vs_bl": -0.014
+    }
+  ],
+  "exp3_summary": {
+    "struct_mean_delta": -0.0043,
+    "struct_gain_near_zero": true,
+    "note": "decoupled to pure structural signal -> gain shrinks to ~0; VGIG gain comes from D4 constraint-satisfaction signal (cheap, non-leakage)."
+  }
+}

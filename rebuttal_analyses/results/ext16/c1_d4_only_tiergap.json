@@ -1,0 +1,141 @@
+{
+  "analysis": "C1 continuous D4 tier gaps across three tier definitions",
+  "best_baseline_selection": {
+    "criterion": "default LEVEL_WEIGHTS quality-only total (D5 excluded; D1-D4 renormalized)",
+    "strategies": {
+      "claudesonnet420250514": "zero-shot",
+      "claudesonnet46": "few-cot",
+      "deepseekaiDeepSeekV3": "few-shot",
+      "googlegemma327bit": "few-cot",
+      "gpt35turbo": "zero-cot",
+      "gpt41": "few-shot",
+      "gpt4o": "few-shot",
+      "gpt4omini": "zero-cot",
+      "metallamaLlama3370BInstructTurbo": "few-cot",
+      "metallamaMetaLlama318BInstruct": "zero-cot",
+      "microsoftphi4": "few-cot",
+      "mistralaiMistralSmall24BInstruct2501": "zero-shot",
+      "qwen35122ba10b": "few-cot",
+      "qwen3535ba3b": "few-cot",
+      "qwen35397ba17b": "few-cot",
+      "zaiorgGLM46": "few-shot"
+    }
+  },
+  "external_param_tier": {
+    "active_params_billions": {
+      "deepseekaiDeepSeekV3": 37,
+      "googlegemma327bit": 27,
+      "metallamaLlama3370BInstructTurbo": 70,
+      "metallamaMetaLlama318BInstruct": 8,
+      "microsoftphi4": 14,
+      "mistralaiMistralSmall24BInstruct2501": 24,
+      "qwen35122ba10b": 10,
+      "qwen3535ba3b": 3,
+      "qwen35397ba17b": 17,
+      "zaiorgGLM46": 32
+    },
+    "coverage_limitation": "Only six open-weight models have the supplied active-parameter anchor; all closed models are excluded.",
+    "d4_tier_gaps_high_minus_low": [
+      0.011423280423280557,
+      0.050720899470899417,
+      0.04248003527336863,
+      -0.013665406903502153,
+      -0.0026864642831476715,
+      0.02143341324376047
+    ],
+    "groups": {
+      "high": [
+        "metallamaLlama3370BInstructTurbo",
+        "deepseekaiDeepSeekV3",
+        "zaiorgGLM46"
+      ],
+      "low": [
+        "googlegemma327bit",
+        "mistralaiMistralSmall24BInstruct2501",
+        "qwen35397ba17b",
+        "microsoftphi4",
+        "qwen35122ba10b",
+        "metallamaMetaLlama318BInstruct",
+        "qwen3535ba3b"
+      ]
+    },
+    "l2_is_peak": false,
+    "l2_is_unique_peak": false,
+    "peak_levels": [
+      1
+    ]
+  },
+  "metric": "Mean d4_instruction_score, a continuous [0,1] value present across all six levels.",
+  "q_based_tier": {
+    "d4_tier_gaps_T1_minus_T3": [
+      0.06177314814814816,
+      0.08940300925925926,
+      0.19392620370370373,
+      0.09510873015873011,
+      0.04784945764969428,
+      0.13173849896304513
+    ],
+    "groups": {
+      "T1": [
+        "claudesonnet46",
+        "qwen35397ba17b",
+        "qwen35122ba10b",
+        "zaiorgGLM46"
+      ],
+      "T2": [
+        "qwen3535ba3b",
+        "gpt41",
+        "gpt4o",
+        "deepseekaiDeepSeekV3",
+        "claudesonnet420250514",
+        "metallamaLlama3370BInstructTurbo",
+        "microsoftphi4",
+        "googlegemma327bit"
+      ],
+      "T3": [
+        "mistralaiMistralSmall24BInstruct2501",
+        "gpt35turbo",
+        "gpt4omini",
+        "metallamaMetaLlama318BInstruct"
+      ]
+    },
+    "l2_is_peak": true,
+    "l2_is_unique_peak": true,
+    "peak_levels": [
+      2
+    ]
+  },
+  "split_data_tier": {
+    "l2_is_peak": true,
+    "l2_is_unique_peak": true,
+    "l2_peak_frequency": 0.8,
+    "mean_d4_tier_gaps_T1_minus_T3": [
+      0.05072804232804238,
+      0.07323354497354495,
+      0.1504803880070547,
+      0.09004109851347948,
+      0.04646551141569895,
+      0.12005227778993774
+    ],
+    "peak_levels": [
+      2
+    ],
+    "seeds": [
+      2026,
+      2027,
+      2028,
+      2029,
+      2030
+    ],
+    "selection_analysis_disjoint": true,
+    "std_d4_tier_gaps": [
+      0.00402438363171804,
+      0.006214069884710666,
+      0.02602731905925625,
+      0.010466686803571254,
+      0.01116260143383616,
+      0.009923885809279973
+    ]
+  },
+  "zero_api_zero_model_calls": true
+}

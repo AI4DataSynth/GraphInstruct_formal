@@ -1,0 +1,459 @@
+{
+  "aggregations": {
+    "average_rank": {
+      "rank_positions": {
+        "claudesonnet420250514": 5,
+        "claudesonnet46": 1,
+        "deepseekaiDeepSeekV3": 9,
+        "googlegemma327bit": 12,
+        "gpt35turbo": 14,
+        "gpt41": 8,
+        "gpt4o": 6,
+        "gpt4omini": 15,
+        "metallamaLlama3370BInstructTurbo": 10,
+        "metallamaMetaLlama318BInstruct": 16,
+        "microsoftphi4": 11,
+        "mistralaiMistralSmall24BInstruct2501": 13,
+        "qwen35122ba10b": 4,
+        "qwen3535ba3b": 7,
+        "qwen35397ba17b": 2,
+        "zaiorgGLM46": 3
+      },
+      "ranking": [
+        "claudesonnet46",
+        "qwen35397ba17b",
+        "zaiorgGLM46",
+        "qwen35122ba10b",
+        "claudesonnet420250514",
+        "gpt4o",
+        "qwen3535ba3b",
+        "gpt41",
+        "deepseekaiDeepSeekV3",
+        "metallamaLlama3370BInstructTurbo",
+        "microsoftphi4",
+        "googlegemma327bit",
+        "mistralaiMistralSmall24BInstruct2501",
+        "gpt35turbo",
+        "gpt4omini",
+        "metallamaMetaLlama318BInstruct"
+      ],
+      "scores": {
+        "claudesonnet420250514": -6.166666666666667,
+        "claudesonnet46": -1.5,
+        "deepseekaiDeepSeekV3": -8.0,
+        "googlegemma327bit": -10.666666666666666,
+        "gpt35turbo": -13.5,
+        "gpt41": -6.833333333333333,
+        "gpt4o": -6.666666666666667,
+        "gpt4omini": -14.0,
+        "metallamaLlama3370BInstructTurbo": -10.333333333333334,
+        "metallamaMetaLlama318BInstruct": -15.333333333333334,
+        "microsoftphi4": -10.5,
+        "mistralaiMistralSmall24BInstruct2501": -12.666666666666666,
+        "qwen35122ba10b": -4.5,
+        "qwen3535ba3b": -6.666666666666667,
+        "qwen35397ba17b": -4.333333333333333,
+        "zaiorgGLM46": -4.333333333333333
+      }
+    },
+    "borda_count": {
+      "rank_positions": {
+        "claudesonnet420250514": 5,
+        "claudesonnet46": 1,
+        "deepseekaiDeepSeekV3": 9,
+        "googlegemma327bit": 12,
+        "gpt35turbo": 14,
+        "gpt41": 8,
+        "gpt4o": 6,
+        "gpt4omini": 15,
+        "metallamaLlama3370BInstructTurbo": 10,
+        "metallamaMetaLlama318BInstruct": 16,
+        "microsoftphi4": 11,
+        "mistralaiMistralSmall24BInstruct2501": 13,
+        "qwen35122ba10b": 4,
+        "qwen3535ba3b": 7,
+        "qwen35397ba17b": 2,
+        "zaiorgGLM46": 3
+      },
+      "ranking": [
+        "claudesonnet46",
+        "qwen35397ba17b",
+        "zaiorgGLM46",
+        "qwen35122ba10b",
+        "claudesonnet420250514",
+        "gpt4o",
+        "qwen3535ba3b",
+        "gpt41",
+        "deepseekaiDeepSeekV3",
+        "metallamaLlama3370BInstructTurbo",
+        "microsoftphi4",
+        "googlegemma327bit",
+        "mistralaiMistralSmall24BInstruct2501",
+        "gpt35turbo",
+        "gpt4omini",
+        "metallamaMetaLlama318BInstruct"
+      ],
+      "scores": {
+        "claudesonnet420250514": 59,
+        "claudesonnet46": 87,
+        "deepseekaiDeepSeekV3": 48,
+        "googlegemma327bit": 32,
+        "gpt35turbo": 15,
+        "gpt41": 55,
+        "gpt4o": 56,
+        "gpt4omini": 12,
+        "metallamaLlama3370BInstructTurbo": 34,
+        "metallamaMetaLlama318BInstruct": 4,
+        "microsoftphi4": 33,
+        "mistralaiMistralSmall24BInstruct2501": 20,
+        "qwen35122ba10b": 69,
+        "qwen3535ba3b": 56,
+        "qwen35397ba17b": 70,
+        "zaiorgGLM46": 70
+      }
+    },
+    "geometric_mean": {
+      "rank_positions": {
+        "claudesonnet420250514": 8,
+        "claudesonnet46": 1,
+        "deepseekaiDeepSeekV3": 9,
+        "googlegemma327bit": 12,
+        "gpt35turbo": 15,
+        "gpt41": 6,
+        "gpt4o": 7,
+        "gpt4omini": 14,
+        "metallamaLlama3370BInstructTurbo": 10,
+        "metallamaMetaLlama318BInstruct": 16,
+        "microsoftphi4": 11,
+        "mistralaiMistralSmall24BInstruct2501": 13,
+        "qwen35122ba10b": 4,
+        "qwen3535ba3b": 5,
+        "qwen35397ba17b": 2,
+        "zaiorgGLM46": 3
+      },
+      "ranking": [
+        "claudesonnet46",
+        "qwen35397ba17b",
+        "zaiorgGLM46",
+        "qwen35122ba10b",
+        "qwen3535ba3b",
+        "gpt41",
+        "gpt4o",
+        "claudesonnet420250514",
+        "deepseekaiDeepSeekV3",
+        "metallamaLlama3370BInstructTurbo",
+        "microsoftphi4",
+        "googlegemma327bit",
+        "mistralaiMistralSmall24BInstruct2501",
+        "gpt4omini",
+        "gpt35turbo",
+        "metallamaMetaLlama318BInstruct"
+      ],
+      "scores": {
+        "claudesonnet420250514": 0.8636517724943582,
+        "claudesonnet46": 0.918279988763115,
+        "deepseekaiDeepSeekV3": 0.8624152431177903,
+        "googlegemma327bit": 0.8359601188216835,
+        "gpt35turbo": 0.8034799248214473,
+        "gpt41": 0.8724556242364658,
+        "gpt4o": 0.8667391909673342,
+        "gpt4omini": 0.8043319366360051,
+        "metallamaLlama3370BInstructTurbo": 0.8493446420578722,
+        "metallamaMetaLlama318BInstruct": 0.7475141357002134,
+        "microsoftphi4": 0.8480582421690056,
+        "mistralaiMistralSmall24BInstruct2501": 0.8228414640091699,
+        "qwen35122ba10b": 0.8898415111248035,
+        "qwen3535ba3b": 0.873394253615497,
+        "qwen35397ba17b": 0.8942842972295308,
+        "zaiorgGLM46": 0.8932629667890934
+      }
+    },
+    "weighted_sum": {
+      "rank_positions": {
+        "claudesonnet420250514": 9,
+        "claudesonnet46": 1,
+        "deepseekaiDeepSeekV3": 8,
+        "googlegemma327bit": 12,
+        "gpt35turbo": 14,
+        "gpt41": 6,
+        "gpt4o": 7,
+        "gpt4omini": 15,
+        "metallamaLlama3370BInstructTurbo": 10,
+        "metallamaMetaLlama318BInstruct": 16,
+        "microsoftphi4": 11,
+        "mistralaiMistralSmall24BInstruct2501": 13,
+        "qwen35122ba10b": 3,
+        "qwen3535ba3b": 5,
+        "qwen35397ba17b": 2,
+        "zaiorgGLM46": 4
+      },
+      "ranking": [
+        "claudesonnet46",
+        "qwen35397ba17b",
+        "qwen35122ba10b",
+        "zaiorgGLM46",
+        "qwen3535ba3b",
+        "gpt41",
+        "gpt4o",
+        "deepseekaiDeepSeekV3",
+        "claudesonnet420250514",
+        "metallamaLlama3370BInstructTurbo",
+        "microsoftphi4",
+        "googlegemma327bit",
+        "mistralaiMistralSmall24BInstruct2501",
+        "gpt35turbo",
+        "gpt4omini",
+        "metallamaMetaLlama318BInstruct"
+      ],
+      "scores": {
+        "claudesonnet420250514": 0.8342372160060654,
+        "claudesonnet46": 0.9018020924408092,
+        "deepseekaiDeepSeekV3": 0.840476754597868,
+        "googlegemma327bit": 0.818736165551354,
+        "gpt35turbo": 0.7862381739841078,
+        "gpt41": 0.8495729046140045,
+        "gpt4o": 0.8442977095382801,
+        "gpt4omini": 0.7843981220547683,
+        "metallamaLlama3370BInstructTurbo": 0.8340788738121021,
+        "metallamaMetaLlama318BInstruct": 0.7305432335323384,
+        "microsoftphi4": 0.8247462554287424,
+        "mistralaiMistralSmall24BInstruct2501": 0.7947907922356912,
+        "qwen35122ba10b": 0.871417893335303,
+        "qwen3535ba3b": 0.8606637264938249,
+        "qwen35397ba17b": 0.8787812091095794,
+        "zaiorgGLM46": 0.8690504430505069
+      }
+    }
+  },
+  "analysis": "A2 aggregation cross-check",
+  "pairwise_agreement": {
+    "average_rank__vs__borda_count": {
+      "kendall_tau_b": 1.0,
+      "top10_intersection": {
+        "effective_k": 10,
+        "requested_k": 10,
+        "retained": 10
+      },
+      "top5_intersection": {
+        "effective_k": 5,
+        "requested_k": 5,
+        "retained": 5
+      }
+    },
+    "average_rank__vs__geometric_mean": {
+      "kendall_tau_b": 0.9075950713612994,
+      "top10_intersection": {
+        "effective_k": 10,
+        "requested_k": 10,
+        "retained": 10
+      },
+      "top5_intersection": {
+        "effective_k": 5,
+        "requested_k": 5,
+        "retained": 4
+      }
+    },
+    "borda_count__vs__geometric_mean": {
+      "kendall_tau_b": 0.9075950713612994,
+      "top10_intersection": {
+        "effective_k": 10,
+        "requested_k": 10,
+        "retained": 10
+      },
+      "top5_intersection": {
+        "effective_k": 5,
+        "requested_k": 5,
+        "retained": 4
+      }
+    },
+    "weighted_sum__vs__average_rank": {
+      "kendall_tau_b": 0.890787755224979,
+      "top10_intersection": {
+        "effective_k": 10,
+        "requested_k": 10,
+        "retained": 10
+      },
+      "top5_intersection": {
+        "effective_k": 5,
+        "requested_k": 5,
+        "retained": 4
+      }
+    },
+    "weighted_sum__vs__borda_count": {
+      "kendall_tau_b": 0.890787755224979,
+      "top10_intersection": {
+        "effective_k": 10,
+        "requested_k": 10,
+        "retained": 10
+      },
+      "top5_intersection": {
+        "effective_k": 5,
+        "requested_k": 5,
+        "retained": 4
+      }
+    },
+    "weighted_sum__vs__geometric_mean": {
+      "kendall_tau_b": 0.95,
+      "top10_intersection": {
+        "effective_k": 10,
+        "requested_k": 10,
+        "retained": 10
+      },
+      "top5_intersection": {
+        "effective_k": 5,
+        "requested_k": 5,
+        "retained": 5
+      }
+    }
+  },
+  "per_model_quality_only_level_scores": {
+    "claudesonnet420250514": [
+      0.9386952380952381,
+      0.9827901960784314,
+      0.9004652178649237,
+      0.8408923319879412,
+      0.7366540903501231,
+      0.8064466513144107
+    ],
+    "claudesonnet46": [
+      0.9537714285714286,
+      0.9802803921568628,
+      0.9539692810457516,
+      0.8832312011501068,
+      0.8509153224831495,
+      0.89446007515552
+    ],
+    "deepseekaiDeepSeekV3": [
+      0.9360285714285714,
+      0.9627653594771242,
+      0.8310361873638343,
+      0.8310544363732945,
+      0.8089910179025308,
+      0.817138880895441
+    ],
+    "googlegemma327bit": [
+      0.9169428571428572,
+      0.8788217864923747,
+      0.8146446623093682,
+      0.8095999626050798,
+      0.7751546828119099,
+      0.8284059258982999
+    ],
+    "gpt35turbo": [
+      0.8747039682539683,
+      0.9202138888888889,
+      0.7063171241830065,
+      0.8083067526683543,
+      0.7362606989870804,
+      0.7952299710985141
+    ],
+    "gpt41": [
+      0.9273428571428571,
+      0.9801993464052288,
+      0.8904783115468409,
+      0.8191894238169899,
+      0.8125024964556045,
+      0.818602286028054
+    ],
+    "gpt4o": [
+      0.9505,
+      0.9789952614379085,
+      0.8185059477124184,
+      0.8180473379860896,
+      0.8134594330484104,
+      0.8364918615132239
+    ],
+    "gpt4omini": [
+      0.8802547619047619,
+      0.9195617647058824,
+      0.7256235294117647,
+      0.8040930218298001,
+      0.7345640714755075,
+      0.7805042233693613
+    ],
+    "metallamaLlama3370BInstructTurbo": [
+      0.8900380952380952,
+      0.9546212418300654,
+      0.8499505773420479,
+      0.7478557235823975,
+      0.8092396990611697,
+      0.8589647551364468
+    ],
+    "metallamaMetaLlama318BInstruct": [
+      0.8979285714285714,
+      0.7369070261437908,
+      0.6744379084967319,
+      0.762429219328003,
+      0.6890193585163003,
+      0.7441989303093812
+    ],
+    "microsoftphi4": [
+      0.9154000000000001,
+      0.9540877450980392,
+      0.8610208496732025,
+      0.7801272026418538,
+      0.7697850294246601,
+      0.823770622333689
+    ],
+    "mistralaiMistralSmall24BInstruct2501": [
+      0.9042714285714285,
+      0.9617892156862744,
+      0.807603376906318,
+      0.7958026422038378,
+      0.7071722015313117,
+      0.7852168555157966
+    ],
+    "qwen35122ba10b": [
+      0.9369761904761905,
+      0.977437037037037,
+      0.9040044444444445,
+      0.8279474549639975,
+      0.8308561860601378,
+      0.8716847037331561
+    ],
+    "qwen3535ba3b": [
+      0.9085714285714286,
+      0.929334477124183,
+      0.8798939215686274,
+      0.8327994445353323,
+      0.8177742848625222,
+      0.8772566359793764
+    ],
+    "qwen35397ba17b": [
+      0.9320095238095238,
+      0.967632679738562,
+      0.8937244444444444,
+      0.8645969143849709,
+      0.8418626356914287,
+      0.8718950259149156
+    ],
+    "zaiorgGLM46": [
+      0.9606380952380953,
+      0.990340522875817,
+      0.9331847930283225,
+      0.8190815196145935,
+      0.8060532346094361,
+      0.8667086178859772
+    ]
+  },
+  "selected_strategies": {
+    "claudesonnet420250514": "zero-shot",
+    "claudesonnet46": "few-cot",
+    "deepseekaiDeepSeekV3": "few-shot",
+    "googlegemma327bit": "few-cot",
+    "gpt35turbo": "zero-cot",
+    "gpt41": "few-shot",
+    "gpt4o": "few-shot",
+    "gpt4omini": "zero-cot",
+    "metallamaLlama3370BInstructTurbo": "few-cot",
+    "metallamaMetaLlama318BInstruct": "zero-cot",
+    "microsoftphi4": "few-cot",
+    "mistralaiMistralSmall24BInstruct2501": "zero-shot",
+    "qwen35122ba10b": "few-cot",
+    "qwen3535ba3b": "few-cot",
+    "qwen35397ba17b": "few-cot",
+    "zaiorgGLM46": "few-shot"
+  },
+  "selection": "Each model first uses its default LEVEL_WEIGHTS quality-only best baseline strategy; all four aggregations use that same selected run.",
+  "zero_api_zero_model_calls": true
+}

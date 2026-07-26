@@ -105,6 +105,13 @@ extended-analyses companion that drills into individual design choices:
   that regenerate every number in the companion (e.g. `python
   scripts/analyses/b17_loo_ols.py`). Outputs land in
   `scripts/analyses/results/` as JSON.
+- [`REBUTTAL_ANALYSES.md`](REBUTTAL_ANALYSES.md) — discussion-phase
+  analyses: the L2-peak control battery (single-metric, split-data,
+  external Elo/MMLU-Pro anchors, 16-model extension), dimension-validity
+  and weight/aggregation robustness, the L4 metric decomposition, and the
+  cross-family / reasoning-model / held-out-exemplar experiments. Products
+  in [`rebuttal_analyses/results/`](rebuttal_analyses/results/), scripts in
+  [`scripts/rebuttal/`](scripts/rebuttal/).
 
 These analyses are independent of the main paper tables; the headline
 leaderboards below are unaffected.
