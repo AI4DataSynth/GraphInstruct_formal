@@ -117,8 +117,14 @@ L1 (continuous-D4 gaps: L1 0.080 vs. L2 0.042, from `c1_d4_only_tiergap.json`
 `e1a_external_param_tier.json` agrees: 0.080 vs. 0.039). Active-parameter
 count mis-orders heterogeneous
 MoE models — it places Qwen3.5-122B (10B active) below Qwen3.5-397B (17B
-active). The capability-correlated anchors above (Elo, MMLU-Pro, split-data)
-all return the peak to L2.
+active). Concretely, the low-parameter tier {Qwen3.5-122B, Llama-3.1-8B,
+Qwen3.5-35B} inherits two of the three strongest L2 performers (Qwen3.5-122B
+is the best of all six at L2), which cancels the L2 contrast, while the
+residual L1 gap is contributed almost entirely by Llama-3.1-8B, whose
+best-baseline L1 score collapses to 0.74 while the other five sit at
+0.93–0.98. The peak at L1 is thus a property of the broken anchor, not
+evidence against L2. The capability-correlated anchors above (Elo, MMLU-Pro,
+split-data) all return the peak to L2.
 
 ---
 
